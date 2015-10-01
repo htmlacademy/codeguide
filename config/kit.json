@@ -1,0 +1,22 @@
+{
+  "entry": {
+    "css": [
+      "style.css"
+    ],
+
+    "js": [
+      "app.js"
+    ]
+  },
+
+  "discover": ["img", "css", "js", "files"],
+
+  "cssnext": {
+    "browsers": "last 2 versions",
+    "import": false,
+    "features": {
+      "customProperties": false,
+      "rem": false
+    }
+  }
+}

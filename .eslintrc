@@ -1,0 +1,45 @@
+{
+  "extends": "eslint:recommended",
+
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+
+  "ecmaFeatures": {
+    "modules": true
+  },
+
+  "rules": {
+    "arrow-parens": 2,
+    "arrow-spacing": [2,  {"before": true, "after": true}],
+    "brace-style": [1, "1tbs"],
+    "callback-return": [2, ["callback", "cb", "fn", "next"]],
+    "comma-style": [1, "last"],
+    "computed-property-spacing": [2, "never"],
+    "eqeqeq": 2,
+    "indent": [2, 2, {"SwitchCase": 1}],
+    "linebreak-style": [2, "unix"],
+    "no-class-assign": 2,
+    "no-console": 0,
+    "no-const-assign": 2,
+    "no-inner-declarations": [2, "both"],
+    "no-useless-call": 2,
+    "no-var": 2,
+    "object-curly-spacing": [2, "never"],
+    "one-var": [2, "never"],
+    "operator-assignment": [2, "never"],
+    "operator-linebreak": [2, "after"],
+    "prefer-spread": 2,
+    "quotes": [2, "single"],
+    "semi": [2, "always"],
+    "space-after-keywords": 1,
+    "space-before-blocks": 1,
+    "space-before-function-paren": [1, "never"],
+    "space-in-parens": 1,
+    "space-infix-ops": 1,
+    "space-return-throw-case": 1,
+    "wrap-iife": [2, "inside"]
+  }
+}
