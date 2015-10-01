@@ -1,0 +1,23 @@
+header {
+  padding: 3rem 1rem 6rem;
+
+  text-align: center;
+
+  background-color: var(--brand-color);
+
+  @media (--viewport-medium) {
+    padding-top: 4rem;
+    padding-bottom: 8rem;
+  }
+
+  h1 {
+    margin: 1rem 0 0.25rem;
+
+    color: var(--light-color);
+  }
+}
+
+.logo {
+  width: 100px;
+  height: 127px;
+}
