@@ -1,5 +1,5 @@
 header {
-  padding: 3rem 1rem 6rem;
+  padding: 1rem 1rem 6rem;
 
   text-align: center;
 
@@ -9,18 +9,16 @@ header {
     repeating-linear-gradient(-150deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.06) 1px, transparent 0, transparent 41px);
 
   @media (--viewport-medium) {
-    padding-top: 4rem;
-    padding-bottom: 8rem;
+    padding-bottom: 4rem;
   }
 
   h1 {
-    margin: 1rem 0 0.25rem;
+    margin: 0 0 0.25rem;
 
     color: var(--light-color);
   }
 }
 
 .logo {
-  width: 100px;
-  height: 127px;
+  width: 300px;
 }
