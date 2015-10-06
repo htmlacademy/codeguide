@@ -63,5 +63,5 @@ footer {
   width: 91px;
   height: 16px;
 
-  background-image: resolve("copyright.svg");
+  background-image: resolve("github.svg");
 }

@@ -9,7 +9,7 @@
     ]
   },
 
-  "discover": ["img", "css", "js", "files"],
+  "discover": ["img", "css", "js"],
 
   "cssnext": {
     "browsers": "last 2 versions",

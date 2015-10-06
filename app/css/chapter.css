@@ -36,7 +36,6 @@
   }
 
   & + .chapter-part-col {
-    background-color: var(--light-subtle-color);
     border-top: 1px solid var(--subtle-color);
 
     @media (--viewport-large) {
@@ -51,4 +50,8 @@
   p {
     max-width: 32rem;
   }
+}
+
+.gray-bgcolor {
+  background-color: var(--light-subtle-color);
 }
