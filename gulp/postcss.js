@@ -8,7 +8,7 @@ import include from 'postcss-import';
 import mixins from 'postcss-mixins';
 import nested from 'postcss-nested';
 import variables from 'postcss-css-variables';
-import cssnext from 'cssnext';
+import cssnext from 'postcss-cssnext';
 import assets from 'postcss-assets';
 import mqpacker from 'css-mqpacker';
 
