@@ -26,8 +26,6 @@ module.exports = {
       exclude: /node_modules|build/,
       loader: 'babel-loader',
       query: {
-        optional: 'runtime',
-        stage: 1,
         cacheDirectory: true
       }
     }]
