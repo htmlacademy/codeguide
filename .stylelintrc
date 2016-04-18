@@ -6,7 +6,7 @@
     "color-no-hex": null,
     "color-no-invalid-hex": true,
 
-    "font-family-name-quotes": "double-where-recommended",
+    "font-family-name-quotes": "double-unless-keyword",
     "font-weight-notation": null,
 
     "function-blacklist": null,
