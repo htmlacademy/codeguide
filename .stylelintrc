@@ -16,8 +16,11 @@
     "function-comma-space-after": "always",
     "function-comma-space-before": "never",
     "function-linear-gradient-no-nonstandard-direction": true,
+    "function-max-empty-lines": 0,
+    "function-name-case": "lower",
     "function-parentheses-newline-inside": null,
     "function-parentheses-space-inside": "never",
+    "function-url-data-uris": null,
     "function-url-quotes": "double",
     "function-whitelist": null,
     "function-whitespace-after": "always",
@@ -33,10 +36,13 @@
     "time-no-imperceptible": null,
 
     "unit-blacklist": null,
+    "unit-case": "lower",
+    "unit-no-unknown": true,
     "unit-whitelist": null,
 
     "value-no-vendor-prefix": null,
 
+    "value-keyword-case": "lower",
     "value-list-comma-newline-after": "always-multi-line",
     "value-list-comma-newline-before": "never-multi-line",
     "value-list-comma-space-after": "always-single-line",
@@ -45,13 +51,18 @@
     "custom-property-no-outside-root": null,
     "custom-property-pattern": null,
 
+    "shorthand-property-no-redundant-values": null,
+
     "property-blacklist": null,
+    "property-case": "lower",
     "property-no-vendor-prefix": null,
     "property-unit-blacklist": null,
     "property-unit-whitelist": null,
     "property-value-blacklist": null,
     "property-value-whitelist": null,
     "property-whitelist": null,
+
+    "keyframe-declaration-no-important": true,
 
     "declaration-bang-space-after": "never",
     "declaration-bang-space-before": "always",
@@ -61,6 +72,7 @@
     "declaration-no-important": null,
 
     "declaration-block-no-duplicate-properties": true,
+    "declaration-block-no-ignored-properties": true,
     "declaration-block-no-shorthand-property-overrides": true,
     "declaration-block-properties-order": null,
     "declaration-block-semicolon-newline-after": "always",
@@ -81,20 +93,36 @@
     "block-opening-brace-space-after": "always-single-line",
     "block-opening-brace-space-before": "always",
 
+    "selector-attribute-brackets-space-inside": "never",
+    "selector-attribute-operator-blacklist": null,
+    "selector-attribute-operator-space-after": "never",
+    "selector-attribute-operator-space-before": "never",
+    "selector-attribute-operator-whitelist": null,
     "selector-class-pattern": null,
     "selector-combinator-space-after": "always",
     "selector-combinator-space-before": "always",
     "selector-id-pattern": null,
+    "selector-max-compound-selectors": 3,
     "selector-max-specificity": null,
     "selector-no-attribute": null,
     "selector-no-combinator": null,
     "selector-no-id": null,
+    "selector-no-qualifying-type": [true, {
+      "ignore": ["attribute"]
+    }],
     "selector-no-type": null,
     "selector-no-universal": null,
     "selector-no-vendor-prefix": null,
+    "selector-pseudo-class-case": "lower",
+    "selector-pseudo-class-no-unknown": true,
+    "selector-pseudo-class-parentheses-space-inside": "never",
+    "selector-pseudo-element-case": "lower",
     "selector-pseudo-element-colon-notation": "double",
+    "selector-pseudo-element-no-unknown": true,
     "selector-root-no-composition": null,
     "selector-type-case": "lower",
+    "selector-type-no-unknown": true,
+    "selector-max-empty-lines": 0,
 
     "selector-list-comma-newline-after": "always",
     "selector-list-comma-newline-before": "never-multi-line",
@@ -133,11 +161,16 @@
       ],
       "ignore": ["after-comment"]
     }],
+    "at-rule-name-case": "lower",
+    "at-rule-name-space-after": "always",
     "at-rule-no-vendor-prefix": null,
     "at-rule-semicolon-newline-after": "always",
 
+    "stylelint-disable-reason": "always-before",
+
     "comment-empty-line-before": null,
     "comment-whitespace-inside": null,
+    "comment-word-blacklist": null,
 
     "indentation": [2, {
       "except": ["value"]
@@ -150,6 +183,7 @@
     "no-descending-specificity": null,
     "no-duplicate-selectors": true,
     "no-eol-whitespace": true,
+    "no-extra-semicolons": true,
     "no-indistinguishable-colors": null,
     "no-invalid-double-slash-comments": true,
     "no-missing-eof-newline": true,
