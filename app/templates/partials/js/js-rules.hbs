@@ -1,0 +1,207 @@
+# Синтаксис и лексика
+## Отступы, пробелы и переносы
+'indent': ['error', 2, {
+    SwitchCase: 1,
+    // continuation indent
+    VariableDeclarator: 2,
+    MemberExpression: 2,
+    FunctionDeclaration: {parameters: 2},
+    FunctionExpression: {parameters: 2},
+    CallExpression: {arguments: 2}
+}],
+'no-irregular-whitespace': 'error', // eslint:recommended
+'no-unexpected-multiline': 'error', // eslint:recommended
+'no-multi-spaces': 'error',
+'brace-style': 'error',
+'block-spacing': ['error', 'always'],
+'array-bracket-spacing': ['error', 'never'],
+'comma-spacing': 'error',
+'comma-style': 'error',
+'eol-last': 'error',
+'no-trailing-spaces': 'error',
+'object-curly-spacing': 'error',
+'no-mixed-spaces-and-tabs': 'error', // eslint:recommended
+'no-multiple-empty-lines': ['error', {max: 2}],
+'linebreak-style': 'off', // check this in git
+'computed-property-spacing': 'error',
+'func-call-spacing': 'error',
+'key-spacing': 'error',
+'keyword-spacing': 'error',
+'padded-blocks': ['off', 'never'],
+'semi-spacing': 'error',
+'space-before-blocks': 'error',
+'space-before-function-paren': ['error', {named: 'never', anonymous: 'always'}],
+'spaced-comment': ['error', 'always'],
+'generator-star-spacing': ['error', 'after'],
+'rest-spread-spacing': 'error',
+'yield-star-spacing': ['error', 'after']
+
+## Строки
+'no-multi-str': 'error', // запрет на использование переносов в ES5-строках
+'no-octal-escape': 'error',
+'quote-props': ['error', 'consistent'],
+'quotes': ['error', 'single', {allowTemplateLiterals: true}],
+
+## Числа
+'no-floating-decimal': 'error', // запрет на опускание нуля
+'no-octal': 'error', //default
+
+## Литералы
+'no-array-constructor': 'error',
+'no-new-object': 'error',
+
+### Объекты
+'no-dupe-keys': 'error',
+'no-dupe-args': 'error',
+'no-duplicate-case': 'error',
+
+### Массивы
+
+## Операторы
+'space-infix-ops': 'error',
+'space-unary-ops': ['error', {words: true, nonwords: false}],
+
+# Именование
+'no-label-var': 'error',
+'camelcase': 'error',
+'no-shadow': 'error',
+'no-shadow-restricted-names': 'error',
+'no-undef': 'error', //default // нельзя использовать необъявленные переменные
+'no-undef-init': 'error', // нельзя создавать переменные без значения
+'no-undefined': 'error', // нельзя использовать значение undefined
+'new-cap': 'error',
+
+# Конструкции языка
+
+## Условные операторы
+## Циклы
+## Функции
+## Переменные
+## Классы
+'constructor-super': 'error', // eslint:recommended
+
+
+# Предотвращение ошибок
+'semi': 'error',
+'unicode-bom': 'warn',
+'curly': ['error', "all"],
+'no-empty': 'error',
+'strict': ['error', 'global'],
+
+## Условные операторы
+'yoda': ['error', "never"],
+'eqeqeq': 'error', // использование строгого сравнения
+'no-cond-assign': 'error', // eslint:recommended // запрет на присвоение в блоке условия
+'no-unsafe-negation': 'error', // небезопасное отрицание (использование ! в in или instanceof без скобок)
+'use-isnan': 'error',
+'no-fallthrough': 'error', // запрет на проваливание в switch
+'no-nested-ternary': 'error',
+
+## Функции
+'consistent-return': 'error', // функция не возвращает undefined, особенно если есть другой return
+'no-return-assign': 'error',
+'arrow-parens': ['error', 'always'],
+
+## Классы
+'no-this-before-super': 'error',  // eslint:recommended
+
+
+## Объявление переменных и функций
+'no-var': 'error',
+'no-redeclare': 'error', //default
+'one-var': ['error', {
+    var: 'never',
+    let: 'never',
+    const: 'never'
+}],
+
+### Объявление функций
+'no-func-assign': 'error',
+'no-inner-declarations': ["error", "functions"], // запрет на объявление значений внутри блоков
+'no-new-func': 'error', // запрет на создание функций через конструктор Function
+'prefer-rest-params': 'error',
+'prefer-spread': 'error',
+
+### Создание значений
+'no-obj-calls': 'error', // запрет на создание значений с помощью конструкторов без new (Math(), JSON(), Reflect()).
+'no-sparse-arrays': 'error', // запрет на массивы с пропусками
+'comma-dangle': ['error', 'only-multiline'],
+'no-new-wrappers': 'error', // запрет на вызов конструкторов для примитивов
+'new-parens': 'error',
+'no-new-symbol': 'error', // eslint:recommended
+
+## Хорошие практики
+'no-with': 'error',
+'no-alert': 'error',
+'no-eval': 'error',
+'no-implied-eval': 'error', // запрет на код в строчках (например timeout)
+'no-script-url': 'error', // запрет на использование протокола javascript:
+'no-new': 'error', // запрет на использование конструкторов для сайдэффектов
+
+### Манкипатчинг
+'no-extend-native': 'error', // запрет на манкипатчинг
+'no-global-assign': 'error',
+
+### Контекст
+'no-extra-bind': 'error', // запрет на использование bind там где не нужно (например IIFE)
+'no-invalid-this': 'error', // запрет на использование this вне объектов и классов
+
+### Переменные
+'no-delete-var': 'error', //eslint:recommended
+
+## Приведение типов
+'no-extra-boolean-cast': 'error',
+'valid-typeof': 'error', // проверка на правильный тип в typeof
+'radix': 'error',
+
+### Зафиксированный if (if..true)
+'no-constant-condition': 'error',
+
+# Модульность и области видимости
+## Глобальная область видимости
+## Системы сборки
+
+# Чистый код
+## Лишние символы (пробелы, точки с запятой и прочее)
+'no-extra-semi': 'error',
+
+## Отладчик и консоль
+'no-console': 'error',
+'no-debugger': 'error',
+
+## Неиспользуемый код
+'no-unreachable': 'error',
+'no-unused-vars': ['error', {args: 'none'}], // eslint:recommended
+'no-unused-expressions': 'error',
+
+## Обработка ошибок и исключения
+'no-throw-literal': 'error', // eslint:recommended // запрет на выброс исключениями не объектов Error а литералов
+
+### try..catch с пустым try
+'no-ex-assign': 'error'
+
+# Документирование
+'valid-jsdoc': ['error', {
+    requireParamDescription: false,
+    requireReturnDescription: false,
+    requireReturn: false,
+    prefer: {returns: 'return'}
+}],
+
+# Прочее
+'guard-for-in': 'error', // Итерирование по объектам через hasOwnProp
+'no-caller': 'error', // запрет на использование caller/callee в функциях
+'no-iterator': 'error', // запрет на использование __iterator__
+'no-proto': 'error', // запрет на использование __proto__
+'no-labels': 'error',
+'no-lone-blocks': 'error',
+'no-sequences': 'error',
+
+## Регулярные выражения
+'no-control-regex': 'error',
+'no-empty-character-class': 'error',
+'no-invalid-regexp': 'error', // нельзя создавать объект RegExp из неправильной строки
+'no-regex-spaces': 'error', // запрет на использование нескольких пробелов в регулярках. Вместо этого предлагается использовать {3}
+
+# node.js
+'no-process-exit': 'error',
