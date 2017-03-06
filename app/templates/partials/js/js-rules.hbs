@@ -238,8 +238,11 @@ if (myValue === 1) {} // Хорошо
 - В стрелочных функциях всегда используются скобки для параметров, даже если параметр один
 
 ## Классы
-'no-this-before-super': 'error',  // eslint:recommended
 'constructor-super': 'error', // eslint:recommended
+- В конструкторе классов-наследников  обязательно вызывается super()
+
+'no-this-before-super': 'error',  // eslint:recommended
+- В конструкторе нет обращения к this до того, как будет вызван super()
 
 
 ## Объявление переменных и функций
