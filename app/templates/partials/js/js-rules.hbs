@@ -228,9 +228,14 @@ if (myValue === 1) {} // Хорошо
 
 
 ## Функции
-'consistent-return': 'error', // функция не возвращает undefined, особенно если есть другой return
+'consistent-return': 'error',
+- Функция не возвращает undefined, особенно если есть другой return
+
 'no-return-assign': 'error',
+- В return не используется оператор присваивания.
+
 'arrow-parens': ['error', 'always'],
+- В стрелочных функциях всегда используются скобки для параметров, даже если параметр один
 
 ## Классы
 'no-this-before-super': 'error',  // eslint:recommended
