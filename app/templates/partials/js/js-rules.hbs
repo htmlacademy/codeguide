@@ -326,8 +326,11 @@ function myFunc() {}; // Плохо
 - Не переопределяются глобальные значения (undefined, null, Object, window и прочие)
 
 ### Контекст
-'no-extra-bind': 'error', // запрет на использование bind там где не нужно (например IIFE)
-'no-invalid-this': 'error', // запрет на использование this вне объектов и классов
+'no-extra-bind': 'error',
+- bind не используется вне методов классов
+
+'no-invalid-this': 'error',
+- в функциях, которые не являются методами никакого объекта или класса не используется `this`
 
 ### Переменные
 'no-delete-var': 'error', //eslint:recommended
