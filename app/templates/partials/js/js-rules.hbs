@@ -262,10 +262,23 @@ if (myValue === 1) {} // Хорошо
 
 ### Объявление функций
 'no-func-assign': 'error',
-'no-inner-declarations': ["error", "functions"], // запрет на объявление значений внутри блоков
-'no-new-func': 'error', // запрет на создание функций через конструктор Function
+- Функции объявляются как функциональные выражения, а не определения функций.
+```javascript
+var myFunc = function() {}; // Хорошо
+function myFunc() {}; // Плохо
+```
+
+'no-inner-declarations': ["error", "functions"],
+- Запрещено объявление значений внутри блоков
+
+'no-new-func': 'error',
+- Новые функции не создаются с помощью конструктора `Function`
+
 'prefer-rest-params': 'error',
+- Вместо коллекции `arguments`, используется rest-оператор
+
 'prefer-spread': 'error',
+- Вместо вызова функции через `apply` используется spread-оператор
 
 ### Создание значений
 'no-obj-calls': 'error', // запрет на создание значений с помощью конструкторов без new (Math(), JSON(), Reflect()).
