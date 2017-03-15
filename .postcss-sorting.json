@@ -3,6 +3,10 @@
     "at-rule-nested-empty-line-before": [true, {
       "except": ["first-nested"]
     }],
+    "declaration-empty-line-before": [true, {
+      "except": ["after-declaration", "first-nested"],
+      "ignore": ["after-comment", "after-declaration"]
+    }],
     "rule-nested-empty-line-before": [true, {
       "except": ["first-nested"],
       "ignore": ["after-comment"]
@@ -86,7 +90,8 @@
                 "overflow-x",
                 "-ms-overflow-y",
                 "overflow-y",
-                "-webkit-overflow-scrolling"
+                "-webkit-overflow-scrolling",
+                "-ms-overflow-style"
             ]
         },
         {
@@ -170,7 +175,8 @@
                 "text-shadow",
                 "page-break-after",
                 "page-break-before",
-                "page-break-inside"
+                "page-break-inside",
+                "src"
             ]
         },
         {
@@ -289,7 +295,8 @@
                 "cursor",
                 "opacity",
                 "-webkit-filter",
-                "filter"
+                "filter",
+                "backdrop-filter"
             ]
         },
         {
@@ -359,7 +366,12 @@
                 "-moz-animation-direction",
                 "-ms-animation-direction",
                 "-o-animation-direction",
-                "animation-direction"
+                "animation-direction",
+                "-webkit-animation-fill-mode",
+                "-moz-animation-fill-mode",
+                "-ms-animation-fill-mode",
+                "-o-animation-fill-mode",
+                "animation-fill-mode"
             ]
         },
         {
@@ -386,6 +398,15 @@
                 "touch-action",
                 "will-change",
                 "zoom"
+            ]
+        },
+        {
+            "emptyLineBefore": true,
+            "properties": [
+              "fill",
+              "fill-rule",
+              "clip-rule",
+              "stroke"
             ]
         }
     ],
