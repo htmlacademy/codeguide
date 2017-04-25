@@ -111,6 +111,35 @@ header a:visited {
   color: #ffffff;
 }
 
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+
+  border: 0;
+
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(100%);
+}
+
+.logo-list {
+  max-width: 550px;
+  margin: 50px auto;
+}
+
+.logo-list ul {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
 .logo {
   width: 300px;
   height: 300px;
