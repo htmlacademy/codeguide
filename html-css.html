@@ -33,7 +33,7 @@
         <h2>Оглавление</h2>
         <article class="chapter-part">
           <div class="chapter-part-col">
-            <h4>HTML</h4>
+            <h3>HTML</h3>
             <ul>
               <li><a href="#html-syntax">Синтаксис</a></li>
               <li><a href="#html-validator">Валидность</a></li>
@@ -49,7 +49,7 @@
             </ul>
           </div>
           <div class="chapter-part-col">
-            <h4>CSS</h4>
+            <h3>CSS</h3>
             <ul>
               <li><a href="#css-syntax">Синтаксис</a></li>
               <li><a href="#css-order">Порядок свойств</a></li>
@@ -66,7 +66,7 @@
 
         <article class="chapter-part">
           <div class="chapter-part-col">
-            <h4 id="html-syntax">Синтаксис</h4>
+            <h3 id="html-syntax">Синтаксис</h3>
             <ul>
               <li>Для отступов у&nbsp;вложенных элементов используются два пробела. Для правильного форматирования используйте файл <a href="https://github.com/htmlacademy/codeguide/blob/master/.editorconfig" target="_blank">.editorconfig</a> в&nbsp;вашем редакторе.</li>
               <li>Теги и&nbsp;их&nbsp;атрибуты пишутся строчными буквами. Для значений атрибутов всегда используются двойные кавычки.</li>
@@ -99,7 +99,7 @@
 
         <article class="chapter-part">
           <div class="chapter-part-col">
-            <h4 id="html-validator">Валидность</h4>
+            <h3 id="html-validator">Валидность</h3>
             <p>
               Документ должен проходить проверку на&nbsp;валидность. Для проверки используется <a href="http://validator.w3.org/nu/" target="_blank">современный валидатор</a>.
             </p>
@@ -108,7 +108,7 @@
 
         <article class="chapter-part">
           <div class="chapter-part-col">
-            <h4 id="html-doctype">HTML-доктайп</h4>
+            <h3 id="html-doctype">HTML-доктайп</h3>
             <p>
               В&nbsp;начале страницы обязательно должен быть указан актуальный <code>doctype</code>, чтобы браузер отображал её&nbsp;в&nbsp;режиме соответствия стандартам. Это гарантирует, что страница будет выглядеть единообразно во&nbsp;всех современных браузерах.
             </p>
@@ -126,7 +126,7 @@
 
         <article class="chapter-part">
           <div class="chapter-part-col">
-            <h4 id="html-encoding">Кодировка символов</h4>
+            <h3 id="html-encoding">Кодировка символов</h3>
             <p>
               Кодировка символов на&nbsp;странице всегда должна быть явно указана, чтобы обеспечить корректное отображение текста. Кодировка <code>utf-8</code> предпочтительна.
             </p>
@@ -143,7 +143,7 @@
 
         <article class="chapter-part">
           <div class="chapter-part-col">
-            <h4 id="html-style-includes">Подключение стилей</h4>
+            <h3 id="html-style-includes">Подключение стилей</h3>
             <p>
               Стилевые файлы с&nbsp;помощью <code>&lt;link&gt;</code> подключаются внутри <code>&lt;head&gt;</code>. При этом атрибут <code>type</code> для тега <code>&lt;link&gt;</code> не&nbsp;указывается, так как его значение <code>text/css</code> устанавливается по&nbsp;умолчанию.
             </p>
@@ -173,7 +173,7 @@
 
         <article class="chapter-part">
           <div class="chapter-part-col">
-            <h4 id="html-js-includes">Подключение скриптов</h4>
+            <h3 id="html-js-includes">Подключение скриптов</h3>
             <p>
               Скрипты должны подключаться в&nbsp;самом низу страницы, чтобы при её&nbsp;загрузке не&nbsp;блокировать отображение содержимого.
             </p>
@@ -207,7 +207,7 @@
 
         <article class="chapter-part">
           <div class="chapter-part-col">
-            <h4 id="html-attribute-order">Порядок атрибутов</h4>
+            <h3 id="html-attribute-order">Порядок атрибутов</h3>
             <p>
               Атрибут класса у&nbsp;HTML-элементов пишется первым. Единообразное написание помогает легче считывать код и&nbsp;быстрее разбираться в&nbsp;назначении блоков по&nbsp;их&nbsp;классам.
             </p>
@@ -228,7 +228,7 @@
 
         <article class="chapter-part">
           <div class="chapter-part-col">
-            <h4 id="html-boolean">Логические атрибуты</h4>
+            <h3 id="html-boolean">Логические атрибуты</h3>
             <p>
               Для логических атрибутов (например, <code>checked</code>, <code>disabled</code>, <code>required</code>) значение не&nbsp;указывается, а&nbsp;сами атрибуты указываются последними и&nbsp;в&nbsp;единообразной последовательности во&nbsp;всём документе.
             </p>
@@ -249,7 +249,7 @@
 
         <article class="chapter-part">
           <div class="chapter-part-col">
-            <h4 id="html-form-labels">Подписи полей ввода</h4>
+            <h3 id="html-form-labels">Подписи полей ввода</h3>
             <p>
               Для улучшения взаимодействия пользователя с&nbsp;элементами форм, при нажатии на&nbsp;подпись поля, оно должно активироваться. Для этого элемент формы связывается с&nbsp;его описанием с&nbsp;помощью идентификатора и&nbsp;атрибута <code>for</code> тега <code>&lt;label&gt;</code>.
             </p>
@@ -273,7 +273,7 @@
 
         <article class="chapter-part">
           <div class="chapter-part-col">
-            <h4 id="html-img-sizes">Размеры картинок</h4>
+            <h3 id="html-img-sizes">Размеры картинок</h3>
             <p>
               Изображениям <code>&lt;img&gt;</code> должны быть явно заданы с&nbsp;помощью атрибута размеры в&nbsp;пикселях. В&nbsp;случае пикселей размерность не&nbsp;нужна.
             </p>
@@ -303,7 +303,7 @@
 
         <article class="chapter-part">
           <div class="chapter-part-col">
-            <h4 id="html-language">Атрибут языка</h4>
+            <h3 id="html-language">Атрибут языка</h3>
             <p>
               Для элемента <code>&lt;html&gt;</code> в&nbsp;атрибуте <code>lang</code> должен указываться соответствующий язык документа. Это помогает инструментам синтеза речи определить, какое использовать произношение или системам перевода, какие использовать языковые правила.
             </p>
@@ -325,7 +325,7 @@
 
         <article class="chapter-part">
           <div class="chapter-part-col">
-            <h4 id="css-syntax">Синтаксис</h4>
+            <h3 id="css-syntax">Синтаксис</h3>
             <ul>
               <li>После значения свойства обязательно ставится точка с&nbsp;запятой.</li>
               <li>Для отступов внутри правил используются два пробела. Для правильного форматирования используйте файл <a href="https://github.com/htmlacademy/codeguide/blob/master/.editorconfig" target="_blank">.editorconfig</a> в&nbsp;вашем редакторе.</li>
@@ -372,7 +372,7 @@
 
         <article class="chapter-part">
           <div class="chapter-part-col">
-            <h4 id="css-order">Порядок свойств</h4>
+            <h3 id="css-order">Порядок свойств</h3>
             <p>
               Объявления логически связанных свойств группируются в&nbsp;следующем порядке:
             </p>
@@ -443,7 +443,7 @@
 
         <article class="chapter-part">
           <div class="chapter-part-col">
-            <h4 id="css-class-names">Имена классов</h4>
+            <h3 id="css-class-names">Имена классов</h3>
             <ul>
               <li>Имена классов пишутся строчными буквами, используется дефис (но&nbsp;не&nbsp;знаки нижнего подчёркивания или camelCase). Дефисы служат разделителями во&nbsp;взаимосвязанных классах (например, <code>.button</code> и <code>.button-danger</code>).</li>
               <li>Имена классов должны быть такими, чтобы по&nbsp;ним можно было быстро понять какому элементу страницы задан класс: избегайте сокращений (единственное исключение&nbsp;&mdash; <code>.btn</code> для кнопок), но&nbsp;не&nbsp;делайте их&nbsp;слишком длинными (более трёх слов).</li>
@@ -469,7 +469,7 @@
 
         <article class="chapter-part">
           <div class="chapter-part-col">
-            <h4 id="css-import">Правило <code>@import</code></h4>
+            <h3 id="css-import">Правило <code>@import</code></h3>
             <p>
               Правило <code>@import</code> работает медленнее, чем тег <code>&lt;link&gt;</code>. В&nbsp;стилях <code>@import</code> не&nbsp;должен использоваться.
             </p>
@@ -489,7 +489,7 @@
 
         <article class="chapter-part">
           <div class="chapter-part-col">
-            <h4 id="css-font-variant">Варианты шрифта</h4>
+            <h3 id="css-font-variant">Варианты шрифта</h3>
             <p>
               Альтернативные варианты шрифта и&nbsp;тип семейства указываются в&nbsp;конце перечисления <code>font-family</code>.
             </p>

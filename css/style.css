@@ -23,7 +23,7 @@ a:hover {
 
 h1,
 h2,
-h4 {
+h3 {
   margin: 0;
 
   font-weight: normal;
@@ -32,6 +32,7 @@ h4 {
 }
 
 h2,
+h3,
 h4 {
   line-height: 1.2;
 }
@@ -45,7 +46,7 @@ h2 {
   font-size: 2.5rem;
 }
 
-h4 {
+h3 {
   font-size: 1.75rem;
 }
 
@@ -277,6 +278,10 @@ footer {
   .chapter-part-col {
     width: 50%;
     padding: 3rem;
+  }
+
+  .chapter-part-col--full-width {
+    width: 100%;
   }
 
   .chapter-part-col + .chapter-part-col {

@@ -29,24 +29,23 @@
     </header>
 
     <main>
-      <!-- <section class="chapter">
+      <section class="chapter">
         <h2>Оглавление</h2>
         <article class="chapter-part">
-          <div class="chapter-part-col">
-            <h4>JS</h4>
+          <div class="chapter-part-col chapter-part-col--full-width">
             <ul>
-              <li><a href="#html-syntax">Синтаксис</a></li>
+              <li><a href="#js-syntax">Синтаксис</a></li>
             </ul>
           </div>
         </article>
-      </section> -->
+      </section>
 
       <section class="chapter">
-        <h2>Синтаксис</h2>
+        <h2 id="js-syntax">Синтаксис</h2>
 
         <article class="chapter-part">
-          <div class="chapter-part-col">
-            <h4 id="">Отступы, пробелы и переносы</h4>
+          <div class="chapter-part-col chapter-part-col--full-width">
+            <h3 id="">Отступы, пробелы и переносы</h3>
             <ul>
               Для правильного форматирования используйте файл .editorconfig в вашем редакторе.
 
@@ -58,15 +57,17 @@
 
               <li>Внутри строки не используется более одного пробела.</li>
 
-              <li>Открывающие скобки блоков кода находятся на одной строке с оператором, которых их использует
-                <pre class="language-js"><code>- if (condition)
+              <li>Открывающие скобки блоков кода находятся на одной строке с оператором, которых их использует:<pre class="language-js"><code>
+- if (condition)
 - {
 -   // code
 - }
 
 + if (condition) {
 +   // code
-+ }</code></pre>
++ }
+
+</code></pre>
                 </li>
 
               <li>В однострочных блоках кода, код отделен от открывающей и закрывающей скобки пробелом</li>
@@ -117,13 +118,16 @@
         </article>
 
         <article class="chapter-part">
-          <div class="chapter-part-col">
-            <h4 id="">Строки</h4>
+          <div class="chapter-part-col chapter-part-col--full-width">
+            <h3 id="">Строки</h3>
             <ul>
               <li>В строках, объявленных с помощью одинарных и двойных кавычек запрещено использовать переносы.</li>
 
-              <li>В строках запрещено указывать код спецсимволов в восьмеричной системе счисления <pre class="language-js"><code>- var foo = "Copyright \251";
-+ var foo = "Copyright \u00A9";</code></pre></li>
+              <li>В строках запрещено указывать код спецсимволов в восьмеричной системе счисления <pre class="language-js"><code>
+- var foo = "Copyright \251";
++ var foo = "Copyright \u00A9";
+
+</code></pre></li>
 
               <li>При создании объектов через литералы свойства должны объявляться в едином стиле: или без кавычек или с ними.</li>
 
@@ -133,8 +137,8 @@
         </article>
 
         <article class="chapter-part">
-          <div class="chapter-part-col">
-            <h4 id="">Числа</h4>
+          <div class="chapter-part-col chapter-part-col--full-width">
+            <h3 id="">Числа</h3>
             <ul>
               <li>В числах запрещено опускать ноль в дробной и целой части.</li>
 
@@ -144,28 +148,28 @@
         </article>
 
         <article class="chapter-part">
-          <div class="chapter-part-col">
-            <h4 id="">Литералы</h4>
+          <div class="chapter-part-col chapter-part-col--full-width">
+            <h3 id="">Литералы</h3>
             <ul>
               <li>Массивы должны создаваться через литерал массива, а не через конструктор. Допустимое исключение — создание массива определенной длины.</li>
 
               <li>Объекты должны создаваться через литерал объекта, а не через конструктор.</li>
 
-              <h5>Объекты</h5>
+              <h4>Объекты</h4>
               <li>При создании объектов запрещено дублирование ключей.</li>
 
               <li>При описании функций запрещено дублировать названия параметров.</li>
 
               <li>В операторе <code>switch</code> запрещено дублировать условия (case)</li>
 
-              <h5>Массивы</h5>
+              <h4>Массивы</h4>
             </ul>
           </div>
         </article>
 
         <article class="chapter-part">
-          <div class="chapter-part-col">
-            <h4 id="">Операторы</h4>
+          <div class="chapter-part-col chapter-part-col--full-width">
+            <h3 id="">Операторы</h3>
             <ul>
               <li>В бинарных и тернарных операторах операнды и символы оператора отделяются пробелами.</li>
 
@@ -180,7 +184,7 @@
         <h2>Именование</h2>
 
         <article class="chapter-part">
-          <div class="chapter-part-col">
+          <div class="chapter-part-col chapter-part-col--full-width">
             <ul>
               <li>Запрещено объявлять переменные, имена которых совпадают с именами используемых в коде лейблов</li>
 
@@ -207,7 +211,7 @@
         <h2>Предотвращение ошибок</h2>
 
         <article class="chapter-part">
-          <div class="chapter-part-col">
+          <div class="chapter-part-col chapter-part-col--full-width">
             <ul>
               <li>Все точки с запятой должны быть проставлены явно, не стоит рассчитывать на автоматическую расстановку точек с запятой ASI.</li>
 
@@ -223,11 +227,14 @@
         </article>
 
         <article class="chapter-part">
-          <div class="chapter-part-col">
-            <h4 id="">Условные операторы</h4>
+          <div class="chapter-part-col chapter-part-col--full-width">
+            <h3 id="">Условные операторы</h3>
             <ul>
-              <li>Запрещена "проверка Йоды" — в условных операторах в блоке условия при сравнении переменной или свойства со значением сначала идет переменная или свойство объекта и только потом значения, а не наоброт. <pre class="language-js"><code>- if (1 === myValue) {}
-+ if (myValue === 1) {}</code></pre></li>
+              <li>Запрещена "проверка Йоды" — в условных операторах в блоке условия при сравнении переменной или свойства со значением сначала идет переменная или свойство объекта и только потом значения, а не наоброт. <pre class="language-js"><code>
+- if (1 === myValue) {}
++ if (myValue === 1) {}
+
+</code></pre></li>
 
               <li>При сравнении двух значений используется оператор строгого сравнения вместо оператора нестрогого сравнения</li>
 
@@ -245,10 +252,11 @@
         </article>
 
         <article class="chapter-part">
-          <div class="chapter-part-col">
-            <h4 id="">Функции</h4>
+          <div class="chapter-part-col chapter-part-col--full-width">
+            <h3 id="">Функции</h3>
             <ul>
-              <li>Если в функции используется ветвление, в котором есть возврат значения (<code>return</code>), <code>return</code> должен быть добавлен и в остальных ветках. Это правило предотвращает создание функций, при использовании которых непонятно, вернут ли они какое-то значение. <pre class="language-js"><code>- var do = function() {
+              <li>Если в функции используется ветвление, в котором есть возврат значения (<code>return</code>), <code>return</code> должен быть добавлен и в остальных ветках. Это правило предотвращает создание функций, при использовании которых непонятно, вернут ли они какое-то значение. <pre class="language-js"><code>
+- var do = function() {
 -   if (cond) {
 -     return 1;
 -   } else {
@@ -267,7 +275,9 @@
 +   } else {
 +     return 2;
 +   }
-+ }</code></pre></li>
++ }
+
+</code></pre></li>
 
               <li>В return не используется оператор присваивания.</li>
 
@@ -277,8 +287,8 @@
         </article>
 
         <article class="chapter-part">
-          <div class="chapter-part-col">
-            <h4 id="">Операторы</h4>
+          <div class="chapter-part-col chapter-part-col--full-width">
+            <h3 id="">Операторы</h3>
             <ul>
               <li>В конструкторе классов-наследников  обязательно вызывается super()</li>
 
@@ -288,25 +298,29 @@
         </article>
 
         <article class="chapter-part">
-          <div class="chapter-part-col">
-            <h4 id="">Объявление переменных и функций</h4>
+          <div class="chapter-part-col chapter-part-col--full-width">
+            <h3 id="">Объявление переменных и функций</h3>
             <ul>
               <li>При объявлении переменных предпочтение отдается ключевым словам let и const. Переменные объявляются через var только при наличии проблем с поддержкой кода.</li>
 
               <li>Запрещено переопределять с помощью ключевого слова ранее созданные переменные</li>
 
-              <li>Запрещено использовать множественное объявление через одно ключевое слово. Для каждой переменной используется отдельный <code>var</code>, <code>let</code> или <code>const</code>. Это правило облегчает отладку, поскольку создание нескольких переменных через запятую трактуются движком как одна операция, что означает, что невозможно поставить отладчик на создание одной из переменных. <pre class="language-js"><code>- var a = 1, b = 2;
+              <li>Запрещено использовать множественное объявление через одно ключевое слово. Для каждой переменной используется отдельный <code>var</code>, <code>let</code> или <code>const</code>. Это правило облегчает отладку, поскольку создание нескольких переменных через запятую трактуются движком как одна операция, что означает, что невозможно поставить отладчик на создание одной из переменных. <pre class="language-js"><code>
+- var a = 1, b = 2;
 -
 + var a = 1;
 + var b = 2;
-            </code></pre></li>
+
+</code></pre></li>
             </ul>
 
-            <h5 id="">Объявление функций</h5>
+            <h4 id="">Объявление функций</h4>
             <ul>
               'no-func-assign': 'error',
-              <li>Запрещено переопределение функций, созданных с помощью функционального объявления (function expression) <pre class="language-js"><code>- function myFunc() {};
+              <li>Запрещено переопределение функций, созданных с помощью функционального объявления (function expression) <pre class="language-js"><code>
+- function myFunc() {};
 - myFunc = 2;
+
 </code></pre></li>
 
               <li>Запрещено объявление значений внутри блоков</li>
@@ -318,7 +332,7 @@
               <li>Вместо вызова функции через <code>apply</code> используется spread-оператор</li>
             </ul>
 
-            <h5 id="">Создание значений</h5>
+            <h4 id="">Создание значений</h4>
             <ul>
               <li>Не вызываются служебные конструкторы, создающие объекты из глобальной области видимости <code>Math(), JSON(), Reflect()</code>.</li>
 
@@ -336,8 +350,8 @@
         </article>
 
         <article class="chapter-part">
-          <div class="chapter-part-col">
-            <h4 id="">Хорошие практики</h4>
+          <div class="chapter-part-col chapter-part-col--full-width">
+            <h3 id="">Хорошие практики</h3>
             <ul>
               <li>Не используется конструкция <code>with</code>.</li>
 
@@ -352,7 +366,7 @@
               <li>Конструкторы не используются без ключевого слова <code>new</code>.</li>
             </ul>
 
-            <h5>Манкипатчинг</h5>
+            <h4>Манкипатчинг</h4>
 
             <ul>
               <li>Встроенные в язык объекты и прототипы не расширяются в рантайме</li>
@@ -360,14 +374,14 @@
               <li>Не переопределяются глобальные значения (<code>undefined</code>, <code>null</code>, <code>Object</code>, <code>window</code> и прочие)</li>
             </ul>
 
-            <h5>Контекст</h5>
+            <h4>Контекст</h4>
             <ul>
               <li>bind не используется вне методов классов</li>
 
               <li>в функциях, которые не являются методами никакого объекта или класса не используется <code>this</code></li>
             </ul>
 
-            <h5>Переменные</h5>
+            <h4>Переменные</h4>
             <ul>
               <li>Переменные, объявленные через <code>var</code> не удаляются оператором <code>delete</code></li>
             </ul>
@@ -375,8 +389,8 @@
         </article>
 
         <article class="chapter-part">
-          <div class="chapter-part-col">
-            <h4 id="">Приведение типов</h4>
+          <div class="chapter-part-col chapter-part-col--full-width">
+            <h3 id="">Приведение типов</h3>
             <ul>
               <li>Не используется лишнее приведение к Boolean. Например, нет большого смысла переводить в boolean условия в конструкциях <code>if</code>, <code>while</code>, <code>for</code>, в первом операнде тернарного оператора</li>
 
@@ -385,14 +399,19 @@
               <li>В <code>parseInt</code> обязательно передается второй параметр — основание системы счисления, даже в случае с десятичной системой счисления</li>
             </ul>
 
-            <h5>Константы в условиях</h5>
+            <h4>Константы в условиях</h4>
 
             <ul>
-              <li>В блоки условия операторов if, while, for и тернарного оператора не передается константное значение, которое подразумевает, что условие выполняется (или не выполняется) всегда <pre class="language-js"><code>- if (true) {}
-+ if (a > 1) {}</code></pre>
+              <li>В блоки условия операторов if, while, for и тернарного оператора не передается константное значение, которое подразумевает, что условие выполняется (или не выполняется) всегда <pre class="language-js"><code>
+- if (true) {}
++ if (a > 1) {}
 
-              <pre class="language-js"><code>- var ternaryValue = true ? 'a' : 'b';
+</code></pre>
+
+              <pre class="language-js"><code>
+- var ternaryValue = true ? 'a' : 'b';
 + var ternaryValue = isA() ? 'a' : 'b';
+
               </code></pre></li>
             </ul>
           </div>
@@ -404,8 +423,8 @@
         <h2>Чистый код</h2>
 
         <article class="chapter-part">
-          <div class="chapter-part-col">
-            <h4 id="">Лишние символы (пробелы, точки с запятой и прочее)</h4>
+          <div class="chapter-part-col chapter-part-col--full-width">
+            <h3 id="">Лишние символы (пробелы, точки с запятой и прочее)</h3>
             <ul>
               <li>Не используются лишние (множественные) точки с запятой</li>
             </ul>
@@ -413,8 +432,8 @@
         </article>
 
         <article class="chapter-part">
-          <div class="chapter-part-col">
-            <h4 id="">Отладчик и консоль</h4>
+          <div class="chapter-part-col chapter-part-col--full-width">
+            <h3 id="">Отладчик и консоль</h3>
             <ul>
               <li>В коде не используется оставленных выводов в консоль</li>
 
@@ -424,41 +443,50 @@
         </article>
 
         <article class="chapter-part">
-          <div class="chapter-part-col">
-            <h4 id="">Неиспользуемый код</h4>
+          <div class="chapter-part-col chapter-part-col--full-width">
+            <h3 id="">Неиспользуемый код</h3>
             <ul>
               <li>
-                В проекте нет недоступного кода, который никогда не выполнится<pre class="language-js"><code>- if (false) {
+                В проекте нет недоступного кода, который никогда не выполнится<pre class="language-js"><code>
+- if (false) {
 -   doSomething();
 - }
 +
 + if (needToDoSomething()) {
 +   doSomething();
-+ }</code></pre>
++ }
+
+</code></pre>
               </li>
 
               <li>В коде нет объявленных, но неиспользуемых переменных. Проверка не относится к параметрам функций.</li>
 
               <li>
-                В коде нет выражений, значения которых не записываются в переменные, параметры функций, свойства объектов и не передаются как параметры функций <pre class="language-js"><code>- check === true && doSomething();
+                В коде нет выражений, значения которых не записываются в переменные, параметры функций, свойства объектов и не передаются как параметры функций <pre class="language-js"><code>
+- check === true && doSomething();
 -
 + if (check) {
 +   doSomething();
-+ }</code></pre></li>
++ }
+
+</code></pre></li>
             </ul>
           </div>
         </article>
 
         <article class="chapter-part">
-          <div class="chapter-part-col">
-            <h4 id="">Обработка ошибок и исключения</h4>
+          <div class="chapter-part-col chapter-part-col--full-width">
+            <h3 id="">Обработка ошибок и исключения</h3>
             <ul>
               <li>
-                Для выбрасывания исключения в оператор <code>throw</code> передаются только объекты Error. Передавать литералы запрещено.<pre class="language-js"><code>- throw 'Passed value is out of range';
-+ throw new RangeError('Rassed value is out of range');</code></pre></li>
+                Для выбрасывания исключения в оператор <code>throw</code> передаются только объекты Error. Передавать литералы запрещено.<pre class="language-js"><code>
+- throw 'Passed value is out of range';
++ throw new RangeError('Rassed value is out of range');
+
+</code></pre></li>
             </ul>
 
-            <h5>try..catch с пустым try</h5>
+            <h4>try..catch с пустым try</h4>
             <ul>
               <li>В конструкции <code>try..catch</code> запрещен пустой блок <code>try</code></li>
             </ul>
@@ -471,7 +499,7 @@
         <h2>Документирование</h2>
 
         <article class="chapter-part">
-          <div class="chapter-part-col">
+          <div class="chapter-part-col chapter-part-col--full-width">
             При написании jsDoc используются следующие ограничения:
 
             <ul>
@@ -490,7 +518,7 @@
         <h2>Прочее</h2>
 
         <article class="chapter-part">
-          <div class="chapter-part-col">
+          <div class="chapter-part-col chapter-part-col--full-width">
             <ul>
               <li>При итерировании по объектам через <code>for..in</code> при работе со свойствами используется конструкция <code>hasOwnProperty</code></li>
 
@@ -499,7 +527,8 @@
               <li>В объектах напрямую не переопределяется свойство <code>__iterator__</code></li>
 
               <li>
-                В объектах напрямую не переопределяется свойство <code>__proto__</code>. Разрешено переопределять <code>__proto__</code> через <code>Object.create</code> или запись в прототип, объектов, созданных другими конструкторами, но напрямую редактировать <code>__proto__</code> нельзя<pre class="language-js"><code>- var obj = {
+                В объектах напрямую не переопределяется свойство <code>__proto__</code>. Разрешено переопределять <code>__proto__</code> через <code>Object.create</code> или запись в прототип, объектов, созданных другими конструкторами, но напрямую редактировать <code>__proto__</code> нельзя<pre class="language-js"><code>
+- var obj = {
 -   __proto__: Parent
 - };
 +
@@ -507,28 +536,33 @@
 + Obj.prototype = new Parent();
 + var obj = new obj;
 +
-+ var obj = Object.create(Parent.prototype);</code></pre></li>
++ var obj = Object.create(Parent.prototype);
 
-              <li>В коде не используются лейблы. Лейблы используются с конструкциями <code>break</code> и <code>continue</code> для направленного выхода из цикла и могут привести к слишком сложному для понимания коду</li>
+</code></pre></li>
+
+              <li>В коде не используются лейблы. Лейблы используются с конструкциями <code>break</code> и <code>continue</code> для направленного выхода из икла и могут привести к слишком сложному для понимания коду</li>
 
               <li>Блоки, использующиеся в коде должны описывать тело функции, условия, оператора <code>switch</code> и прочие конструкции относящиеся к группировке множественных операций. Блоки не должны использваться сами по себе, любой блок должен быть частью другого выражения.</li>
 
               <li>
-                В коде не используется оператор «запятая» для описания последовательностей действий. Для создания переменных используются отдельные ключевые слова <code>let</code>, <code>const</code>, <code>var</code>, в операторы группировки, условные операторы и прочие конструкции. Исключение составляет начальное условие оператора <code>for</code><pre class="language-js"><code>- const result = (1, 2); // 2
+                В коде не используется оператор «запятая» для описания последовательностей действий. Для создания переменных используются отдельные ключевые слова <code>let</code>, <code>const</code>, <code>var</code>, в операторы группировки, условные операторы и прочие конструкции. Исключение составляет начальное условие оператора <code>for</code><pre class="language-js"><code>
+- const result = (1, 2); // 2
 + const result = 2;
 
 - switch (val = getVal(), val) {}
 + val = getVal();
 + switch(val) {}
 
-+ for (var i = 0, l = 100; i < l; i++);</code></pre></li>
++ for (var i = 0, l = 100; i < l; i++);
+
+</code></pre></li>
             </ul>
           </div>
         </article>
 
         <article class="chapter-part">
-          <div class="chapter-part-col">
-            <h4 id="">Регулярные выражения</h4>
+          <div class="chapter-part-col chapter-part-col--full-width">
+            <h3 id="">Регулярные выражения</h3>
             <ul>
               <li>В регулярных выражениях не используются «управляющие выражения»</li>
 
@@ -538,8 +572,11 @@
 
               <li>
                 В регулярных выражениях не используются нескольких последовательных пробелов. Вместо этого предлагается использовать модификаторы количества {3}
-                <pre class="language-js"><code>- /   /.exec(myString);
-+ /\s{3}/.exec(myString);</code></pre></li>
+                <pre class="language-js"><code>
+- /   /.exec(myString);
++ /\s{3}/.exec(myString);
+
+</code></pre></li>
             </ul>
           </div>
         </article>
@@ -550,7 +587,7 @@
         <h2>node.js</h2>
 
         <article class="chapter-part">
-          <div class="chapter-part-col">
+          <div class="chapter-part-col chapter-part-col--full-width">
             <ul>
               <li>В node.js файлах не используется конструкция <code>process.exit</code>.</li>
             </ul>
