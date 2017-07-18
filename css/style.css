@@ -320,3 +320,21 @@ pre[class*="language-"] {
 pre[class*="language-"] {
   background: initial;
 }
+
+pre.language-correct,
+pre.language-incorrect {
+  padding: 5px 10px;
+}
+
+pre.language-correct {
+  background: #deeede;
+}
+
+pre.language-incorrect {
+  background: #f4d3d3;
+}
+
+pre.language-correct .token.operator,
+pre.language-incorrect .token.operator {
+  background: none;
+}

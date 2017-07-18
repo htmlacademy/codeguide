@@ -30,25 +30,15 @@
 
     <main>
       <section class="chapter">
-        <h2>Оглавление</h2>
-        <article class="chapter-part">
-          <div class="chapter-part-col chapter-part-col--full-width">
-            <ul>
-              <li><a href="#js-syntax">Синтаксис</a></li>
-            </ul>
-          </div>
-        </article>
-      </section>
-
-      <section class="chapter">
         <h2 id="js-syntax">Синтаксис</h2>
 
         <article class="chapter-part">
           <div class="chapter-part-col chapter-part-col--full-width">
             <h3 id="">Отступы, пробелы и переносы</h3>
-            <ul>
-              Для правильного форматирования используйте файл .editorconfig в вашем редакторе.
 
+            <p><strong>Для правильного форматирования используйте файл .editorconfig в&nbsp;вашем редакторе.</strong></p>
+
+            <ul>
               <li>Для отступов используются два пробела. Знак табуляции не используется. При переносах в продолжении строки используется четыре пробела.</li>
 
               <li>Запрещено одновременное использование табов и пробелов для отступов.</li>
@@ -57,18 +47,18 @@
 
               <li>Внутри строки не используется более одного пробела.</li>
 
-              <li>Открывающие скобки блоков кода находятся на одной строке с оператором, которых их использует:<pre class="language-js"><code>
-- if (condition)
-- {
--   // code
-- }
-
-+ if (condition) {
-+   // code
-+ }
-
+              <li>Открывающие скобки блоков кода находятся на одной строке с оператором, которых их использует:
+<pre class="language-js language-incorrect"><code>if (condition)
+{
+  // code
+}
 </code></pre>
-                </li>
+
+<pre class="language-js language-correct"><code>if (condition) {
+  // code
+}
+</code></pre>
+              </li>
 
               <li>В однострочных блоках кода, код отделен от открывающей и закрывающей скобки пробелом</li>
 
@@ -123,11 +113,13 @@
             <ul>
               <li>В строках, объявленных с помощью одинарных и двойных кавычек запрещено использовать переносы.</li>
 
-              <li>В строках запрещено указывать код спецсимволов в восьмеричной системе счисления <pre class="language-js"><code>
-- var foo = "Copyright \251";
-+ var foo = "Copyright \u00A9";
+              <li>В строках запрещено указывать код спецсимволов в восьмеричной системе счисления
+<pre class="language-js language-incorrect"><code>var foo = "Copyright \251";
+</code></pre>
 
-</code></pre></li>
+<pre class="language-js language-correct"><code>var foo = "Copyright \u00A9";
+</code></pre>
+              </li>
 
               <li>При создании объектов через литералы свойства должны объявляться в едином стиле: или без кавычек или с ними.</li>
 
@@ -155,14 +147,11 @@
 
               <li>Объекты должны создаваться через литерал объекта, а не через конструктор.</li>
 
-              <h4>Объекты</h4>
               <li>При создании объектов запрещено дублирование ключей.</li>
 
               <li>При описании функций запрещено дублировать названия параметров.</li>
 
               <li>В операторе <code>switch</code> запрещено дублировать условия (case)</li>
-
-              <h4>Массивы</h4>
             </ul>
           </div>
         </article>
@@ -173,7 +162,7 @@
             <ul>
               <li>В бинарных и тернарных операторах операнды и символы оператора отделяются пробелами.</li>
 
-              <li>Унарные операторы не отделяются от операнда пробелом. Исключения составляют операторы, состоящие из слов, а не символов, например оператор typeof.</li>
+              <li>Унарные операторы не отделяются от операнда пробелом. Исключения составляют операторы, состоящие из слов, а не символов, например оператор <code>typeof</code>.</li>
             </ul>
           </div>
         </article>
@@ -188,7 +177,7 @@
             <ul>
               <li>Запрещено объявлять переменные, имена которых совпадают с именами используемых в коде лейблов</li>
 
-              <li>Все переменные должны быть названы в верблюжьем регистре. Исключения составляют константы которые должны именоваться прописными буквами в змеином регистре.</li>
+              <li>Все переменные должны быть названы в верблюжьем регистре (camelCase). Исключения составляют константы которые должны именоваться прописными буквами в змеином регистре (UPPER_SNAKE_CASE).</li>
 
               <li>Запрещено использовать имена переменных, которые используются во внешних областях видимости.</li>
 
@@ -230,10 +219,11 @@
           <div class="chapter-part-col chapter-part-col--full-width">
             <h3 id="">Условные операторы</h3>
             <ul>
-              <li>Запрещена "проверка Йоды" — в условных операторах в блоке условия при сравнении переменной или свойства со значением сначала идет переменная или свойство объекта и только потом значения, а не наоброт. <pre class="language-js"><code>
-- if (1 === myValue) {}
-+ if (myValue === 1) {}
+              <li>Запрещена "проверка Йоды" — в условных операторах в блоке условия при сравнении переменной или свойства со значением сначала идет переменная или свойство объекта и только потом значения, а не наоброт.
+<pre class="language-js language-incorrect"><code>if (1 === myValue) {}
+</code></pre>
 
+<pre class="language-js language-correct"><code>if (myValue === 1) {}
 </code></pre></li>
 
               <li>При сравнении двух значений используется оператор строгого сравнения вместо оператора нестрогого сравнения</li>
@@ -255,29 +245,30 @@
           <div class="chapter-part-col chapter-part-col--full-width">
             <h3 id="">Функции</h3>
             <ul>
-              <li>Если в функции используется ветвление, в котором есть возврат значения (<code>return</code>), <code>return</code> должен быть добавлен и в остальных ветках. Это правило предотвращает создание функций, при использовании которых непонятно, вернут ли они какое-то значение. <pre class="language-js"><code>
-- var do = function() {
--   if (cond) {
--     return 1;
--   } else {
--     // Проблема заключается в том, что
--     // в первой ветке условия возвращается
--     // единица, а в альтернативной нет никакого
--     // возврата и при вызове функции неизвестно
--     // будет ли из нее возвращего какое-то значение.
--     doSomethingElse();
--   }
-- }
-+
-+ var do = function() {
-+   if (cond) {
-+     return 1;
-+   } else {
-+     return 2;
-+   }
-+ }
+              <li>Если в функции используется ветвление, в котором есть возврат значения (<code>return</code>), <code>return</code> должен быть добавлен и в остальных ветках. Это правило предотвращает создание функций, при использовании которых непонятно, вернут ли они какое-то значение.
+<pre class="language-js language-incorrect"><code>var do = function() {
+  if (cond) {
+    return 1;
+  } else {
+    // Проблема заключается в том, что
+    // в первой ветке условия возвращается
+    // единица, а в альтернативной нет никакого
+    // возврата и при вызове функции неизвестно
+    // будет ли из нее возвращего какое-то значение.
+    doSomethingElse();
+  }
+}
+</code></pre>
 
-</code></pre></li>
+<pre class="language-js language-correct"><code>var do = function() {
+  if (cond) {
+    return 1;
+  } else {
+    return 2;
+  }
+}
+</code></pre>
+              </li>
 
               <li>В return не используется оператор присваивания.</li>
 
@@ -305,22 +296,21 @@
 
               <li>Запрещено переопределять с помощью ключевого слова ранее созданные переменные</li>
 
-              <li>Запрещено использовать множественное объявление через одно ключевое слово. Для каждой переменной используется отдельный <code>var</code>, <code>let</code> или <code>const</code>. Это правило облегчает отладку, поскольку создание нескольких переменных через запятую трактуются движком как одна операция, что означает, что невозможно поставить отладчик на создание одной из переменных. <pre class="language-js"><code>
-- var a = 1, b = 2;
--
-+ var a = 1;
-+ var b = 2;
+              <li>Запрещено использовать множественное объявление через одно ключевое слово. Для каждой переменной используется отдельный <code>var</code>, <code>let</code> или <code>const</code>. Это правило облегчает отладку, поскольку создание нескольких переменных через запятую трактуются движком как одна операция, что означает, что невозможно поставить отладчик на создание одной из переменных.
+<pre class="language-js language-incorrect"><code>var a = 1, b = 2;
+</code></pre>
 
-</code></pre></li>
+<pre class="language-js language-correct"><code>var a = 1;
+var b = 2;
+</code></pre>
+              </li>
             </ul>
 
             <h4 id="">Объявление функций</h4>
             <ul>
-              'no-func-assign': 'error',
-              <li>Запрещено переопределение функций, созданных с помощью функционального объявления (function expression) <pre class="language-js"><code>
-- function myFunc() {};
-- myFunc = 2;
-
+              <li>Запрещено переопределение функций, созданных с помощью функционального объявления (function expression)
+<pre class="language-js language-incorrect"><code>function myFunc() {};
+myFunc = 2;
 </code></pre></li>
 
               <li>Запрещено объявление значений внутри блоков</li>
@@ -402,17 +392,19 @@
             <h4>Константы в условиях</h4>
 
             <ul>
-              <li>В блоки условия операторов if, while, for и тернарного оператора не передается константное значение, которое подразумевает, что условие выполняется (или не выполняется) всегда <pre class="language-js"><code>
-- if (true) {}
-+ if (a > 1) {}
-
+              <li>В блоки условия операторов if, while, for и тернарного оператора не передается константное значение, которое подразумевает, что условие выполняется (или не выполняется) всегда
+<pre class="language-js language-incorrect"><code>if (true) {}
 </code></pre>
 
-              <pre class="language-js"><code>
-- var ternaryValue = true ? 'a' : 'b';
-+ var ternaryValue = isA() ? 'a' : 'b';
+<pre class="language-js language-correct"><code>if (a > 1) {}
+</code></pre>
 
-              </code></pre></li>
+<pre class="language-js language-incorrect"><code>var ternaryValue = true ? 'a' : 'b';
+</code></pre>
+
+<pre class="language-js language-correct"><code>var ternaryValue = isA() ? 'a' : 'b';
+</code></pre>
+              </li>
             </ul>
           </div>
         </article>
@@ -447,29 +439,30 @@
             <h3 id="">Неиспользуемый код</h3>
             <ul>
               <li>
-                В проекте нет недоступного кода, который никогда не выполнится<pre class="language-js"><code>
-- if (false) {
--   doSomething();
-- }
-+
-+ if (needToDoSomething()) {
-+   doSomething();
-+ }
+                В проекте нет недоступного кода, который никогда не выполнится
+<pre class="language-js language-incorrect"><code>if (false) {
+  doSomething();
+}
+</code></pre>
 
+<pre class="language-js language-correct"><code>if (needToDoSomething()) {
+  doSomething();
+}
 </code></pre>
               </li>
 
               <li>В коде нет объявленных, но неиспользуемых переменных. Проверка не относится к параметрам функций.</li>
 
               <li>
-                В коде нет выражений, значения которых не записываются в переменные, параметры функций, свойства объектов и не передаются как параметры функций <pre class="language-js"><code>
-- check === true && doSomething();
--
-+ if (check) {
-+   doSomething();
-+ }
+                В коде нет выражений, значения которых не записываются в переменные, параметры функций, свойства объектов и не передаются как параметры функций
+<pre class="language-js language-incorrect"><code>check === true && doSomething();
+</code></pre>
 
-</code></pre></li>
+<pre class="language-js language-correct"><code>if (check) {
+  doSomething();
+}
+</code></pre>
+              </li>
             </ul>
           </div>
         </article>
@@ -479,14 +472,14 @@
             <h3 id="">Обработка ошибок и исключения</h3>
             <ul>
               <li>
-                Для выбрасывания исключения в оператор <code>throw</code> передаются только объекты Error. Передавать литералы запрещено.<pre class="language-js"><code>
-- throw 'Passed value is out of range';
-+ throw new RangeError('Rassed value is out of range');
+                Для выбрасывания исключения в оператор <code>throw</code> передаются только объекты Error. Передавать литералы запрещено.
+<pre class="language-js language-incorrect"><code>throw 'Passed value is out of range';
+</code></pre>
 
+<pre class="language-js language-correct"><code>throw new RangeError('Rassed value is out of range');
 </code></pre></li>
             </ul>
 
-            <h4>try..catch с пустым try</h4>
             <ul>
               <li>В конструкции <code>try..catch</code> запрещен пустой блок <code>try</code></li>
             </ul>
@@ -503,11 +496,11 @@
             При написании jsDoc используются следующие ограничения:
 
             <ul>
-              <li>необязательно добавлять текстовое описание конструкциям @return и @param, достаточно просто указания типа и названия параметра для @param</li>
+              <li>необязательно добавлять текстовое описание конструкциям <code>@return</code> и <code>@param</code>, достаточно просто указания типа и названия параметра для <code>@param</code></li>
 
-              <li>описание возвращаемного типа @return требуется только в том случае, если функция возвращает какое-то значение. Правило не действует для конструкторов, для них указывать @return необязательно. Также необязательно указывать тег @return для функций, в которых конструкуия <code>return</code> используется без возвращаемого значения для выхода из функции</li>
+              <li>описание возвращаемного типа <code>@return</code> требуется только в том случае, если функция возвращает какое-то значение. Правило не действует для конструкторов, для них указывать @return необязательно. Также необязательно указывать тег <code>@return</code> для функций, в которых конструкуия <code>return</code> используется без возвращаемого значения для выхода из функции</li>
 
-              <li>для описания возвращаемого значения из функции используется тег @return, а не @returns</li>
+              <li>для описания возвращаемого значения из функции используется тег <code>@return</code>, а не <code><del>@returns</del></code></li>
             </ul>
           </div>
         </article>
@@ -527,35 +520,41 @@
               <li>В объектах напрямую не переопределяется свойство <code>__iterator__</code></li>
 
               <li>
-                В объектах напрямую не переопределяется свойство <code>__proto__</code>. Разрешено переопределять <code>__proto__</code> через <code>Object.create</code> или запись в прототип, объектов, созданных другими конструкторами, но напрямую редактировать <code>__proto__</code> нельзя<pre class="language-js"><code>
-- var obj = {
--   __proto__: Parent
-- };
-+
-+ var Obj = function() {};
-+ Obj.prototype = new Parent();
-+ var obj = new obj;
-+
-+ var obj = Object.create(Parent.prototype);
+                В объектах напрямую не переопределяется свойство <code>__proto__</code>. Разрешено переопределять <code>__proto__</code> через <code>Object.create</code> или запись в прототип, объектов, созданных другими конструкторами, но напрямую редактировать <code>__proto__</code> нельзя
+<pre class="language-js language-incorrect"><code>var obj = {
+  __proto__: Parent
+};
+</code></pre>
 
-</code></pre></li>
+<pre class="language-js language-correct"><code>var Obj = function() {};
+Obj.prototype = new Parent();
+var obj = new obj;
+
+var obj = Object.create(Parent.prototype);
+</code></pre>
+              </li>
 
               <li>В коде не используются лейблы. Лейблы используются с конструкциями <code>break</code> и <code>continue</code> для направленного выхода из икла и могут привести к слишком сложному для понимания коду</li>
 
               <li>Блоки, использующиеся в коде должны описывать тело функции, условия, оператора <code>switch</code> и прочие конструкции относящиеся к группировке множественных операций. Блоки не должны использваться сами по себе, любой блок должен быть частью другого выражения.</li>
 
               <li>
-                В коде не используется оператор «запятая» для описания последовательностей действий. Для создания переменных используются отдельные ключевые слова <code>let</code>, <code>const</code>, <code>var</code>, в операторы группировки, условные операторы и прочие конструкции. Исключение составляет начальное условие оператора <code>for</code><pre class="language-js"><code>
-- const result = (1, 2); // 2
-+ const result = 2;
+                В коде не используется оператор «запятая» для описания последовательностей действий. Для создания переменных используются отдельные ключевые слова <code>let</code>, <code>const</code>, <code>var</code>, в операторы группировки, условные операторы и прочие конструкции. Исключение составляет начальное условие оператора <code>for</code>
+<pre class="language-js language-incorrect"><code>const result = (1, 2); // 2
+</code></pre>
 
-- switch (val = getVal(), val) {}
-+ val = getVal();
-+ switch(val) {}
+<pre class="language-js language-correct"><code>const result = 2;
+</code></pre>
+<br>
+<pre class="language-js language-incorrect"><code>switch (val = getVal(), val) {}
+</code></pre>
 
-+ for (var i = 0, l = 100; i < l; i++);
+<pre class="language-js language-correct"><code>val = getVal();
+switch(val) {}
 
-</code></pre></li>
+for (var i = 0, l = 100; i < l; i++);
+</code></pre>
+              </li>
             </ul>
           </div>
         </article>
@@ -572,22 +571,20 @@
 
               <li>
                 В регулярных выражениях не используются нескольких последовательных пробелов. Вместо этого предлагается использовать модификаторы количества {3}
-                <pre class="language-js"><code>
-- /   /.exec(myString);
-+ /\s{3}/.exec(myString);
+<pre class="language-js language-incorrect"><code>/   /.exec(myString);
+</code></pre>
 
-</code></pre></li>
+<pre class="language-js language-correct"><code>/\s{3}/.exec(myString);
+</code></pre>
+              </li>
             </ul>
           </div>
         </article>
 
-      </section>
-
-      <section class="chapter">
-        <h2>node.js</h2>
-
         <article class="chapter-part">
           <div class="chapter-part-col chapter-part-col--full-width">
+            <h3 id="">node.js</h3>
+
             <ul>
               <li>В node.js файлах не используется конструкция <code>process.exit</code>.</li>
             </ul>
