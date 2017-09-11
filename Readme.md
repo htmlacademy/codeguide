@@ -14,4 +14,5 @@
 ## Конфигурации линтеров
 
 ESLint — https://github.com/htmlacademy/eslint-config-htmlacademy
+
 Stylelint — https://github.com/htmlacademy/stylelint-config-htmlacademy
