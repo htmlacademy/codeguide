@@ -12,7 +12,7 @@ html {
 
 /** Делаем основной контейнер display: flex **/
 
-main {
+.guide-content {
   display: flex;
   flex-wrap: wrap;
 }
