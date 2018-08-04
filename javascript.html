@@ -16,9 +16,6 @@
     <link rel="stylesheet" href="css/prism.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- Временный css для пулл реквеста -->
-    <link rel="stylesheet" href="css/additions.css">
-
     <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-29640059-7','auto');ga('send','pageview');</script>
 
     <style type="text/css">
@@ -35,13 +32,14 @@
       <a href="https://htmlacademy.ru" target="_blank">
         <img class="logo" src="img/bane.svg" width="300" height="300" alt="HTML Academy" title="HTML Academy">
       </a>
-      <h1>Стиль кода Академии HTML</h1>
+      <h1><a href="index.html">Стиль кода Академии HTML</a></h1>
       <p><a href="https://github.com/htmlacademy/codeguide">github.com/htmlacademy/codeguide</a></p>
     </header>
 
     <main class="guide-content">
       <aside class="sidebar">
         <h2 class="visually-hidden">Оглавление</h2>
+
         <div class="sidebar-col sidebar-col-first">
           <a href="#syntax">Синтаксис</a>
           <ul class="sidebar-menu">
@@ -52,9 +50,11 @@
             <li><a href="#syntax-operators">Операторы</a></li>
           </ul>
         </div>
+
         <div class="sidebar-col">
           <a href="#naming">Именование</a>
         </div>
+
         <div class="sidebar-col">
           <a href="#preventing-errors">Предотвращение ошибок</a>
           <ul class="sidebar-menu">
@@ -66,6 +66,7 @@
             <li><a href="#type-conversion">Приведение типов</a></li>
           </ul>
         </div>
+
         <div class="sidebar-col">
           <a href="#clean-code">Чистый код</a>
           <ul class="sidebar-menu">
@@ -75,9 +76,11 @@
             <li><a href="#error-handling-and-exceptions">Обработка ошибок и исключения</a></li>
           </ul>
         </div>
+
         <div class="sidebar-col">
           <a href="#documentation">Документирование</a>
         </div>
+
         <div class="sidebar-col sidebar-col-last">
           <a href="#other">Прочее</a>
           <ul class="sidebar-menu">
@@ -86,6 +89,7 @@
           </ul>
         </div>
       </aside>
+
       <div class="chapters">
         <section class="chapter">
           <h2 id="syntax">Синтаксис</h2>
@@ -650,11 +654,8 @@
     </footer>
 
     <script src="js/prism.js"></script>
-
-    <!-- Полифилл для position: sticky -->
     <script src="js/stickyfill.js"></script>
 
-    <!-- Инициализация полифилла -->
     <script>
       var sidebar = document.querySelector('.sidebar');
       Stickyfill.add(sidebar);
