@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Стиль кода Академии HTML</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@htmlacademy_ru">
+    <meta name="twitter:image" content="https://htmlacademy.github.io/codeguide/img/og.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://htmlacademy.github.io/codeguide/">
+    <meta property="og:title" itemprop="name" content="Стиль кода Академии HTML">
+    <meta property="og:image" itemprop="image" content="https://htmlacademy.github.io/codeguide/img/og.png">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/prism.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-29640059-7','auto');ga('send','pageview');</script>
+  </head>
+  <body>
+
+    <header>
+      <a href="https://htmlacademy.ru" target="_blank">
+        <img class="logo" src="img/bane.svg" width="300" height="300" alt="HTML Academy" title="HTML Academy">
+      </a>
+      <h1>Стиль кода Академии HTML</h1>
+      <p><a href="https://github.com/htmlacademy/codeguide">github.com/htmlacademy/codeguide</a></p>
+    </header>
+
+    <main>
+      <section class="chapter">
+        <h2>Оглавление</h2>
+        <article class="chapter-part">
+          <div class="chapter-part-col">
+            <h3>HTML</h3>
+            <ul>
+              <li><a href="#html-syntax">Синтаксис</a></li>
+              <li><a href="#html-validator">Валидность</a></li>
+              <li><a href="#html-doctype">HTML-доктайп</a></li>
+              <li><a href="#html-encoding">Кодировка символов</a></li>
+              <li><a href="#html-style-includes">Подключение стилей</a></li>
+              <li><a href="#html-js-includes">Подключение скриптов</a></li>
+              <li><a href="#html-attribute-order">Порядок атрибутов</a></li>
+              <li><a href="#html-boolean">Логические атрибуты</a></li>
+              <li><a href="#html-form-labels">Подписи полей ввода</a></li>
+              <li><a href="#html-img-sizes">Размеры картинок</a></li>
+              <li><a href="#html-language">Атрибут языка</a></li>
+            </ul>
+          </div>
+          <div class="chapter-part-col">
+            <h3>CSS</h3>
+            <ul>
+              <li><a href="#css-syntax">Синтаксис</a></li>
+              <li><a href="#css-order">Порядок свойств</a></li>
+              <li><a href="#css-class-names">Имена классов</a></li>
+              <li><a href="#css-import">Правило @import</a></li>
+              <li><a href="#css-font-variant">Варианты шрифта</a></li>
+            </ul>
+          </div>
+        </article>
+      </section>
+
+      <section class="chapter">
+        <h2>HTML</h2>
+
+        <article class="chapter-part">
+          <div class="chapter-part-col">
+            <h3 id="html-syntax">Синтаксис</h3>
+            <ul>
+              <li>Для отступов у&nbsp;вложенных элементов используются два пробела. Для правильного форматирования используйте файл <a href="https://github.com/htmlacademy/codeguide/blob/master/.editorconfig" target="_blank">.editorconfig</a> в&nbsp;вашем редакторе.</li>
+              <li>Теги и&nbsp;их&nbsp;атрибуты пишутся строчными буквами. Для значений атрибутов всегда используются двойные кавычки.</li>
+              <li>Необязательный закрывающий слеш у&nbsp;одиночных тегов (<code>&lt;img&gt;</code>, <code>&lt;br&gt;</code> и&nbsp;другие) не&nbsp;ставится.</li>
+              <li>Необязательные закрывающие теги (например, <code>&lt;/li&gt;</code> или <code>&lt;/body&gt;</code>) не&nbsp;пропускаются.</li>
+              <li>Для проверки HTML-кода используйте файл конфигурации <a href="https://github.com/htmlacademy/codeguide/blob/master/.htmlhintrc" target="_blank">.htmlhintrc</a> для настройки валидатора <a href="http://htmlhint.com" target="_blank">HTMLHint</a>.</li>
+            </ul>
+          </div>
+          <div class="chapter-part-col gray-bgcolor">
+            <figure>
+              <pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;Страница о коте&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;article class="post"&gt;
+      &lt;h1&gt;Красивый кот&lt;/h1&gt;
+      &lt;figure class="post-item"&gt;
+        &lt;img src="cat.jpg" alt="Изображение кота"&gt;
+        &lt;figcaption&gt;Кот красив!&lt;/figcaption&gt;
+      &lt;/figure&gt;
+    &lt;/article&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </figure>
+          </div>
+        </article>
+
+        <article class="chapter-part">
+          <div class="chapter-part-col">
+            <h3 id="html-validator">Валидность</h3>
+            <p>
+              Документ должен проходить проверку на&nbsp;валидность. Для проверки используется <a href="http://validator.w3.org/nu/" target="_blank">современный валидатор</a>.
+            </p>
+          </div>
+        </article>
+
+        <article class="chapter-part">
+          <div class="chapter-part-col">
+            <h3 id="html-doctype">HTML-доктайп</h3>
+            <p>
+              В&nbsp;начале страницы обязательно должен быть указан актуальный <code>doctype</code>, чтобы браузер отображал её&nbsp;в&nbsp;режиме соответствия стандартам. Это гарантирует, что страница будет выглядеть единообразно во&nbsp;всех современных браузерах.
+            </p>
+          </div>
+          <div class="chapter-part-col gray-bgcolor">
+            <figure>
+              <pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+  &lt;head&gt;…&lt;/head&gt;
+  &lt;body&gt;…&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </figure>
+          </div>
+        </article>
+
+        <article class="chapter-part">
+          <div class="chapter-part-col">
+            <h3 id="html-encoding">Кодировка символов</h3>
+            <p>
+              Кодировка символов на&nbsp;странице всегда должна быть явно указана, чтобы обеспечить корректное отображение текста. Кодировка <code>utf-8</code> предпочтительна.
+            </p>
+          </div>
+          <div class="chapter-part-col gray-bgcolor">
+            <figure>
+              <pre><code class="language-markup">&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;Заголовок страницы&lt;/title&gt;
+&lt;/head&gt;</code></pre>
+            </figure>
+          </div>
+        </article>
+
+        <article class="chapter-part">
+          <div class="chapter-part-col">
+            <h3 id="html-style-includes">Подключение стилей</h3>
+            <p>
+              Стилевые файлы с&nbsp;помощью <code>&lt;link&gt;</code> подключаются внутри <code>&lt;head&gt;</code>. При этом атрибут <code>type</code> для тега <code>&lt;link&gt;</code> не&nbsp;указывается, так как его значение <code>text/css</code> устанавливается по&nbsp;умолчанию.
+            </p>
+          </div>
+          <div class="chapter-part-col gray-bgcolor">
+            <figure>
+              <pre><code class="language-markup">&lt;!-- Хорошо: стилевой файл подключён в секции head --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+  &lt;head&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;…&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;!-- Плохо: стилевой файл подключён в секции body --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+  &lt;head&gt;…&lt;/head&gt;
+  &lt;body&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </figure>
+          </div>
+        </article>
+
+        <article class="chapter-part">
+          <div class="chapter-part-col">
+            <h3 id="html-js-includes">Подключение скриптов</h3>
+            <p>
+              Скрипты должны подключаться в&nbsp;самом низу страницы, чтобы при её&nbsp;загрузке не&nbsp;блокировать отображение содержимого.
+            </p>
+            <p>
+              При подключении скриптов в&nbsp;теге <code>&lt;script&gt;</code> атрибут <code>type</code> не&nbsp;указывается, так как его значение <code>text/javascript</code> устанавливается по&nbsp;умолчанию.
+            </p>
+          </div>
+          <div class="chapter-part-col gray-bgcolor">
+            <figure>
+              <pre><code class="language-markup">&lt;!-- Хорошо: скрипт подключается перед &lt;/body&gt; --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+  &lt;head&gt;…&lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- Содержимое страницы --&gt;
+    &lt;script src="app.js"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+&lt;!-- Плохо: скрипт подключается в секции &lt;head&gt; --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+  &lt;head&gt;
+    &lt;script src="app.js"&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;…&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </figure>
+          </div>
+        </article>
+
+        <article class="chapter-part">
+          <div class="chapter-part-col">
+            <h3 id="html-attribute-order">Порядок атрибутов</h3>
+            <p>
+              Атрибут класса у&nbsp;HTML-элементов пишется первым. Единообразное написание помогает легче считывать код и&nbsp;быстрее разбираться в&nbsp;назначении блоков по&nbsp;их&nbsp;классам.
+            </p>
+            <p>
+              Остальные атрибуты могут быть расставлены в&nbsp;любом порядке, но&nbsp;тоже единообразно для одинаковых элементов.
+            </p>
+          </div>
+          <div class="chapter-part-col gray-bgcolor">
+            <figure>
+              <pre><code class="language-markup">&lt;a class="element element-big" id="element" href="/" data-name="element"&gt;Ссылка&lt;/a&gt;
+
+&lt;input class="form-control" type="text" name="test"&gt;
+
+&lt;img class="pets-picture" src="cats.jpg" alt="Изображение котиков"&gt;</code></pre>
+            </figure>
+          </div>
+        </article>
+
+        <article class="chapter-part">
+          <div class="chapter-part-col">
+            <h3 id="html-boolean">Логические атрибуты</h3>
+            <p>
+              Для логических атрибутов (например, <code>checked</code>, <code>disabled</code>, <code>required</code>) значение не&nbsp;указывается, а&nbsp;сами атрибуты указываются последними и&nbsp;в&nbsp;единообразной последовательности во&nbsp;всём документе.
+            </p>
+          </div>
+          <div class="chapter-part-col gray-bgcolor">
+            <figure>
+              <pre><code class="language-markup">&lt;!-- checked="checked" необязательно --&gt;
+&lt;input type="checkbox" required checked&gt;
+
+&lt;input type="text" disabled&gt;
+
+&lt;select&gt;
+  &lt;option value="1" selected>1&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+            </figure>
+          </div>
+        </article>
+
+        <article class="chapter-part">
+          <div class="chapter-part-col">
+            <h3 id="html-form-labels">Подписи полей ввода</h3>
+            <p>
+              Для улучшения взаимодействия пользователя с&nbsp;элементами форм, при нажатии на&nbsp;подпись поля, оно должно активироваться. Для этого элемент формы связывается с&nbsp;его описанием с&nbsp;помощью идентификатора и&nbsp;атрибута <code>for</code> тега <code>&lt;label&gt;</code>.
+            </p>
+          </div>
+          <div class="chapter-part-col gray-bgcolor">
+            <figure>
+              <pre><code class="language-markup">&lt;!-- Хорошо: элемент формы radio связан с подписью через идентификатор --&gt;
+&lt;input type="radio" id="choose"&gt;
+&lt;label for="choose"&gt;Радио кнопка&lt;/label&gt;
+
+&lt;!-- Хорошо: элемент формы radio и подпись обёрнуты в label --&gt;
+&lt;label&gt;
+  &lt;input type="radio"&gt; Радио кнопка
+&lt;/label&gt;
+
+&lt;!-- Плохо: подпись не связана с элементом формы --&gt;
+&lt;input type="radio" id="choose"&gt; Радио кнопка</code></pre>
+            </figure>
+          </div>
+        </article>
+
+        <article class="chapter-part">
+          <div class="chapter-part-col">
+            <h3 id="html-img-sizes">Размеры картинок</h3>
+            <p>
+              Изображениям <code>&lt;img&gt;</code> должны быть явно заданы с&nbsp;помощью атрибута размеры в&nbsp;пикселях. В&nbsp;случае пикселей размерность не&nbsp;нужна.
+            </p>
+            <p>
+              По&nbsp;возможности изображениям указываются действительные размеры, так как это улучшает производительность отрисовки страницы: браузер не&nbsp;будет перерисовывать страницу в&nbsp;процессе загрузки и&nbsp;отображения изображения.
+            </p>
+          </div>
+          <div class="chapter-part-col gray-bgcolor">
+            <figure>
+              <pre><code class="language-markup">&lt;!-- Хорошо: размеры картинке заданы --&gt;
+&lt;div class="logo-area"&gt;
+  &lt;img src="logo.png" alt="" width="300" height="150"&gt;
+&lt;/div&gt;
+
+&lt;!-- Плохо: размеры картинке заданы в px --&gt;
+&lt;div class="logo-area"&gt;
+  &lt;img src="logo.png" alt="" width="300px" height="150px"&gt;
+&lt;/div&gt;
+
+&lt;!-- Плохо: размеры картинке не заданы --&gt;
+&lt;div class="logo-area"&gt;
+  &lt;img src="logo.png" alt=""&gt;
+&lt;/div&gt;</code></pre>
+            </figure>
+          </div>
+        </article>
+
+        <article class="chapter-part">
+          <div class="chapter-part-col">
+            <h3 id="html-language">Атрибут языка</h3>
+            <p>
+              Для элемента <code>&lt;html&gt;</code> в&nbsp;атрибуте <code>lang</code> должен указываться соответствующий язык документа. Это помогает инструментам синтеза речи определить, какое использовать произношение или системам перевода, какие использовать языковые правила.
+            </p>
+          </div>
+          <div class="chapter-part-col gray-bgcolor">
+            <figure>
+              <pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+  &lt;head&gt;…&lt;/head&gt;
+  &lt;body&gt;…&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </figure>
+          </div>
+        </article>
+      </section>
+
+      <section class="chapter">
+        <h2>CSS</h2>
+
+        <article class="chapter-part">
+          <div class="chapter-part-col">
+            <h3 id="css-syntax">Синтаксис</h3>
+            <ul>
+              <li>После значения свойства обязательно ставится точка с&nbsp;запятой.</li>
+              <li>Для отступов внутри правил используются два пробела. Для правильного форматирования используйте файл <a href="https://github.com/htmlacademy/codeguide/blob/master/.editorconfig" target="_blank">.editorconfig</a> в&nbsp;вашем редакторе.</li>
+              <li>Шестнадцатеричное значение цвета не&nbsp;сокращается, а&nbsp;пишется полностью из&nbsp;всех шести символов. Для записи используются строчные буквы. Например, <code>#f5f5f5</code>.</li>
+              <li>Названия тегов и&nbsp;свойств в&nbsp;правилах пишутся строчными буквами.</li>
+              <li>Начальный ноль для значений не&nbsp;сокращается (например, <code>.5</code> вместо <code>0.5</code>).</li>
+              <li>Во&nbsp;всех случаях в&nbsp;стилях используются двойные кавычки. В&nbsp;необязательных случаях кавычки не&nbsp;опускаются.</li>
+              <li>После двоеточия в&nbsp;правилах ставится один пробел (<code>top:&nbsp;10px;</code>). А&nbsp;перед двоеточием пробел не&nbsp;нужен.</li>
+              <li>После запятых внутри значений <code>rgb()</code>, <code>rgba()</code>, <code>hsl()</code>, <code>hsla()</code> или <code>rect()</code> пробелы ставятся. Это повышает удобочитаемость.</li>
+              <li>До&nbsp;и&nbsp;после комбинатора между селекторами (например, <code>p&nbsp;&gt;&nbsp;a</code>) ставится один пробел.</li>
+              <li>Каждое объявление в&nbsp;правиле пишется на&nbsp;новой строке.</li>
+              <li>Перед открывающейся фигурной скобкой ставится один пробел. После скобки запись идёт с&nbsp;новой строки:
+            <pre class="language-css"><code>.selector {
+  color: #f5f5f5;
+}
+            </code></pre></li>
+              <li>Закрывающая фигурная скобка пишется на&nbsp;новой строке и&nbsp;без отступа. Следующее после этого правило отделяется пустой строкой.</li>
+              <li>Единицы измерения не&nbsp;пишутся, там где в&nbsp;них нет необходимости. Например, <code>border:&nbsp;0</code>.</li>
+              <li>Для проверки CSS-кода используйте <a href="https://github.com/htmlacademy/stylelint-config-htmlacademy" target="_blank">конфигурацию</a> для настройки валидатора <a href="http://stylelint.io" target="_blank">stylelint</a>.</li>
+              <li>Для автоматического применения этих правил используйте файл конфигурации <a href="https://github.com/htmlacademy/codeguide/blob/master/csscomb.json" target="_blank">csscomb.json</a> для настройки <a href="https://github.com/csscomb/csscomb.js" target="_blank">CSSComb</a>.</li>
+            </ul>
+          </div>
+          <div class="chapter-part-col gray-bgcolor">
+            <figure>
+              <pre><code class="language-css">/* Хорошо */
+.selector,
+.selector-secondary,
+.selector[type="text"] {
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 2px #cccccc, inset 0 1px 0 #ffffff;
+}
+
+/* Плохо */
+.selector, .selector-secondary, .selector[type=text]{
+  padding:15px;
+  margin:0px 0px 15px;
+  background-color:rgba(0,0,0,.5);
+  box-shadow:0px 1px 2px #CCC,inset 0 1px 0 #FFFFFF}</code></pre>
+            </figure>
+          </div>
+        </article>
+
+        <article class="chapter-part">
+          <div class="chapter-part-col">
+            <h3 id="css-order">Порядок свойств</h3>
+            <p>
+              Объявления логически связанных свойств группируются в&nbsp;следующем порядке:
+            </p>
+            <ol>
+              <li>Позиционирование</li>
+              <li>Блочная модель</li>
+              <li>Типографика</li>
+              <li>Оформление</li>
+              <li>Анимация</li>
+              <li>Разное</li>
+            </ol>
+            <p>
+              Позиционирование следует первым потому, что оно влияет на&nbsp;положение блоков в&nbsp;потоке документа. Блочная модель идёт следующей, так как она определяет размеры и&nbsp;расположение блоков.
+            </p>
+            <p>
+              Все остальные объявления, которые изменяют вид внутренних частей блоков и&nbsp;не&nbsp;оказывают влияния на&nbsp;другие блоки, идут в&nbsp;последнюю очередь.
+            </p>
+            <p>
+              Сгруппированные объявления в&nbsp;правиле отделяются друг от&nbsp;друга пустой строкой.
+            </p>
+            <p>
+              Порядок объявления подробных правил, таких как <code>font-size</code>, <code>font-family</code>, <code>line-height</code>, должен соответствовать порядку в&nbsp;сокращённой версии правила. В&nbsp;случае совместного использования подробных и&nbsp;сокращённых правил, первой должна идти сокращённая версия.
+            </p>
+          </div>
+          <div class="chapter-part-col gray-bgcolor">
+            <figure>
+              <pre><code class="language-css">.declaration-order {
+  /* Позиционирование */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+
+  /* Блочная модель */
+  display: block;
+  float: right;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  padding: 10px;
+
+  /* Типографика */
+  font: normal 13px/1.5 "Arial", sans-serif;
+  font-style: normal;
+  font-size: 13px;
+  line-height: 1.5;
+  font-family: "Arial", sans-serif;
+  text-align: center;
+  color: #333333;
+
+  /* Оформление */
+  background-color: #f5f5f5;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  opacity: 1;
+
+  /* Анимация */
+  transition: color 1s;
+
+  /* Разное */
+  will-change: auto;
+}</code></pre>
+            </figure>
+          </div>
+        </article>
+
+        <article class="chapter-part">
+          <div class="chapter-part-col">
+            <h3 id="css-class-names">Имена классов</h3>
+            <ul>
+              <li>Имена классов пишутся строчными буквами, используется дефис (но&nbsp;не&nbsp;знаки нижнего подчёркивания или camelCase). Дефисы служат разделителями во&nbsp;взаимосвязанных классах (например, <code>.button</code> и <code>.button-danger</code>).</li>
+              <li>Имена классов должны быть такими, чтобы по&nbsp;ним можно было быстро понять какому элементу страницы задан класс: избегайте сокращений (единственное исключение&nbsp;&mdash; <code>.btn</code> для кнопок), но&nbsp;не&nbsp;делайте их&nbsp;слишком длинными (более трёх слов).</li>
+              <li>Для написания классов используются английские слова и&nbsp;термины. Транслитом названия классов и&nbsp;атрибутов не&nbsp;пишутся.</li>
+            </ul>
+          </div>
+          <div class="chapter-part-col gray-bgcolor">
+            <figure>
+              <pre><code class="language-css">/* Хорошо */
+.alert-danger { … }
+.tweet .user-picture { … }
+.button { … }
+.layout-center { … }
+
+/* Плохо */
+.testElement { … }
+.t { … }
+.big_red_button { … }
+.knopka { … }</code></pre>
+            </figure>
+          </div>
+        </article>
+
+        <article class="chapter-part">
+          <div class="chapter-part-col">
+            <h3 id="css-import">Правило <code>@import</code></h3>
+            <p>
+              Правило <code>@import</code> работает медленнее, чем тег <code>&lt;link&gt;</code>. В&nbsp;стилях <code>@import</code> не&nbsp;должен использоваться.
+            </p>
+          </div>
+          <div class="chapter-part-col gray-bgcolor">
+            <figure>
+              <pre><code class="language-markup">&lt;!-- Хорошо: подключение тегом link --&gt;
+&lt;link rel="stylesheet" href="module.css"&gt;
+
+&lt;!-- Плохо --&gt;
+&lt;style&gt;
+  @import url("module.css");
+&lt;/style&gt;</code></pre>
+            </figure>
+          </div>
+        </article>
+
+        <article class="chapter-part">
+          <div class="chapter-part-col">
+            <h3 id="css-font-variant">Варианты шрифта</h3>
+            <p>
+              Альтернативные варианты шрифта и&nbsp;тип семейства указываются в&nbsp;конце перечисления <code>font-family</code>.
+            </p>
+            <p>
+              В&nbsp;случае использования нестандартных шрифтов альтернативный веб-безопасный шрифт и&nbsp;тип семейства указываются, чтобы в&nbsp;случае отсутствия нестандартного шрифта в&nbsp;системе, изменения внешнего вида страницы были минимальны. Альтернативный шрифт должен быть такого&nbsp;же типа, что и&nbsp;нестандартный.
+            </p>
+            <p>
+              Порядок шрифтов следующий:
+            </p>
+            <ol>
+              <li>нестандартный шрифт;</li>
+              <li>веб-безопасный;</li>
+              <li>тип шрифта.</li>
+            </ol>
+            <p>
+              Список веб-безопасных шрифтов можно посмотреть здесь&nbsp;&mdash; <a href="http://www.cssfontstack.com" target="_blank">cssfontstack.com</a>.
+            </p>
+          </div>
+          <div class="chapter-part-col gray-bgcolor">
+            <figure>
+              <pre><code class="language-css">/* Хорошо: указан альтернативный веб-безопасный шрифт и его тип семейства */
+body {
+  font-family: "Helvetica", "Arial", sans-serif;
+}
+
+/* Кому-то нравится Arial, кому-то Tahoma */
+body {
+  font-family: "Helvetica", "Tahoma", sans-serif;
+}
+
+/* Плохо: указан только нестандартный шрифт */
+body {
+  font-family: "Helvetica";
+}
+
+/* Плохо: указан только нестандартный шрифт и тип семейства, альтернативный веб-безопасный шрифт отсутствует */
+body {
+  font-family: "Helvetica", sans-serif;
+}
+
+/* Плохо: Georgia — шрифт с засечками, а нестандартный шрифт — без засечек */
+body {
+  font-family: "Helvetica", "Georgia", sans-serif;
+}</code></pre>
+            </figure>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <div class="contacts">
+        <a class="logo-full" href="https://htmlacademy.ru">
+          <img src="img/logo-full.svg" width="161" height="55" alt="HTML Academy" title="HTML Academy">
+        </a>
+        <div class="social-icons">
+          <a class="icon icon-vk" href="https://vk.com/htmlacademy" target="_blank">
+            Вконтакте
+          </a>
+          <a class="icon icon-fb" href="https://www.facebook.com/htmlacademy" target="_blank">
+            Facebook
+          </a>
+          <a class="icon icon-tw" href="https://twitter.com/htmlacademy_ru" target="_blank">
+            Twitter
+          </a>
+          <a class="icon icon-ig" href="https://instagram.com/htmlacademy" target="_blank">
+            Instagram
+          </a>
+        </div>
+        <div class="github">
+          <a class="github-link" href="https://github.com/htmlacademy" target="_blank">
+            GitHub
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/prism.js"></script>
+  </body>
+</html>
