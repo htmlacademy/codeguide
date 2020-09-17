@@ -52,15 +52,13 @@
 
             <p>Запрещено одновременное использование табов и пробелов для отступов</p>
 
-            <p>Выражения должны заканчиваться точками с запятой</p>
-
             <p>Для отступов ключевых слов, операторов и т. д. используется не более одного пробела</p>
-<pre class="language-js language-incorrect"><code>var name       = 1;
-var longerName = 2;
+<pre class="language-js language-incorrect"><code>const name       = 1;
+const longerName = 2;
 </code></pre>
 
-<pre class="language-js language-correct"><code>var name = 1;
-var longerName = 2;
+<pre class="language-js language-correct"><code>const name = 1;
+const longerName = 2;
 </code></pre>
 
             <p>Открывающие скобки блоков кода находятся на одной строке с оператором, который их использует:
@@ -82,17 +80,35 @@ var longerName = 2;
 
             <p>После запятой всегда должен ставиться пробел, если запятая не в конце строки</p>
 
-            <p>Запрещено переносить запятую на новую строку при объявлении массивов и объектов. Запрещено использовать запятую в конце списков, объектов или перечислений параметров функции</p>
+            <p>Обязательно переносить запятую на новую строку при объявлении массивов и объектов. Обязательно использовать запятую в конце списков, объектов или перечислений параметров функции</p>
+            <pre class="language-js language-incorrect"><code>const foo = {
+    a: 1,
+    b: 2
+};
+
+const bar = [
+    1,
+    2
+];</code></pre>
+<pre class="language-js language-correct"><code>const foo = {
+    a: 1,
+    b: 2,
+};
+
+const bar = [
+    1,
+    2,
+];</code></pre>
 
             <p>Файл должен заканчиваться пустой строкой</p>
 
             <p>Строка не должна заканчиваться пробелами</p>
 
             <p>В однострочных объектах и при деструктуризации фигурные скобки не отделяются пробелами от содержимого</p>
-<pre class="language-js language-incorrect"><code>var foo = { a: 1 };
+<pre class="language-js language-incorrect"><code>const foo = { a: 1 };
 </code></pre>
 
-<pre class="language-js language-correct"><code>var foo = {a: 1};
+<pre class="language-js language-correct"><code>const foo = {a: 1};
 </code></pre>
 
 <pre class="language-js language-incorrect"><code>const { a, b } = someObject;
@@ -101,15 +117,13 @@ var longerName = 2;
 <pre class="language-js language-correct"><code>const {a, b} = someObject;
 </code></pre>
 
-            <p>В коде не используются совместно табы и пробелы</p>
-
             <p>Смысловые блоки кода отделяются друг от друга не более чем двумя пустыми строками</p>
 
             <p>В качестве символа переноса строки используется стандартный символ, который используется в системе</p>
 
             <p>При объявлении вычисляемых ключей в объектах с помощью синтаксиса ES2016 в квадратных скобках не используются пробелы</p>
 
-            <p>Оператор вызова функции <code>()</code> не отделяется пробелами от названия функции</p>
+            <p>Оператор вызова функции <code>()</code> отделяется пробелом от названия функции</p>
 
             <p>В объектах после объявления ключа не ставится пробел. После двоеточия, которое отделяет в объектах ключ от значения может стоять только один пробел, выравнивать несколько значений при объявлении многострочного объекта запрещено</p>
 
@@ -121,15 +135,13 @@ var longerName = 2;
 
             <p>Перед скобками начинающими новый блок кода должен ставиться пробел</p>
 
-            <p>При объявлении анонимных функций, скобки с параметрами отделяются пробелом от ключевого слова <code>function</code>. Если функция именована, перед названием ставится пробел, после — нет</p>
-
             <p>В комментариях текст отбивается пробелом от начала комментария</p>
 
             <p>При создании генераторов, звездочка идёт сразу после ключевого слова <code>function</code> без пробелов</p>
 
-            <p>В spread-операторе точки не отделяются от названия коллекции</p>
-
             <p>Звездочка после ключевого слова <code>yield</code> не отбивается пробелом. После звездочки пробел ставится всегда</p>
+
+            <p>В spread-операторе точки не отделяются от названия коллекции</p>
           </div>
         </article>
 
@@ -139,16 +151,16 @@ var longerName = 2;
             <p>В строках, объявленных с помощью одинарных и двойных кавычек запрещено использовать переносы</p>
 
             <p>В строках запрещено указывать код спецсимволов в восьмеричной системе счисления
-<pre class="language-js language-incorrect"><code>var foo = "Copyright \251";
+<pre class="language-js language-incorrect"><code>const foo = "Copyright \251";
 </code></pre>
 
-<pre class="language-js language-correct"><code>var foo = "Copyright \u00A9";
+<pre class="language-js language-correct"><code>const foo = "Copyright \u00A9";
 </code></pre>
             </p>
 
             <p>При создании объектов через литералы свойства должны объявляться в едином стиле: или без кавычек или с ними</p>
 
-            <p>В строках используются одинарные кавычки. Разрешено использовать строковые шаблоны. Если позволяет поддержка, предпочтение отдается строковым шаблонам</p>
+            <p>В строках используются двойные кавычки. Разрешено использовать строковые шаблоны. Предпочтение отдается строковым шаблонам</p>
           </div>
         </article>
 
@@ -192,21 +204,15 @@ var longerName = 2;
 
         <article class="chapter-part">
           <div class="chapter-part-col chapter-part-col--full-width">
-            <p>Запрещено объявлять переменные, имена которых совпадают с именами используемых в коде лейблов</p>
-
-            <p>Все переменные должны быть названы в верблюжьем регистре (camelCase). Исключения составляют константы которые должны именоваться прописными буквами в змеином регистре (UPPER_SNAKE_CASE)</p>
+            <p>Все переменные должны быть названы в верблюжьем регистре (camelCase). Исключения составляют константы которые должны именоваться прописными буквами в константном регистре (CONSTANT_CASE) и названия классов, функций-конструкторов и перечислений, которые именуются с заглавной буквы (PascalCase)</p>
 
             <p>Запрещено использовать имена переменных, которые используются во внешних областях видимости</p>
 
             <p>Запрещено называть переменные и свойства <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords" target="_blank">ключевыми словами JS</a></p>
 
-            <p>Запрещено использовать переменные, не объявленные ранее. При использовании переменной, объявленной в другом модуле в глобальной области видимости нужно обращаться к ней как в свойству объекта <code>window/global</code></p>
+            <p>Запрещено использовать переменные, не объявленные ранее. При использовании переменной, объявленной в другом модуле в глобальной области видимости нужно обращаться к ней как в свойству объекта <code>window</code></p>
 
-            <p>Запрещено объявлять переменные без значения</p>
-
-            <p>Запрещено напрямую обращаться к значению <code>undefined</code>. Для проверки типа рекомендуется использовать <code>typeof</code>. Для прямого сравнения с <code>undefined</code> можно использовать конструкцию <code>void 0</code></p>
-
-            <p>С заглавной буквы называются только функции-конструкторы</p>
+            <p>Запрещено напрямую обращаться к значению <code>undefined</code>. Для проверки типа рекомендуется использовать <code>typeof</code>. Исключение составляет явная передача <code>undefined</code> при вызове функции вместо аргумента, чтобы использовать значение параметра по умолчанию</p>
           </div>
         </article>
 
@@ -225,14 +231,14 @@ var longerName = 2;
 
             <p>В коде нет пустых блоков кода</p>
 
-            <p>Код работает в строгом режиме: в начале всех файлов явно прописана директива <code>'use strict'</code></p>
+            <p>Код работает в строгом режиме: в начале всех файлов явно прописана директива <code>"use strict"</code> или используются модули ECMAScript, которые по умолчанию работают в строгом режиме</p>
           </div>
         </article>
 
         <article class="chapter-part">
           <div class="chapter-part-col chapter-part-col--full-width">
             <h3>Условные операторы</h3>
-            <p>Запрещена «проверка Йоды» — в условных операторах в блоке условия при сравнении переменной или свойства со значением сначала идет переменная или свойство объекта и только потом значения, а не наоброт.
+            <p>Запрещена «проверка Йоды» — в условных операторах в блоке условия при сравнении переменной или свойства со значением сначала идет переменная или свойство объекта и только потом значения, а не наоборот.
 <pre class="language-js language-incorrect"><code>if (1 === myValue) { /*...*/ }
 </code></pre>
 
@@ -245,7 +251,7 @@ var longerName = 2;
 
             <p>В условиях не используется небезопасное отрицание, например использование <code>!</code> в <code>in</code> или <code>instanceof</code> без скобок</p>
 
-            <p>Запрещено сравнение с <code>NaN</code>. Для проверки, является результат операции числовым, нужно использовать <code><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN" target="_blank">Number.isNaN</a></code></p>
+            <p>Запрещено сравнение с <code>NaN</code>. Для проверки, является ли результат операции числовым, нужно использовать <code><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN" target="_blank">Number.isNaN</a></code></p>
 
             <p>Запрещено использовать <code>case</code> без <code>break</code> или <code>return</code> в блоках <code>switch</code></p>
 
@@ -256,9 +262,9 @@ var longerName = 2;
         <article class="chapter-part">
           <div class="chapter-part-col chapter-part-col--full-width">
             <h3>Функции</h3>
-            <p>Если в функции используется ветвление, в котором есть возврат значения (<code>return</code>), <code>return</code> должен быть добавлен и в остальных ветках.</p>
+            <p>Если в функции используется ветвление, в котором есть возврат значения, то <code>return</code> должен быть добавлен и в остальных ветках.</p>
 
-<pre class="language-js language-incorrect"><code>var doThings = function() {
+<pre class="language-js language-incorrect"><code>const doThings = function() {
   if (cond) {
     return 1;
   } else {
@@ -267,16 +273,28 @@ var longerName = 2;
 };
 </code></pre>
 
-<pre class="language-js language-correct"><code>var doThings = function() {
+<pre class="language-js language-correct"><code>const doThings = function() {
   if (cond) {
     return 1;
   } else {
-    return 2;
+    return doSomethingElse();
   }
 };
 </code></pre>
 
             <p>Это правило предотвращает создание функций, при использовании которых непонятно, вернут ли они какое-то значение. В первом примере, функция <code>do</code> может вернуть значение <code>1</code>, а может <code>undefined</code></p>
+
+            <p>Единственное исключение — использование <code>return</code> без значения для прекращения работы функции:</p>
+
+<pre class="language-js language-correct"><code>const doThings = function() {
+  if (cond) {
+    doSomething()
+    return;
+  }
+
+  doSomethingElse();
+};
+</code></pre>
 
             <p>В <code>return</code> не используется оператор присваивания</p>
 
@@ -296,16 +314,16 @@ var longerName = 2;
         <article class="chapter-part">
           <div class="chapter-part-col chapter-part-col--full-width">
             <h3>Объявление переменных и функций</h3>
-            <p>При объявлении переменных предпочтение отдается ключевым словам <code>let</code> и <code>const</code>. Переменные объявляются через <code>var</code> только при наличии проблем с поддержкой ES6</p>
+            <p>При объявлении переменных предпочтение отдается ключевым словам <code>let</code> и <code>const</code>. Переменные объявляются через <code>var</code> только при наличии проблем с поддержкой ECMAScript 2015</p>
 
             <p>Запрещено переопределять с помощью ключевого слова ранее созданные переменные</p>
 
             <p>Запрещено использовать множественное объявление через одно ключевое слово. Для каждой переменной используется отдельный <code>var</code>, <code>let</code> или <code>const</code>.
-<pre class="language-js language-incorrect"><code>var a = 1, b = 2;
+<pre class="language-js language-incorrect"><code>const a = 1, b = 2;
 </code></pre>
 
-<pre class="language-js language-correct"><code>var a = 1;
-var b = 2;
+<pre class="language-js language-correct"><code>const a = 1;
+const b = 2;
 </code></pre>
             </p>
 
@@ -315,13 +333,11 @@ var b = 2;
 myFunc = 2;
 </code></pre></p>
 
-            <p>Запрещено объявление значений внутри блоков</p>
-
             <p>Новые функции не создаются с помощью конструктора <code>Function</code></p>
 
             <p>Вместо коллекции <code>arguments</code>, используется rest-оператор, если это позволяет версия языка</p>
 
-            <p>Вместо вызова функции через <code>apply</code> используется spread-оператор, если это позволяет версия языка
+            <p>Для превращения массива с данными в аргументы вместо вызова функции через <code>apply</code> используется spread-оператор, если это позволяет версия языка
 
 <pre class="language-js language-incorrect"><code>Math.max.apply(null, [1, 100, 15, 1000]);
 </code></pre>
@@ -337,7 +353,7 @@ myFunc = 2;
 
             <p>При создании непустых объектов и массивов не используются «висячие» запятые</p>
 
-            <p>Не используются конструкторы примитивов, которые используются для автобоксинга <code>String</code>, <code>Number</code>, <code>Boolean</code></p>
+            <p>Для создания новых значений не используются конструкторы примитивов <code>String</code>, <code>Number</code>, <code>Boolean</code></p>
 
             <p>Конструкторы вызываются со скобками, даже если у них нет параметров</p>
 
@@ -396,10 +412,10 @@ myFunc = 2;
 <pre class="language-js language-correct"><code>if (a > 1) {}
 </code></pre>
 
-<pre class="language-js language-incorrect"><code>var ternaryValue = true ? 'a' : 'b';
+<pre class="language-js language-incorrect"><code>const ternaryValue = true ? 'a' : 'b';
 </code></pre>
 
-<pre class="language-js language-correct"><code>var ternaryValue = isA() ? 'a' : 'b';
+<pre class="language-js language-correct"><code>const ternaryValue = isA() ? 'a' : 'b';
 </code></pre>
             </p>
           </div>
@@ -443,17 +459,6 @@ myFunc = 2;
             </p>
 
             <p>В коде нет объявленных, но неиспользуемых переменных</p>
-
-            <p>В коде нет выражений, значения которых не записываются в переменные, параметры функций или свойства объектов и не передаются как параметры функций
-
-<pre class="language-js language-incorrect"><code>check === true && doSomething();
-</code></pre>
-
-<pre class="language-js language-correct"><code>if (check) {
-  doSomething();
-}
-</code></pre>
-            </p>
           </div>
         </article>
 
@@ -475,23 +480,6 @@ myFunc = 2;
       </section>
 
       <section class="chapter">
-        <h2>Документирование</h2>
-
-        <article class="chapter-part">
-          <div class="chapter-part-col chapter-part-col--full-width">
-            При написании jsDoc используются следующие ограничения:
-
-            <p>необязательно добавлять текстовое описание конструкциям <code>@return</code> и <code>@param</code>, достаточно просто указания типа и названия параметра для <code>@param</code></p>
-
-            <p>описание возвращаемного типа <code>@return</code> требуется только в том случае, если функция возвращает какое-то значение. Правило не действует для конструкторов, для них указывать <code>@return</code> необязательно. Также необязательно указывать тег <code>@return</code> для функций, в которых конструкция <code>return</code> используется без возвращаемого значения для выхода из функции</p>
-
-            <p>для описания возвращаемого значения из функции используется тег <code>@return</code>, а не <code><del>@returns</del></code></p>
-          </div>
-        </article>
-
-      </section>
-
-      <section class="chapter">
         <h2>Прочее</h2>
 
         <article class="chapter-part">
@@ -501,22 +489,22 @@ myFunc = 2;
             <p>В объектах напрямую не переопределяется свойство <code>__iterator__</code></p>
 
             <p>В объектах напрямую не переопределяется свойство <code>__proto__</code>. Разрешено переопределять <code>__proto__</code> через <code>Object.create</code> или запись в прототип, объектов, созданных другими конструкторами, но напрямую редактировать <code>__proto__</code> нельзя
-<pre class="language-js language-incorrect"><code>var obj = {
+<pre class="language-js language-incorrect"><code>const obj = {
   __proto__: Parent
 };
 </code></pre>
 
-<pre class="language-js language-correct"><code>var Obj = function() {};
+<pre class="language-js language-correct"><code>const Obj = function() {};
 Obj.prototype = new Parent();
-var obj = new obj;
+const obj = new obj;
 
-var obj = Object.create(Parent.prototype);
+const obj = Object.create(Parent.prototype);
 </code></pre>
             </p>
 
             <p>В коде не используются лейблы. Лейблы используются с конструкциями <code>break</code> и <code>continue</code> для направленного выхода из цикла и могут привести к слишком сложному для понимания коду</p>
 
-            <p>Блоки, использующиеся в коде должны описывать тело функции, условия, оператора <code>switch</code> и прочие конструкции относящиеся к группировке множественных операций. Блоки не должны использваться сами по себе, любой блок должен быть частью другого выражения</p>
+            <p>Блоки, использующиеся в коде должны описывать тело функции, условия, оператора <code>switch</code> и прочие конструкции относящиеся к группировке множественных операций. Блоки не должны использоваться сами по себе, любой блок должен быть частью другого выражения</p>
 
             <p>В коде не используется оператор «запятая» для описания последовательностей действий. Для создания переменных используются отдельные ключевые слова <code>let</code>, <code>const</code>, <code>var</code>, операторы группировки, условные операторы и прочие конструкции. Исключение составляет начальное условие оператора <code>for</code>
 <pre class="language-js language-incorrect"><code>const result = (1, 2); // 2
@@ -531,7 +519,7 @@ var obj = Object.create(Parent.prototype);
 <pre class="language-js language-correct"><code>val = getVal();
 switch(val) {}
 
-for (var i = 0, l = 100; i < l; i++);
+for (let i = 0, l = 100; i < l; i++);
 </code></pre>
             </p>
           </div>
@@ -557,14 +545,6 @@ for (var i = 0, l = 100; i < l; i++);
 <pre class="language-js language-correct"><code>/\s{3}/.exec(myString);
 </code></pre>
             </p>
-          </div>
-        </article>
-
-        <article class="chapter-part">
-          <div class="chapter-part-col chapter-part-col--full-width">
-            <h3>Node.js</h3>
-
-            <p>В Node.js файлах не используется конструкция <code>process.exit</code></p>
           </div>
         </article>
 
