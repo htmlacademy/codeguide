@@ -37,7 +37,7 @@ section {
  */
 
 h1 {
-  font-size: 2em;
+  font-size: 1em;
   margin: 0.67em 0;
 }
 
@@ -60,7 +60,7 @@ main { /* 1 */
  */
 
 figure {
-  margin: 1em 40px;
+  margin: 1em 35px;
 }
 
 /**
@@ -151,8 +151,8 @@ dfn {
  */
 
 mark {
-  background-color: #ff0;
-  color: #000;
+  background-color: gray;
+  color: red;
 }
 
 /**
