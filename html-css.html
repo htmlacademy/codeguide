@@ -60,6 +60,7 @@
               <li><a href="#css-class-names">Имена классов</a></li>
               <li><a href="#css-import">Правило @import</a></li>
               <li><a href="#css-font-variant">Варианты шрифта</a></li>
+              <li><a href="#css-visually-hidden">Доступное скрытие</a></li>
             </ul>
           </div>
         </article>
@@ -538,6 +539,47 @@ body {
 body {
   font-family: "Helvetica", "Georgia", sans-serif;
 }</code></pre>
+            </figure>
+          </div>
+        </article>
+
+        <article class="chapter-part">
+          <div class="chapter-part-col">
+            <h3 id="#css-visually-hidden">Доступное скрытие</h3>
+            <p>
+              Для того, чтобы контент был скрыт от глаз, но доступен для скринридеров и поисковиков его нужно скрывать используя утилитарный класс <code>visually-hidden</code>.
+            </p>
+          </div>
+          <div class="chapter-part-col gray-bgcolor">
+            <figure>
+              <pre><code class="language-css">/* Плохо: скрывать элемент с помощью font-size, display:none */
+h1 {
+  font-size: 0;
+}
+
+.title {
+  display: none;
+}</code></pre>
+            </figure>
+            <figure>
+              <pre><code class="language-css">
+/* Хорошо: использован класс visually-hidden */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}</code></pre>
+            </figure>
+            <figure>
+              <pre><code class="language-markup">
+&lt;h2 class="visually-hidden"&gt;Заголовок&lt;/h2&gt;</code></pre>
             </figure>
           </div>
         </article>
