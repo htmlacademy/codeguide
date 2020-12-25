@@ -17,6 +17,4 @@ ESLint — https://github.com/htmlacademy/eslint-config-htmlacademy
 
 Stylelint — https://github.com/htmlacademy/stylelint-config-htmlacademy
 
-### Устаревшее
-
 HTMLHint - https://github.com/htmlacademy/htmlhint-config-htmlacademy
