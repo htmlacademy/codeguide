@@ -1,5 +1,6 @@
 html {
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -48,6 +49,7 @@ h2 {
 
 h3 {
   font-size: 1.75rem;
+  scroll-margin-top: 60px;
 }
 
 code,
