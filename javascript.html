@@ -106,25 +106,21 @@
               <p>Запрещено одновременное использование табов и пробелов для отступов</p>
 
               <p>Для отступов ключевых слов, операторов и т. д. используется не более одного пробела</p>
-<pre class="language-js language-incorrect"><code>const name       = 1;
-const longerName = 2;
-</code></pre>
+              <pre class="language-js language-incorrect"><code>const name       = 1;
+const longerName = 2;</code></pre>
 
-<pre class="language-js language-correct"><code>const name = 1;
-const longerName = 2;
-</code></pre>
+              <pre class="language-js language-correct"><code>const name = 1;
+const longerName = 2;</code></pre>
 
               <p>Открывающие скобки блоков кода находятся на одной строке с оператором, который их использует:</p>
-<pre class="language-js language-incorrect"><code>if (condition)
+              <pre class="language-js language-incorrect"><code>if (condition)
 {
   // code
-}
-</code></pre>
+}</code></pre>
 
-<pre class="language-js language-correct"><code>if (condition) {
+              <pre class="language-js language-correct"><code>if (condition) {
   // code
-}
-</code></pre>
+}</code></pre>
               <p>В однострочных блоках кода, код отделен от открывающей и закрывающей скобки пробелом</p>
 
               <p>В однострочных массивах скобки не отделяются пробелами, первое значение идет непосредственно после открывающей скобки, а закрывающая скобка идет непосредственно после последнего значения массива</p>
@@ -132,23 +128,23 @@ const longerName = 2;
               <p>После запятой всегда должен ставиться пробел, если запятая не в конце строки</p>
 
               <p>Обязательно переносить запятую на новую строку при объявлении массивов и объектов. Обязательно использовать запятую в конце списков, объектов или перечислений параметров функции</p>
-<pre class="language-js language-incorrect"><code>const foo = {
-    a: 1,
-    b: 2
+              <pre class="language-js language-incorrect"><code>const foo = {
+  a: 1,
+  b: 2
 };
 
 const bar = [
-    1,
-    2
+  1,
+  2
 ];</code></pre>
-<pre class="language-js language-correct"><code>const foo = {
-    a: 1,
-    b: 2,
+              <pre class="language-js language-correct"><code>const foo = {
+  a: 1,
+  b: 2,
 };
 
 const bar = [
-    1,
-    2,
+  1,
+  2,
 ];</code></pre>
 
               <p>Файл должен заканчиваться пустой строкой</p>
@@ -156,17 +152,13 @@ const bar = [
               <p>Строка не должна заканчиваться пробелами</p>
 
               <p>В однострочных объектах и при деструктуризации фигурные скобки не отделяются пробелами от содержимого</p>
-<pre class="language-js language-incorrect"><code>const foo = { a: 1 };
-</code></pre>
+              <pre class="language-js language-incorrect"><code>const foo = { a: 1 };</code></pre>
 
-<pre class="language-js language-correct"><code>const foo = {a: 1};
-</code></pre>
+              <pre class="language-js language-correct"><code>const foo = {a: 1};</code></pre>
 
-<pre class="language-js language-incorrect"><code>const { a, b } = someObject;
-</code></pre>
+              <pre class="language-js language-incorrect"><code>const { a, b } = someObject;</code></pre>
 
-<pre class="language-js language-correct"><code>const {a, b} = someObject;
-</code></pre>
+              <pre class="language-js language-correct"><code>const {a, b} = someObject;</code></pre>
 
               <p>Смысловые блоки кода отделяются друг от друга не более чем двумя пустыми строками</p>
 
@@ -202,11 +194,9 @@ const bar = [
               <p>В строках, объявленных с помощью одинарных и двойных кавычек запрещено использовать переносы</p>
 
               <p>В строках запрещено указывать код спецсимволов в восьмеричной системе счисления</p>
-<pre class="language-js language-incorrect"><code>const foo = "Copyright \251";
-</code></pre>
+              <pre class="language-js language-incorrect"><code>const foo = "Copyright \251";</code></pre>
 
-<pre class="language-js language-correct"><code>const foo = "Copyright \u00A9";
-</code></pre>
+              <pre class="language-js language-correct"><code>const foo = "Copyright \u00A9";</code></pre>
 
               <p>При создании объектов через литералы свойства должны объявляться в едином стиле: или без кавычек или с ними</p>
 
@@ -289,11 +279,9 @@ const bar = [
             <div class="chapter-part-col chapter-part-col--full-width">
               <h3 id="conditional-operators">Условные операторы</h3>
               <p>Запрещена «проверка Йоды» — в условных операторах в блоке условия при сравнении переменной или свойства со значением сначала идет переменная или свойство объекта и только потом значения, а не наоборот.</p>
-<pre class="language-js language-incorrect"><code>if (1 === myValue) { /*...*/ }
-</code></pre>
+              <pre class="language-js language-incorrect"><code>if (1 === myValue) { /*...*/ }</code></pre>
 
-<pre class="language-js language-correct"><code>if (myValue === 1) { /*...*/ }
-</code></pre>
+              <pre class="language-js language-correct"><code>if (myValue === 1) { /*...*/ }</code></pre>
               <p>При сравнении двух значений используется оператор строгого сравнения вместо оператора нестрогого сравнения</p>
 
               <p>В условных операторах не используется оператор присвоения</p>
@@ -313,37 +301,34 @@ const bar = [
               <h3 id="errors-functions">Функции</h3>
               <p>Если в функции используется ветвление, в котором есть возврат значения, то <code>return</code> должен быть добавлен и в остальных ветках.</p>
 
-<pre class="language-js language-incorrect"><code>const doThings = function() {
+              <pre class="language-js language-incorrect"><code>const doThings = function() {
   if (cond) {
     return 1;
   } else {
     doSomethingElse();
   }
-};
-</code></pre>
+};</code></pre>
 
-<pre class="language-js language-correct"><code>const doThings = function() {
+              <pre class="language-js language-correct"><code>const doThings = function() {
   if (cond) {
     return 1;
   } else {
     return doSomethingElse();
   }
-};
-</code></pre>
+};</code></pre>
 
               <p>Это правило предотвращает создание функций, при использовании которых непонятно, вернут ли они какое-то значение. В первом примере, функция <code>do</code> может вернуть значение <code>1</code>, а может <code>undefined</code></p>
 
               <p>Единственное исключение — использование <code>return</code> без значения для прекращения работы функции:</p>
 
-<pre class="language-js language-correct"><code>const doThings = function() {
+              <pre class="language-js language-correct"><code>const doThings = function() {
   if (cond) {
     doSomething()
     return;
   }
 
   doSomethingElse();
-};
-</code></pre>
+};</code></pre>
 
               <p>В <code>return</code> не используется оператор присваивания</p>
 
@@ -368,28 +353,23 @@ const bar = [
               <p>Запрещено переопределять с помощью ключевого слова ранее созданные переменные</p>
 
               <p>Запрещено использовать множественное объявление через одно ключевое слово. Для каждой переменной используется отдельный <code>var</code>, <code>let</code> или <code>const</code>.</p>
-<pre class="language-js language-incorrect"><code>const a = 1, b = 2;
-</code></pre>
+              <pre class="language-js language-incorrect"><code>const a = 1, b = 2;</code></pre>
 
-<pre class="language-js language-correct"><code>const a = 1;
-const b = 2;
-</code></pre>
+              <pre class="language-js language-correct"><code>const a = 1;
+const b = 2;</code></pre>
               <h4>Объявление функций</h4>
               <p>Запрещено переопределение функций, созданных с помощью функционального объявления (function declaration)</p>
-<pre class="language-js language-incorrect"><code>function myFunc() {};
-myFunc = 2;
-</code></pre>
+              <pre class="language-js language-incorrect"><code>function myFunc() {};
+myFunc = 2;</code></pre>
 
               <p>Новые функции не создаются с помощью конструктора <code>Function</code></p>
 
               <p>Вместо коллекции <code>arguments</code>, используется rest-оператор, если это позволяет версия языка</p>
 
               <p>Для превращения массива с данными в аргументы вместо вызова функции через <code>apply</code> используется spread-оператор, если это позволяет версия языка</p>
-<pre class="language-js language-incorrect"><code>Math.max.apply(null, [1, 100, 15, 1000]);
-</code></pre>
+              <pre class="language-js language-incorrect"><code>Math.max.apply(null, [1, 100, 15, 1000]);</code></pre>
 
-<pre class="language-js language-correct"><code>Math.max(...[1, 100, 15, 1000]);
-</code></pre>
+              <pre class="language-js language-correct"><code>Math.max(...[1, 100, 15, 1000]);</code></pre>
 
               <h4>Создание значений</h4>
               <p>Не вызываются служебные конструкторы, создающие объекты из глобальной области видимости <code>Math()</code>, <code>JSON()</code>, <code>Reflect()</code></p>
@@ -451,17 +431,13 @@ myFunc = 2;
               <h4>Константы в условиях</h4>
 
               <p>В блоки условия операторов <code>if</code>, <code>while</code>, <code>for</code> и тернарного оператора не передается константное значение, которое подразумевает, что условие выполняется (или не выполняется) всегда</p>
-<pre class="language-js language-incorrect"><code>if (true) {}
-</code></pre>
+              <pre class="language-js language-incorrect"><code>if (true) {}</code></pre>
 
-<pre class="language-js language-correct"><code>if (a > 1) {}
-</code></pre>
+              <pre class="language-js language-correct"><code>if (a > 1) {}</code></pre>
 
-<pre class="language-js language-incorrect"><code>const ternaryValue = true ? 'a' : 'b';
-</code></pre>
+              <pre class="language-js language-incorrect"><code>const ternaryValue = true ? 'a' : 'b';</code></pre>
 
-<pre class="language-js language-correct"><code>const ternaryValue = isA() ? 'a' : 'b';
-</code></pre>
+              <pre class="language-js language-correct"><code>const ternaryValue = isA() ? 'a' : 'b';</code></pre>
             </div>
           </article>
 
@@ -490,15 +466,13 @@ myFunc = 2;
             <div class="chapter-part-col chapter-part-col--full-width">
               <h3 id="unused-code">Неиспользуемый код</h3>
               <p>В проекте нет недоступного кода, который никогда не выполнится</p>
-<pre class="language-js language-incorrect"><code>if (false) {
+              <pre class="language-js language-incorrect"><code>if (false) {
   doSomething();
-}
-</code></pre>
+}</code></pre>
 
-<pre class="language-js language-correct"><code>if (needToDoSomething()) {
+              <pre class="language-js language-correct"><code>if (needToDoSomething()) {
   doSomething();
-}
-</code></pre>
+}</code></pre>
 
               <p>В коде нет объявленных, но неиспользуемых переменных</p>
             </div>
@@ -508,11 +482,9 @@ myFunc = 2;
             <div class="chapter-part-col chapter-part-col--full-width">
               <h3 id="error-handling-and-exceptions">Обработка ошибок и исключения</h3>
               <p>Для выбрасывания исключения в оператор <code>throw</code> передаются только объекты Error. Передавать литералы запрещено.</p>
-<pre class="language-js language-incorrect"><code>throw 'Passed value is out of range';
-</code></pre>
+              <pre class="language-js language-incorrect"><code>throw 'Passed value is out of range';</code></pre>
 
-<pre class="language-js language-correct"><code>throw new RangeError('Passed value is out of range');
-</code></pre>
+              <pre class="language-js language-correct"><code>throw new RangeError('Passed value is out of range');</code></pre>
 
               <p>В конструкции <code>try..catch</code> запрещен пустой блок <code>catch</code></p>
             </div>
@@ -530,37 +502,31 @@ myFunc = 2;
               <p>В объектах напрямую не переопределяется свойство <code>__iterator__</code></p>
 
               <p>В объектах напрямую не переопределяется свойство <code>__proto__</code>. Разрешено переопределять <code>__proto__</code> через <code>Object.create</code> или запись в прототип, объектов, созданных другими конструкторами, но напрямую редактировать <code>__proto__</code> нельзя</p>
-<pre class="language-js language-incorrect"><code>const obj = {
+              <pre class="language-js language-incorrect"><code>const obj = {
   __proto__: Parent
-};
-</code></pre>
+};</code></pre>
 
-<pre class="language-js language-correct"><code>const Obj = function() {};
+              <pre class="language-js language-correct"><code>const Obj = function() {};
 Obj.prototype = new Parent();
 const obj = new obj;
 
-const obj = Object.create(Parent.prototype);
-</code></pre>
+const obj = Object.create(Parent.prototype);</code></pre>
 
               <p>В коде не используются лейблы. Лейблы используются с конструкциями <code>break</code> и <code>continue</code> для направленного выхода из цикла и могут привести к слишком сложному для понимания коду</p>
 
               <p>Блоки, использующиеся в коде должны описывать тело функции, условия, оператора <code>switch</code> и прочие конструкции относящиеся к группировке множественных операций. Блоки не должны использоваться сами по себе, любой блок должен быть частью другого выражения</p>
 
               <p>В коде не используется оператор «запятая» для описания последовательностей действий. Для создания переменных используются отдельные ключевые слова <code>let</code>, <code>const</code>, <code>var</code>, операторы группировки, условные операторы и прочие конструкции. Исключение составляет начальное условие оператора <code>for</code></p>
-<pre class="language-js language-incorrect"><code>const result = (1, 2); // 2
-</code></pre>
+              <pre class="language-js language-incorrect"><code>const result = (1, 2); // 2</code></pre>
 
-<pre class="language-js language-correct"><code>const result = 2;
-</code></pre>
-<br>
-<pre class="language-js language-incorrect"><code>switch (val = getVal(), val) {}
-</code></pre>
+              <pre class="language-js language-correct"><code>const result = 2;</code></pre>
+              <br>
+              <pre class="language-js language-incorrect"><code>switch (val = getVal(), val) {}</code></pre>
 
-<pre class="language-js language-correct"><code>val = getVal();
+              <pre class="language-js language-correct"><code>val = getVal();
 switch(val) {}
 
-for (let i = 0, l = 100; i < l; i++);
-</code></pre>
+for (let i = 0, l = 100; i < l; i++);</code></pre>
             </div>
           </article>
 
@@ -574,14 +540,11 @@ for (let i = 0, l = 100; i < l; i++);
               <p>В коде регулярные выражения не создаются через конструктор <code>RegExp</code> из строки, которая не может быть разобрана как правильное регулярное выражение</p>
 
               <p>В регулярных выражениях не используются нескольких последовательных пробелов. Вместо этого предлагается использовать модификаторы количества</p>
-<pre class="language-js language-incorrect"><code>/   /.exec(myString);
-</code></pre>
+              <pre class="language-js language-incorrect"><code>/   /.exec(myString);</code></pre>
 
-<pre class="language-js language-incorrect"><code>/\s\s\s/.exec(myString);
-</code></pre>
+              <pre class="language-js language-incorrect"><code>/\s\s\s/.exec(myString);</code></pre>
 
-<pre class="language-js language-correct"><code>/\s{3}/.exec(myString);
-</code></pre>
+              <pre class="language-js language-correct"><code>/\s{3}/.exec(myString);</code></pre>
             </div>
           </article>
 
