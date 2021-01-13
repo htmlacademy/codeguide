@@ -175,12 +175,6 @@ header a:visited {
   width: 100%;
 }
 
-.sidebar::before,
-.sidebar::after {
-  content: "";
-  display: table;
-}
-
 .sidebar a {
   display: block;
   color: #5a5a5a;
@@ -383,7 +377,6 @@ footer {
   }
 
   .sidebar {
-    position: -webkit-sticky;
     position: sticky;
     top: 0;
     bottom: 0;
