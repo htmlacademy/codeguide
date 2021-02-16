@@ -711,24 +711,22 @@ barbershop/
             <div class="chapter-part-col">
               <h3 id="css-syntax">Синтаксис</h3>
               <ul>
-                <li>После значения свойства обязательно ставится точка с&nbsp;запятой.</li>
+                <li>Селекторы и свойства <strong>должны</strong> записываться строчными буквами.</li>
+                <li>Селекторы, разделённые запятой, <strong>должны</strong> записываться на новых строках.</li>
+                <li>До&nbsp;и&nbsp;после комбинатора между селекторами (например, <code>p&nbsp;&gt;&nbsp;a</code>) ставится один пробел.</li>
+                <li>Перед открывающейся фигурной скобкой <strong>должен</strong> быть пробел. После скобки запись идёт с&nbsp;новой строки.</li>
+                <li>Свойства <strong>должны</strong> стоять на отдельных строках.</li>
+                <li>Свойства внутри блока <strong>должны</strong> иметь один внутренний отступ.</li>
+                <li>После двоеточия <strong>должен</strong> быть пробел. Перед двоеточием пробел не&nbsp;нужен.</li>
+                <li>В конце объявления <strong>должна</strong> быть точка с запятой.</li>
                 <li>Шестнадцатеричное значение цвета не&nbsp;сокращается, а&nbsp;пишется полностью из&nbsp;всех шести символов. Для записи используются строчные буквы. Например, <code>#f5f5f5</code>.</li>
-                <li>Названия тегов и&nbsp;свойств в&nbsp;правилах пишутся строчными буквами.</li>
                 <li>Начальный ноль для значений не&nbsp;сокращается (например, <code>.5</code> вместо <code>0.5</code>).</li>
                 <li>Во&nbsp;всех случаях в&nbsp;стилях используются двойные кавычки. В&nbsp;необязательных случаях кавычки не&nbsp;опускаются.</li>
-                <li>После двоеточия в&nbsp;правилах ставится один пробел (<code>top:&nbsp;10px;</code>). А&nbsp;перед двоеточием пробел не&nbsp;нужен.</li>
-                <li>После запятых внутри значений <code>rgb()</code>, <code>rgba()</code>, <code>hsl()</code>, <code>hsla()</code> или <code>rect()</code> пробелы ставятся. Это повышает удобочитаемость.</li>
-                <li>До&nbsp;и&nbsp;после комбинатора между селекторами (например, <code>p&nbsp;&gt;&nbsp;a</code>) ставится один пробел.</li>
-                <li>Каждое объявление в&nbsp;правиле пишется на&nbsp;новой строке.</li>
-                <li>Перед открывающейся фигурной скобкой ставится один пробел. После скобки запись идёт с&nbsp;новой строки:
-                  <pre><code class="language-css">.selector {
-  color: #f5f5f5;
-}</code></pre>
-                </li>
-                <li>Закрывающая фигурная скобка пишется на&nbsp;новой строке и&nbsp;без отступа. Следующее после этого правило отделяется пустой строкой.</li>
+                <li>После запятых в перечислениях, например <code>rgb()</code>, <code>rgba()</code>, <code>hsl()</code>, <code>hsla()</code> или <code>rect()</code> <strong>должен</strong> быть пробел .</li>
                 <li>Единицы измерения не&nbsp;пишутся, там где в&nbsp;них нет необходимости. Например, <code>border:&nbsp;0</code>.</li>
+                <li>Закрывающая скобка <strong>должна</strong> быть на новой строке и без отступа.</li>
+                <li>Между блоками правил <strong>должна</strong> быть одна пустая строка.</li>
                 <li>Для проверки CSS-кода используйте <a href="https://github.com/htmlacademy/stylelint-config-htmlacademy" target="_blank">конфигурацию</a> для настройки валидатора <a href="http://stylelint.io" target="_blank">stylelint</a>.</li>
-                <li>Для автоматического применения этих правил используйте файл конфигурации <a href="https://github.com/htmlacademy/codeguide/blob/master/csscomb.json" target="_blank">csscomb.json</a> для настройки <a href="https://github.com/csscomb/csscomb.js" target="_blank">CSSComb</a>.</li>
               </ul>
             </div>
             <div class="chapter-part-col gray-bgcolor">
@@ -744,11 +742,10 @@ barbershop/
 }
 
 /* Плохо */
-.selector, .selector-secondary, .selector[type=text] {
-  padding:15px;
-  margin:0px 0px 15px;
-  background-color:rgba(0,0,0,.5);
-  box-shadow:0px 1px 2px #CCC,inset 0 1px 0 #FFFFFF}</code></pre>
+.selector, .selector-SECONDARY, .selector[type=text]{ color: red;
+  padding:15px;margin:0px 0px 15px;
+    background-color:rgba(0,0,0,.5);
+  box-shadow:0px 1px 2px #CCC,inset 0 1px 0 #FFF}</code></pre>
               </figure>
             </div>
           </article>
