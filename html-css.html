@@ -59,7 +59,7 @@
             <li><a href="#html-class-name">Разделители в имени класса</a></li>
             <li><a href="#html-tags-formatting">Форматирование тегов</a></li>
             <li><a href="#html-basic-parts">Базовые части разметки</a></li>
-            <li><a href="#html-form-method">Атрибут <code>method</code> в форме</a></li>
+            <li><a href="#html-form-method">Атрибут method в форме</a></li>
 
 
             <li><a href="#html-validator">Валидность</a></li>
@@ -84,6 +84,10 @@
             <li><a href="#css-import">Правило @import</a></li>
             <li><a href="#css-fonts-add">Подключение шрифтов</a></li>
             <li><a href="#css-font-variant">Варианты шрифта</a></li>
+            <li><a href="#css-important">!important</a></li>
+            <li><a href="#css-repeated-properties">Повторяющиеся свойства</a></li>
+            <li><a href="#css-color-format">Формат цветов</a></li>
+            <li><a href="#css-fractions">Дробные значения</a></li>
             <li><a href="#css-visually-hidden">Доступное скрытие</a></li>
           </ul>
         </div>
@@ -908,7 +912,6 @@ barbershop/
             </div>
           </article>
 
-
           <article class="chapter-part">
             <div class="chapter-part-col">
               <h3 id="css-font-variant">Варианты шрифта</h3>
@@ -956,6 +959,116 @@ body {
 body {
   font-family: "Helvetica", "Georgia", sans-serif;
 }</code></pre>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
+              <h3 id="css-important"><code>!important</code></h3>
+              <ul>
+                <li>Ключевое слово <code>!important</code> <strong>не должно</strong> использоваться для борьбы со специфичностью.</li>
+                <li>Универсальные классы-хелперы <strong>могут</strong> использовать <code>!important</code>.</li>
+              </ul>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-css">/* Правильно */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+/* Неправильно */
+.element {
+  font-size: 17px !important;
+}
+</code></pre>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
+              <h3 id="css-repeated-properties">Повторяющиеся свойства</h3>
+              <ul>
+                <li>Свойства <strong>не должны</strong> повторяться в рамках одной декларации.</li>
+                <li>Свойство <strong>может</strong> повторяться, если раньше описан сброс или общий случай.</li>
+              </ul>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-css">/* Правильно */
+.block {
+  margin: 0;
+  margin-left: 20px;
+  border: 10px solid #000000;
+  border-bottom-color: #ff0000;
+}
+
+/* Неправильно */
+.block {
+  margin-left: 10px;
+  border-left: 10px solid #000000;
+  margin-left: 20px;
+  border-left: 10px solid #ff0000;
+}
+</code></pre>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
+              <h3 id="css-color-format">Формат цветов</h3>
+              <ul>
+                <li>Цвета <strong>должны</strong> записываться строчными в 6-значном формате HEX.</li>
+                <li>Цвета <strong>могут</strong> записываться функциями <code>rgba</code> или <code>hsla</code>, если нужна прозрачность.</li>
+              </ul>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-css">/* Правильно */
+.block {
+  background-color: #ff0000;
+  border-left-color: #00ff00;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* Неправильно */
+.block {
+  background-color: #F00;
+  border-left-color: rgb(0, 255, 0);
+  color: black;
+}
+</code></pre>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
+              <h3 id="css-fractions">Дробные значения</h3>
+              <p>В дробных значениях <strong>не должно</strong> быть больше двух знаков после точки.</p>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-css">/* Правильно */
+.block {
+  width: 2.33%;
+}
+
+/* Неправильно */
+.block {
+  width: 2.33333%;
+}
+</code></pre>
               </figure>
             </div>
           </article>
