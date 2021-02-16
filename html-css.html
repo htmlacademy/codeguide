@@ -47,6 +47,9 @@
         <div class="sidebar-col">
           <a href="#html">HTML</a>
           <ul class="sidebar-menu">
+            <li><a href="#html-syntax-tag">Регистр тегов и атрибутов</a></li>
+
+
             <li><a href="#html-syntax">Синтаксис</a></li>
             <li><a href="#html-validator">Валидность</a></li>
             <li><a href="#html-doctype">HTML-доктайп</a></li>
@@ -157,6 +160,35 @@ barbershop/
 
         <section class="chapter">
           <h2 id="html">HTML</h2>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
+              <h3 id="html-syntax-tag">Регистр тегов и атрибутов</h3>
+              <p>Имена тегов и атрибуты <strong>должны</strong> быть записаны строчными.</p>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+&lt;ul&gt;
+  &lt;li&gt;Первый&lt;/li&gt;
+  &lt;li&gt;Второй&lt;/li&gt;
+  &lt;li&gt;Третий&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;img src="images/picture.png" width="400" height="400" alt="Кот смотрит на солнышко."&gt;
+
+&lt;!-- Неправильно --&gt;
+&lt;UL&gt;
+  &lt;LI&gt;Первый
+  &lt;LI&gt;Второй
+  &lt;LI&gt;Третий
+&lt;/UL&gt;
+
+&lt;IMG src="images/picture.png" width="400" height="400" alt="Кот смотрит на солнышко."&gt;
+                </code></pre>
+              </figure>
+            </div>
+          </article>
 
           <article class="chapter-part">
             <div class="chapter-part-col">
