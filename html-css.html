@@ -82,6 +82,7 @@
             <li><a href="#css-order">Порядок свойств</a></li>
             <li><a href="#css-class-names">Имена классов</a></li>
             <li><a href="#css-import">Правило @import</a></li>
+            <li><a href="#css-fonts-add">Подключение шрифтов</a></li>
             <li><a href="#css-font-variant">Варианты шрифта</a></li>
             <li><a href="#css-visually-hidden">Доступное скрытие</a></li>
           </ul>
@@ -866,6 +867,47 @@ barbershop/
               </figure>
             </div>
           </article>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
+              <h3 id="css-fonts-add">Подключение шрифтов</h3>
+              <ul>
+                <li>Базовые начертания семейства <strong>должны</strong> иметь общее название <code>font-family</code>.</li>
+                <li>Для каждого начертания <strong>должны</strong> быть указаны <code>font-weight</code> и <code>font-style</code>.</li>
+                <li>В описании шрифта <strong>должен</strong> быть указан режим отрисовки <code>font-display</code>.</li>
+              </ul>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-css">/* Правильно */
+@font-face {
+  font-family: "PT Sans";
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/pt-sans-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "PT Sans";
+  font-weight: bold;
+  font-style: normal;
+  font-display: optional;
+  src: url("../fonts/pt-sans-bold.woff2") format("woff2");
+}
+
+/* Неправильно */
+@font-face {
+  font-family: "PT Sans Regular";
+}
+
+@font-face {
+  font-family: "PT Sans Bold";
+}</code></pre>
+              </figure>
+            </div>
+          </article>
+
 
           <article class="chapter-part">
             <div class="chapter-part-col">
