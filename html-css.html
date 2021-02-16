@@ -56,6 +56,7 @@
             <li><a href="#html-attr-double-quotes">Кавычки в атрибутах</a></li>
             <li><a href="#html-attr-single-quotes">Кавычки в значениях атрибутов</a></li>
             <li><a href="#html-attr-no-units">Единицы измерения в атрибутах</a></li>
+            <li><a href="#html-class-name">Разделители в имени класса</a></li>
 
 
             <li><a href="#html-syntax">Синтаксис</a></li>
@@ -172,7 +173,8 @@ barbershop/
           <article class="chapter-part">
             <div class="chapter-part-col">
               <h3 id="html-syntax-tag">Регистр тегов и атрибутов</h3>
-              <p>Имена тегов и атрибуты <strong>должны</strong> быть записаны строчными.</p>
+              <p>Имена тегов, атрибуты и их значения <strong>должны</strong> быть записаны строчными.</p>
+              <p>Исключение: атрибуты, которые требуют другого написания, например <code>viewBox</code></p>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
@@ -183,7 +185,7 @@ barbershop/
   &lt;li&gt;Третий&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;img src="images/picture.png" width="400" height="400" alt="Кот смотрит на солнышко."&gt;
+&lt;img class="image" src="images/picture.png" width="400" height="400" alt="Кот смотрит на солнышко."&gt;
 
 &lt;!-- Неправильно --&gt;
 &lt;UL&gt;
@@ -192,7 +194,7 @@ barbershop/
   &lt;LI&gt;Третий
 &lt;/UL&gt;
 
-&lt;IMG SRC="images/picture.png" WIDTH="400" HEIGHT="400" ALT="Кот смотрит на солнышко."&gt;
+&lt;IMG class="IMAGE" SRC="images/picture.png" WIDTH="400" HEIGHT="400" ALT="Кот смотрит на солнышко."&gt;
                 </code></pre>
               </figure>
             </div>
@@ -358,6 +360,27 @@ barbershop/
 
 &lt;!-- Неправильно --&gt;
 &lt;img src="images/picture.png" width="400px" height="400px" alt="Кот смотрит на солнышко."&gt;
+                </code></pre>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
+              <h3 id="html-class-name">Разделители в имени класса</h3>
+              <p>Разделителями в имени класса <strong>должны</strong> быть только дефисы <code>-</code> и подчёркивания <code>_</code>. В коде необходимо придерживаться одного стиля.</p>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+&lt;input class="form-input form-input-field" type="text"&gt;
+&lt;input class="form_input form_input_field" type="text"&gt;
+&lt;input class="form__input form-input__field" type="text"&gt;
+&lt;input class="form--input form-input--field" type="text"&gt;
+
+&lt;!-- Неправильно --&gt;
+&lt;input class="formInput formInputField" type="text"&gt;
+&lt;input class="form-input form_input_field" type="text"&gt;
                 </code></pre>
               </figure>
             </div>
