@@ -58,9 +58,10 @@
             <li><a href="#html-attr-no-units">Единицы измерения в атрибутах</a></li>
             <li><a href="#html-class-name">Разделители в имени класса</a></li>
             <li><a href="#html-tags-formatting">Форматирование тегов</a></li>
+            <li><a href="#html-basic-parts">Базовые части разметки</a></li>
+            <li><a href="#html-form-method">Атрибут <code>method</code> в форме</a></li>
 
 
-            <li><a href="#html-syntax">Синтаксис</a></li>
             <li><a href="#html-validator">Валидность</a></li>
             <li><a href="#html-doctype">HTML-доктайп</a></li>
             <li><a href="#html-encoding">Кодировка символов</a></li>
@@ -428,32 +429,54 @@ barbershop/
 
           <article class="chapter-part">
             <div class="chapter-part-col">
-              <h3 id="html-syntax">Синтаксис</h3>
+              <h3 id="html-basic-parts">Базовые части разметки</h3>
               <ul>
-                <li>Теги и&nbsp;их&nbsp;атрибуты пишутся строчными буквами. Для значений атрибутов всегда используются двойные кавычки.</li>
-                <li>Необязательный закрывающий слеш у&nbsp;одиночных тегов (<code>&lt;img&gt;</code>, <code>&lt;br&gt;</code> и&nbsp;другие) не&nbsp;ставится.</li>
-                <li>Необязательные закрывающие теги (например, <code>&lt;/li&gt;</code> или <code>&lt;/body&gt;</code>) не&nbsp;пропускаются.</li>
-                <li>Для проверки HTML-кода используйте файл конфигурации <a href="https://github.com/htmlacademy/htmlhint-config-htmlacademy/blob/main/.htmlhintrc" target="_blank">.htmlhintrc</a> для настройки валидатора <a href="http://htmlhint.com" target="_blank">HTMLHint</a>.</li>
+                <li>Современный тип документа <code>&lt;!DOCTYPE html&gt;</code></li>
+                <li>Корневой элемент <code>&lt;html&gt;</code> с языком документа <code>lang</code></li>
+                <li>Метаинформация <code>&lt;head&gt;</code></li>
+                <li>Заголовок документа <code>&lt;title&gt;</code></li>
+                <li>Кодировка документа <code>&lt;meta charset="utf-8"&gt;</code></li>
+                <li>Тело документа <code>&lt;body&gt;</code></li>
               </ul>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+&lt;!DOCTYPE html&gt;
 &lt;html lang="ru"&gt;
   &lt;head&gt;
     &lt;meta charset="utf-8"&gt;
-    &lt;title&gt;Страница о коте&lt;/title&gt;
+    &lt;title&gt;Заголовок&lt;/title&gt;
   &lt;/head&gt;
-  &lt;body&gt;
-    &lt;article class="post"&gt;
-      &lt;h1&gt;Красивый кот&lt;/h1&gt;
-      &lt;figure class="post-item"&gt;
-        &lt;img src="cat.jpg" alt="Изображение кота"&gt;
-        &lt;figcaption&gt;Кот красив!&lt;/figcaption&gt;
-      &lt;/figure&gt;
-    &lt;/article&gt;
-  &lt;/body&gt;
-&lt;/html&gt;</code></pre>
+  &lt;body&gt;Страница&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;!-- Неправильно --&gt;
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;
+&lt;html&gt;
+  &lt;title&gt;Заголовок&lt;/title&gt;
+  Страница
+&lt;/html&gt;
+</code></pre>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
+              <h3 id="html-form-method">Атрибут <code>method</code> в форме</h3>
+              <p>В атрибуте <code>method</code> <strong>должен</strong> быть указан тип отправки данных.</p>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+&lt;form method="post"&gt;&lt;/form&gt;
+&lt;form method="get"&gt;&lt;/form&gt;
+
+&lt;!-- Неправильно --&gt;
+&lt;form method=""&gt;&lt;/form&gt;
+&lt;form&gt;&lt;/form&gt;
+                </code></pre>
               </figure>
             </div>
           </article>
