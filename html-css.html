@@ -37,6 +37,14 @@
         <h2 class="visually-hidden">Оглавление</h2>
 
         <div class="sidebar-col sidebar-col-first">
+          <a href="#code">Код</a>
+          <ul class="sidebar-menu">
+            <li><a href="#grouping">Группировка файлов</a></li>
+            <li><a href="#formatting">Форматирование кода</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-col">
           <a href="#html">HTML</a>
           <ul class="sidebar-menu">
             <li><a href="#html-syntax">Синтаксис</a></li>
@@ -68,13 +76,92 @@
 
       <div class="chapters">
         <section class="chapter">
+          <h2 id="code">Код</h2>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
+              <h3 id="grouping">Группировка файлов</h3>
+              <ul>
+                <li>Файлы схожих типов <strong>должны</strong> быть сгруппированы в папки: картинки, стили, скрипты, шрифты.</li>
+                <li>Если внутри папок файлов становится много или выделяются подгруппы, <strong>можно</strong> добавить вложенные папки.</li>
+               </ul>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+barbershop/
+  pictures/
+    catalog/
+      wine.jpg
+      cheese.png
+    product/
+      wine-big.jpg
+      cheese-big.png
+  images/
+    logo.svg
+    favicons/
+      32x32.png
+      16x16.png
+    content/
+      cat.jpg
+      map.png
+  scripts/
+    menu.js
+    map.js
+  styles/
+    styles.css
+  catalog.html
+  index.html
+
+&lt;!-- Неправильно --&gt;
+barbershop/
+  assets/
+    logo.svg
+    icon-32x32.png
+    icon-16x16.png
+    menu.js
+    map.js
+    header.css
+    footer.css
+    index.css
+    fonts.css
+  index.html
+                </code></pre>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
+              <h3 id="formatting">Форматирование кода</h3>
+              <p>Код проекта <strong>должен</strong> соответствовать параметрам <a href="https://github.com/htmlacademy/codeguide/blob/master/.editorconfig">EditorConfig</a>, описанным в файле <code>.editorconfig</code> проекта.</p>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-markup">&lt;!-- Правильно--&gt;
+&lt;ul&gt;
+∙∙&lt;li&gt;Пункт&lt;/li&gt;
+∙∙&lt;li&gt;Пункт&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Неправильно--&gt;
+&lt;ul&gt;
+→ &lt;li&gt;Пункт&lt;/li&gt;
+∙∙∙∙&lt;li&gt;Пункт&lt;/li&gt;∙∙∙∙∙∙∙
+&lt;/ul&gt;</code></pre>
+              </figure>
+            </div>
+          </article>
+
+        </section>
+
+        <section class="chapter">
           <h2 id="html">HTML</h2>
 
           <article class="chapter-part">
             <div class="chapter-part-col">
               <h3 id="html-syntax">Синтаксис</h3>
               <ul>
-                <li>Для отступов у&nbsp;вложенных элементов используются два пробела. Для правильного форматирования используйте файл <a href="https://github.com/htmlacademy/codeguide/blob/master/.editorconfig" target="_blank">.editorconfig</a> в&nbsp;вашем редакторе.</li>
                 <li>Теги и&nbsp;их&nbsp;атрибуты пишутся строчными буквами. Для значений атрибутов всегда используются двойные кавычки.</li>
                 <li>Необязательный закрывающий слеш у&nbsp;одиночных тегов (<code>&lt;img&gt;</code>, <code>&lt;br&gt;</code> и&nbsp;другие) не&nbsp;ставится.</li>
                 <li>Необязательные закрывающие теги (например, <code>&lt;/li&gt;</code> или <code>&lt;/body&gt;</code>) не&nbsp;пропускаются.</li>
@@ -334,7 +421,6 @@
               <h3 id="css-syntax">Синтаксис</h3>
               <ul>
                 <li>После значения свойства обязательно ставится точка с&nbsp;запятой.</li>
-                <li>Для отступов внутри правил используются два пробела. Для правильного форматирования используйте файл <a href="https://github.com/htmlacademy/codeguide/blob/master/.editorconfig" target="_blank">.editorconfig</a> в&nbsp;вашем редакторе.</li>
                 <li>Шестнадцатеричное значение цвета не&nbsp;сокращается, а&nbsp;пишется полностью из&nbsp;всех шести символов. Для записи используются строчные буквы. Например, <code>#f5f5f5</code>.</li>
                 <li>Названия тегов и&nbsp;свойств в&nbsp;правилах пишутся строчными буквами.</li>
                 <li>Начальный ноль для значений не&nbsp;сокращается (например, <code>.5</code> вместо <code>0.5</code>).</li>
