@@ -48,6 +48,14 @@
           <a href="#html">HTML</a>
           <ul class="sidebar-menu">
             <li><a href="#html-syntax-tag">Регистр тегов и атрибутов</a></li>
+            <li><a href="#html-closed-tag">Двойные теги</a></li>
+            <li><a href="#html-single-tag">Одиночные теги</a></li>
+            <li><a href="#html-attr-order">Порядок атрибутов</a></li>
+            <li><a href="#html-single-attr-no-value">Одиночные атрибуты</a></li>
+            <li><a href="#html-attr-no-space">Форматирование атрибутов</a></li>
+            <li><a href="#html-attr-double-quotes">Кавычки в атрибутах</a></li>
+            <li><a href="#html-attr-single-quotes">Кавычки в значениях атрибутов</a></li>
+            <li><a href="#html-attr-no-units">Единицы измерения в атрибутах</a></li>
 
 
             <li><a href="#html-syntax">Синтаксис</a></li>
@@ -184,7 +192,172 @@ barbershop/
   &lt;LI&gt;Третий
 &lt;/UL&gt;
 
-&lt;IMG src="images/picture.png" width="400" height="400" alt="Кот смотрит на солнышко."&gt;
+&lt;IMG SRC="images/picture.png" WIDTH="400" HEIGHT="400" ALT="Кот смотрит на солнышко."&gt;
+                </code></pre>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
+              <h3 id="html-closed-tag">Двойные теги</h3>
+              <p>Двойные теги <strong>должны</strong> иметь открывающий и закрывающий теги.</p>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+&lt;ul&gt;
+  &lt;li&gt;Первый&lt;/li&gt;
+  &lt;li&gt;Второй&lt;/li&gt;
+  &lt;li&gt;Третий&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Неправильно --&gt;
+&lt;ul&gt;
+  &lt;li&gt;Первый
+  &lt;li&gt;Второй
+  &lt;li&gt;Третий
+&lt;/ul&gt;
+                </code></pre>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
+              <h3 id="html-single-tag">Одиночные теги</h3>
+              <p>Одиночные теги <strong>не должны</strong> иметь закрывающий тег или слэш.</p>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+&lt;img src="images/picture.png" width="400" height="400" alt="Кот смотрит на солнышко."&gt;
+
+&lt;input type="text" name="name"&gt;
+
+&lt;!-- Неправильно --&gt;
+&lt;img src="images/picture.png" width="400" height="400" alt="Кот смотрит на солнышко." /&gt;
+
+&lt;input type="text"&gt;&lt;/input&gt;
+                </code></pre>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
+              <h3 id="html-attr-order">Порядок атрибутов</h3>
+              <ul>
+                <li>Атрибуты <strong>должны</strong> идти в одном порядке, чтобы упростить их чтение.</li>
+                <li>Атрибут <code>class</code> <strong>должен</strong> идти сразу после имени тега.</li>
+              </ul>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+&lt;label class="field-group-label" for="appointment-phone"&gt;
+&lt;input class="field-group-input field" type="text" id="appointment-phone" placeholder="+7 000-00-00"&gt;
+
+&lt;label class="field-group-label" for="appointment-date"&gt;
+&lt;input class="field-group-input field" type="text" id="appointment-date" placeholder="01.01.2020"&gt;
+
+&lt;!-- Неправильно --&gt;
+&lt;label for="appointment-phone" class="field-group-label"&gt;
+&lt;input class="field-group-input field" type="text" placeholder="+7 000-00-00" id="appointment-phone" &gt;
+
+&lt;label for="appointment-date" class="field-group-label"&gt;
+&lt;input id="appointment-date" class="field-group-input field" type="text" placeholder="01.01.2020"&gt;
+                </code></pre>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
+              <h3 id="html-single-attr-no-value">Одиночные атрибуты</h3>
+              <p>Одиночные атрибуты <strong>должны</strong> быть записаны без значения.</p>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+&lt;input type="text" disabled required&gt;
+
+&lt;!-- Неправильно --&gt;
+&lt;input type="text" disabled="disabled" required="required"&gt;
+                </code></pre>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
+              <h3 id="html-attr-no-space">Форматирование атрибутов</h3>
+              <p>В записи атрибутов <strong>не должно</strong> быть пробелов вокруг знака «равно» <code>=</code></p>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+&lt;input class="field-group-input field" type="text" id="appointment-date" placeholder="01.01.2020"&gt;
+
+&lt;!-- Неправильно --&gt;
+&lt;input class = "field-group-input field" type = "text" id = "appointment-date" placeholder = "01.01.2020"&gt;
+                </code></pre>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
+              <h3 id="html-attr-double-quotes">Кавычки в атрибутах</h3>
+              <p>Значения атрибутов <strong>должны</strong> быть в двойных кавычках.</p>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+&lt;input class="field-group-input field" type="text" id="appointment-date" placeholder="01.01.2020"&gt;
+
+&lt;!-- Неправильно --&gt;
+&lt;input class='field-group-input field' type='text' id='appointment-date' placeholder='01.01.2020'&gt;
+
+&lt;input class=field-group-input type=text id=appointment-date placeholder=01.01.2020&gt;
+                </code></pre>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
+              <h3 id="html-attr-single-quotes">Кавычки в значениях атрибутов</h3>
+              <p>Вложенные кавычки в значениях <strong>должны</strong> быть одиночными.</p>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+&lt;button class="button" type="button" onclick="show('menu')"&gt;
+  Меню
+&lt;/button&gt;
+
+&lt;!-- Неправильно --&gt;
+&lt;button class="button" type="button" onclick="show("menu")"&gt;
+  Меню
+&lt;/button&gt;
+                </code></pre>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
+              <h3 id="html-attr-no-units">Единицы измерения в атрибутах</h3>
+              <p>В атрибутах <strong>не должно</strong> быть единиц измерения.</p>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+&lt;img src="images/picture.png" width="400" height="400" alt="Кот смотрит на солнышко."&gt;
+
+&lt;!-- Неправильно --&gt;
+&lt;img src="images/picture.png" width="400px" height="400px" alt="Кот смотрит на солнышко."&gt;
                 </code></pre>
               </figure>
             </div>
