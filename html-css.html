@@ -57,6 +57,7 @@
             <li><a href="#html-attr-single-quotes">Кавычки в значениях атрибутов</a></li>
             <li><a href="#html-attr-no-units">Единицы измерения в атрибутах</a></li>
             <li><a href="#html-class-name">Разделители в имени класса</a></li>
+            <li><a href="#html-tags-formatting">Форматирование тегов</a></li>
 
 
             <li><a href="#html-syntax">Синтаксис</a></li>
@@ -381,6 +382,45 @@ barbershop/
 &lt;!-- Неправильно --&gt;
 &lt;input class="formInput formInputField" type="text"&gt;
 &lt;input class="form-input form_input_field" type="text"&gt;
+                </code></pre>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
+              <h3 id="html-tags-formatting">Форматирование тегов</h3>
+              <ul>
+                <li>Вложенность тегов <strong>должна</strong> обозначаться переносами и отступами.</li>
+                <li>Каждый новый вложенный тег <strong>должен</strong> переноситься на отдельную строку с отступом.</li>
+                <li>Текст внутри тегов <strong>должен</strong> оставаться на одной строке с тегами.</li>
+              </ul>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+&lt;div class="menu"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;a href=""&gt;Первый&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=""&gt;Второй&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=""&gt;Третий&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;!-- Неправильно --&gt;
+&lt;div class="menu"&gt;&lt;ul&gt;
+  &lt;li&gt;&lt;a href=""&gt;Первый&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=""&gt;
+    Второй
+  &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=""&gt;Третий&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;
                 </code></pre>
               </figure>
             </div>
