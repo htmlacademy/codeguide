@@ -181,7 +181,7 @@ project/
             <div class="chapter-part-col">
               <h3 id="html-syntax-tag">Регистр тегов и атрибутов</h3>
               <p>Имена тегов, атрибуты и их значения <strong>должны</strong> быть записаны строчными.</p>
-              <p>Исключение: атрибуты, которые требуют другого написания, например <code>viewBox</code></p>
+              <p>Исключение: атрибуты для SVG-элементов, например <code>viewBox</code>, <code>preserveAspectRatio</code> и другие.</p>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
@@ -193,6 +193,10 @@ project/
 &lt;/ul&gt;
 
 &lt;img class="image" src="images/picture.png" width="400" height="400" alt="Кот смотрит на солнышко."&gt;
+
+&lt;svg width="27" height="16" viewBox="0 0 128 76"&gt;
+  &lt;path d="M125,5.15c.89-3,0-5.15-4.23-5.15h-14a6,6,0,0,0-6.09Z"/&gt;
+&lt;/svg&gt;
 
 &lt;!-- Неправильно --&gt;
 &lt;UL&gt;
