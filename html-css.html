@@ -37,6 +37,10 @@
         <h2 class="visually-hidden">Оглавление</h2>
 
         <div class="sidebar-col sidebar-col-first">
+          <a href="#lint">Линтеры</a>
+        </div>
+
+        <div class="sidebar-col">
           <a href="#code">Код</a>
           <ul class="sidebar-menu">
             <li><a href="#grouping">Группировка файлов</a></li>
@@ -95,6 +99,21 @@
       </nav>
 
       <div class="chapters">
+        <section class="chapter">
+          <h2 id="lint">Автоматизация проверки кода</h2>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
+              <p>При написании кода вам сложно будет запомнить все правила кодгайда. Поэтому эту работу стоит отдать роботам.</p>
+              <ul>
+                <li>Для поддержания единообразия в коде используйте <a href="https://github.com/htmlacademy/codeguide/blob/master/.editorconfig">EditorConfig</a>.</li>
+                <li>Для HTML используйте <a href="https://github.com/htmlacademy/htmlhint-config-htmlacademy">HTMLHint</a>.</li>
+                <li>Для стилей <a href="https://github.com/htmlacademy/stylelint-config-htmlacademy">Stylelint</a></li>
+              </ul>
+            </div>
+          </article>
+        </section>
+
         <section class="chapter">
           <h2 id="code">Код</h2>
 
@@ -177,7 +196,6 @@ project/
 
         <section class="chapter">
           <h2 id="html">HTML</h2>
-
           <article class="chapter-part">
             <div class="chapter-part-col">
               <h3 id="html-basic-parts">Базовые части разметки</h3>
