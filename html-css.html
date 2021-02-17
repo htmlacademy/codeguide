@@ -78,7 +78,15 @@
         <div class="sidebar-col sidebar-col-last">
           <a href="#css">CSS</a>
           <ul class="sidebar-menu">
-            <li><a href="#css-syntax">Синтаксис</a></li>
+            <li><a href="#css-case-sensitivity">Регистр селектор и свойств</a></li>
+            <li><a href="#css-multiselectors">Перенос селекторов</a></li>
+            <li><a href="#css-combnators">Пробелы между комбинаторами</a></li>
+            <li><a href="#css-structure">Структура объявления</a></li>
+            <li><a href="#css-color">Цвета</a></li>
+            <li><a href="#css-leading-zero">Ведущий ноль</a></li>
+            <li><a href="#css-quotes">Кавычки</a></li>
+            <li><a href="#css-comma">Пробелы после запятых</a></li>
+            <li><a href="#css-units">Единицы измерения</a></li>
             <li><a href="#css-order">Порядок свойств</a></li>
             <li><a href="#css-class-names">Имена классов</a></li>
             <li><a href="#css-import">Правило @import</a></li>
@@ -718,43 +726,225 @@ project/
 
           <article class="chapter-part">
             <div class="chapter-part-col">
-              <h3 id="css-syntax">Синтаксис</h3>
+              <h3 id="css-case-sensitivity">Регистр селектор и свойств</h3>
+              <p>Селекторы и свойства <strong>должны</strong> записываться строчными буквами.</p>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-css">/* Правильно */
+.element {
+  color: red;
+}
+
+/* Неправильно */
+.Element {
+  Color: red;
+}
+
+.ELEMENT {
+  COLOR: red;
+}
+
+</code></pre>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
+              <h3 id="css-multiselectors">Перенос селекторов</h3>
+              <p>Селекторы, разделённые запятой, <strong>должны</strong> записываться на новых строках.</p>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-css">/* Правильно */
+h1,
+h2,
+h3 {
+  margin-top: 0;
+}
+
+/* Неправильно */
+h1, h2, h3 {
+  margin-top: 0;
+}
+</code></pre>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
+              <h3 id="css-combnators">Пробелы между комбинаторами</h3>
+              <p>До&nbsp;и&nbsp;после комбинатора между селекторами ставится один пробел.</p>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-css">/* Правильно */
+h2 + h3 {}
+ul > li {}
+
+/* Неправильно */
+h2+h2 p{}
+ul >li {}
+</code></pre>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
+              <h3 id="css-structure">Структура объявления</h3>
               <ul>
-                <li>Селекторы и свойства <strong>должны</strong> записываться строчными буквами.</li>
-                <li>Селекторы, разделённые запятой, <strong>должны</strong> записываться на новых строках.</li>
-                <li>До&nbsp;и&nbsp;после комбинатора между селекторами (например, <code>p&nbsp;&gt;&nbsp;a</code>) ставится один пробел.</li>
                 <li>Перед открывающейся фигурной скобкой <strong>должен</strong> быть пробел. После скобки запись идёт с&nbsp;новой строки.</li>
                 <li>Свойства <strong>должны</strong> стоять на отдельных строках.</li>
                 <li>Свойства внутри блока <strong>должны</strong> иметь один внутренний отступ.</li>
                 <li>После двоеточия <strong>должен</strong> быть пробел. Перед двоеточием пробел не&nbsp;нужен.</li>
                 <li>В конце объявления <strong>должна</strong> быть точка с запятой.</li>
-                <li>Шестнадцатеричное значение цвета не&nbsp;сокращается, а&nbsp;пишется полностью из&nbsp;всех шести символов. Для записи используются строчные буквы. Например, <code>#f5f5f5</code>.</li>
-                <li>Начальный ноль для значений не&nbsp;сокращается (например, <code>.5</code> вместо <code>0.5</code>).</li>
-                <li>Во&nbsp;всех случаях в&nbsp;стилях используются двойные кавычки. В&nbsp;необязательных случаях кавычки не&nbsp;опускаются.</li>
-                <li>После запятых в перечислениях, например <code>rgb()</code>, <code>rgba()</code>, <code>hsl()</code>, <code>hsla()</code> или <code>rect()</code> <strong>должен</strong> быть пробел .</li>
-                <li>Единицы измерения не&nbsp;пишутся, там где в&nbsp;них нет необходимости. Например, <code>border:&nbsp;0</code>.</li>
                 <li>Закрывающая скобка <strong>должна</strong> быть на новой строке и без отступа.</li>
                 <li>Между блоками правил <strong>должна</strong> быть одна пустая строка.</li>
-                <li>Для проверки CSS-кода используйте <a href="https://github.com/htmlacademy/stylelint-config-htmlacademy" target="_blank">конфигурацию</a> для настройки валидатора <a href="http://stylelint.io" target="_blank">stylelint</a>.</li>
               </ul>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-css">/* Хорошо */
-.selector,
-.selector-secondary,
-.selector[type="text"] {
-  padding: 15px;
-  margin-bottom: 15px;
-  background-color: rgba(0, 0, 0, 0.5);
-  box-shadow: 0 1px 2px #cccccc, inset 0 1px 0 #ffffff;
+                <pre><code class="language-css">/* Правильно */
+.block {
+  margin-bottom: 0;
+  margin-top: 0;
+  font-size: 14px;
+  line-height: 20;
+  color: #ff0000;
 }
 
-/* Плохо */
-.selector, .selector-SECONDARY, .selector[type=text]{ color: red;
-  padding:15px;margin:0px 0px 15px;
-    background-color:rgba(0,0,0,.5);
-  box-shadow:0px 1px 2px #CCC,inset 0 1px 0 #FFF}</code></pre>
+.element {
+  background-color: #000000;
+}
+
+/* Неправильно */
+.block{margin-bottom: 0;
+    margin-top: 0;
+  font-size: 14px;line-height: 20;
+  color :red}
+.element {
+  background-color: #000000;
+}
+</code></pre>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
+              <h3 id="css-color">Цвета</h3>
+              <p>Шестнадцатеричное значение цвета не&nbsp;сокращается, а&nbsp;пишется полностью из&nbsp;всех шести символов. Для записи используются строчные буквы.</p>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-css">/* Правильно */
+.block {
+  color: #ff0000;
+}
+/* Неправильно */
+.block {
+  color: red;
+  background-color: #ff0;
+}
+</code></pre>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
+              <h3 id="css-leading-zero">Ведущий ноль</h3>
+              <p>Начальный ноль для значений не&nbsp;сокращается.</p>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-css">/* Правильно */
+.block {
+  opacity: 0.5;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Неправильно */
+.block {
+  opacity: .5;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+</code></pre>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
+              <h3 id="css-quotes">Кавычки</h3>
+              <p>Во&nbsp;всех случаях в&nbsp;стилях используются двойные кавычки. В&nbsp;необязательных случаях кавычки не&nbsp;опускаются.</p>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-css">/* Правильно */
+.field[type="text"] {
+  background-color: url("images/cat.jpg");
+}
+
+/* Неправильно */
+.field[type=text] {
+  background-color: url(images/cat.jpg);
+}
+
+</code></pre>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
+              <h3 id="css-comma">Пробелы после запятых</h3>
+              <p>После запятых в перечислениях **должен** быть пробел .</p>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-css">/* Правильно */
+.element {
+  background-color: rgb(0, 0, 0);
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* Неправильно */
+.element {
+  background-color: rgb(0,0,0);
+  color: rgba(0 ,0 ,0 ,0.5);
+}
+</code></pre>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
+              <h3 id="css-units">Единицы измерения</h3>
+              <p>Единицы измерения не&nbsp;пишутся, там где в&nbsp;них нет необходимости. Например, <code>border:&nbsp;0</code>.</p>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-css">/* Правильно */
+.element {
+  border: 0;
+  box-shadow: 0 1px 2px #cccccc, inset 0 1px 0 #ffffff;
+  margin-top: 0;
+}
+
+/* Неправильно */
+.element {
+  border: 0px;
+  box-shadow: 0px 1px 2px #cccccc, inset 0px 1px 0 #ffffff;
+  margin-top: 0px;
+}
+
+</code></pre>
               </figure>
             </div>
           </article>
