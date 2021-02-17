@@ -509,7 +509,7 @@ project/
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-markup">&lt;!-- Хорошо: стилевой файл подключён в секции head --&gt;
+                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
 &lt;!DOCTYPE html&gt;
 &lt;html lang="ru"&gt;
   &lt;head&gt;
@@ -518,7 +518,7 @@ project/
   &lt;body&gt;…&lt;/body&gt;
 &lt;/html&gt;
 
-&lt;!-- Плохо: стилевой файл подключён в секции body --&gt;
+&lt;!-- Неправильно --&gt;
 &lt;!DOCTYPE html&gt;
 &lt;html lang="ru"&gt;
   &lt;head&gt;…&lt;/head&gt;
@@ -542,7 +542,7 @@ project/
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-markup">&lt;!-- Хорошо: скрипт подключается перед &lt;/body&gt; --&gt;
+                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
 &lt;!DOCTYPE html&gt;
 &lt;html lang="ru"&gt;
   &lt;head&gt;…&lt;/head&gt;
@@ -552,7 +552,7 @@ project/
   &lt;/body&gt;
 &lt;/html&gt;
 
-&lt;!-- Плохо: скрипт подключается в секции &lt;head&gt; --&gt;
+&lt;!-- Неправильно --&gt;
 &lt;!DOCTYPE html&gt;
 &lt;html lang="ru"&gt;
   &lt;head&gt;
@@ -573,16 +573,16 @@ project/
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-markup">&lt;!-- Хорошо: элемент формы radio связан с подписью через идентификатор --&gt;
+                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
 &lt;input type="radio" id="choose"&gt;
 &lt;label for="choose"&gt;Радио кнопка&lt;/label&gt;
 
-&lt;!-- Хорошо: элемент формы radio и подпись обёрнуты в label --&gt;
+&lt;!-- Правильно --&gt;
 &lt;label&gt;
   &lt;input type="radio"&gt; Радио кнопка
 &lt;/label&gt;
 
-&lt;!-- Плохо: подпись не связана с элементом формы --&gt;
+&lt;!-- Неправильно --&gt;
 &lt;input type="radio" id="choose"&gt; Радио кнопка</code></pre>
               </figure>
             </div>
@@ -925,13 +925,13 @@ ul >li {}
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-css">/* Хорошо */
+                <pre><code class="language-css">/* Правильно */
 .alert-danger { … }
 .tweet .user-picture { … }
 .button { … }
 .layout-center { … }
 
-/* Плохо */
+/* Неправильно */
 .testElement { … }
 .t { … }
 .big_red_button { … }
@@ -949,10 +949,10 @@ ul >li {}
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-markup">&lt;!-- Хорошо: подключение тегом link --&gt;
+                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
 &lt;link rel="stylesheet" href="module.css"&gt;
 
-&lt;!-- Плохо --&gt;
+&lt;!-- Неправильно --&gt;
 &lt;style&gt;
   @import url("module.css");
 &lt;/style&gt;</code></pre>
@@ -1023,27 +1023,22 @@ ul >li {}
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-css">/* Хорошо: указан альтернативный веб-безопасный шрифт и его тип семейства */
+                <pre><code class="language-css">/* Правильно */
 body {
   font-family: "Helvetica", "Arial", sans-serif;
 }
 
-/* Кому-то нравится Arial, кому-то Tahoma */
-body {
-  font-family: "Helvetica", "Tahoma", sans-serif;
-}
-
-/* Плохо: указан только нестандартный шрифт */
+/* Неправильно: указан только нестандартный шрифт */
 body {
   font-family: "Helvetica";
 }
 
-/* Плохо: указан только нестандартный шрифт и тип семейства, альтернативный веб-безопасный шрифт отсутствует */
+/* Неправильно: указан только нестандартный шрифт и тип семейства, альтернативный веб-безопасный шрифт отсутствует */
 body {
   font-family: "Helvetica", sans-serif;
 }
 
-/* Плохо: Georgia — шрифт с засечками, а нестандартный шрифт — без засечек */
+/* Неправильно: Georgia — шрифт с засечками, а нестандартный шрифт — без засечек */
 body {
   font-family: "Helvetica", "Georgia", sans-serif;
 }</code></pre>
@@ -1170,18 +1165,7 @@ body {
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-css">/* Плохо: скрывать элемент с помощью font-size, display:none */
-h1 {
-  font-size: 0;
-}
-
-.title {
-  display: none;
-}</code></pre>
-              </figure>
-              <br>
-              <figure>
-                <pre><code class="language-css">/* Хорошо: использован класс visually-hidden */
+                <pre><code class="language-css">/* Правильно */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -1197,6 +1181,17 @@ h1 {
               </figure>
               <figure>
                 <pre><code class="language-markup">&lt;h2 class="visually-hidden"&gt;Заголовок&lt;/h2&gt;</code></pre>
+              </figure>
+              <br>
+              <figure>
+                <pre><code class="language-css">/* Неправильно */
+h1 {
+  font-size: 0;
+}
+
+.title {
+  display: none;
+}</code></pre>
               </figure>
             </div>
           </article>
