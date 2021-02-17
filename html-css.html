@@ -71,25 +71,25 @@
         <div class="sidebar-col sidebar-col-last">
           <a href="#css">CSS</a>
           <ul class="sidebar-menu">
+            <li><a href="#css-import">Правило @import</a></li>
+            <li><a href="#css-structure">Структура объявления</a></li>
+            <li><a href="#css-class-names">Имена классов</a></li>
             <li><a href="#css-case-sensitivity">Регистр селектор и свойств</a></li>
             <li><a href="#css-multiselectors">Перенос селекторов</a></li>
             <li><a href="#css-combnators">Пробелы между комбинаторами</a></li>
-            <li><a href="#css-structure">Структура объявления</a></li>
+            <li><a href="#css-color-format">Формат цветов</a></li>
             <li><a href="#css-color">Цвета</a></li>
-            <li><a href="#css-leading-zero">Ведущий ноль</a></li>
             <li><a href="#css-quotes">Кавычки</a></li>
+            <li><a href="#css-leading-zero">Ведущий ноль</a></li>
             <li><a href="#css-comma">Пробелы после запятых</a></li>
             <li><a href="#css-units">Единицы измерения</a></li>
-            <li><a href="#css-order">Порядок свойств</a></li>
-            <li><a href="#css-class-names">Имена классов</a></li>
-            <li><a href="#css-import">Правило @import</a></li>
+            <li><a href="#css-repeated-properties">Повторяющиеся свойства</a></li>
+            <li><a href="#css-fractions">Дробные значения</a></li>
+            <li><a href="#css-important">!important</a></li>
             <li><a href="#css-fonts-add">Подключение шрифтов</a></li>
             <li><a href="#css-font-variant">Варианты шрифта</a></li>
-            <li><a href="#css-important">!important</a></li>
-            <li><a href="#css-repeated-properties">Повторяющиеся свойства</a></li>
-            <li><a href="#css-color-format">Формат цветов</a></li>
-            <li><a href="#css-fractions">Дробные значения</a></li>
             <li><a href="#css-visually-hidden">Доступное скрытие</a></li>
+            <li><a href="#css-order">Порядок свойств</a></li>
           </ul>
         </div>
       </nav>
@@ -620,6 +620,93 @@ project/
 
           <article class="chapter-part">
             <div class="chapter-part-col">
+              <h3 id="css-import">Правило <code>@import</code></h3>
+              <p>
+                Правило <code>@import</code> работает медленнее, чем тег <code>&lt;link&gt;</code>. В&nbsp;стилях <code>@import</code> не&nbsp;должен использоваться.
+              </p>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+&lt;link rel="stylesheet" href="module.css"&gt;
+
+&lt;!-- Неправильно --&gt;
+&lt;style&gt;
+  @import url("module.css");
+&lt;/style&gt;</code></pre>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
+              <h3 id="css-structure">Структура объявления</h3>
+              <ul>
+                <li>Перед открывающейся фигурной скобкой <strong>должен</strong> быть пробел. После скобки запись идёт с&nbsp;новой строки.</li>
+                <li>Свойства <strong>должны</strong> стоять на отдельных строках.</li>
+                <li>Свойства внутри блока <strong>должны</strong> иметь один внутренний отступ.</li>
+                <li>После двоеточия <strong>должен</strong> быть пробел. Перед двоеточием пробел не&nbsp;нужен.</li>
+                <li>В конце объявления <strong>должна</strong> быть точка с запятой.</li>
+                <li>Закрывающая скобка <strong>должна</strong> быть на новой строке и без отступа.</li>
+                <li>Между блоками правил <strong>должна</strong> быть одна пустая строка.</li>
+              </ul>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-css">/* Правильно */
+.block {
+  margin-bottom: 0;
+  margin-top: 0;
+  font-size: 14px;
+  line-height: 20;
+  color: #ff0000;
+}
+
+.element {
+  background-color: #000000;
+}
+
+/* Неправильно */
+.block{margin-bottom: 0;
+    margin-top: 0;
+  font-size: 14px;line-height: 20;
+  color :red}
+.element {
+  background-color: #000000;
+}
+</code></pre>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
+              <h3 id="css-class-names">Имена классов</h3>
+              <ul>
+                <li>Имена классов пишутся строчными буквами.</li>
+                <li>Имена классов должны быть такими, чтобы по&nbsp;ним можно было быстро понять какому элементу страницы задан класс: избегайте сокращений, но&nbsp;не&nbsp;делайте их&nbsp;слишком длинными (более трёх слов).</li>
+                <li>Для написания классов используются английские слова и&nbsp;термины. Транслитом названия классов и&nbsp;атрибутов не&nbsp;пишутся.</li>
+              </ul>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-css">/* Правильно */
+.alert-danger { … }
+.tweet .user-picture { … }
+.button { … }
+.layout-center { … }
+
+/* Неправильно */
+.testElement { … }
+.t { … }
+.big_red_button { … }
+.knopka { … }</code></pre>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
               <h3 id="css-case-sensitivity">Регистр селектор и свойств</h3>
               <p>Селекторы и свойства <strong>должны</strong> записываться строчными буквами.</p>
             </div>
@@ -688,39 +775,26 @@ ul >li {}
 
           <article class="chapter-part">
             <div class="chapter-part-col">
-              <h3 id="css-structure">Структура объявления</h3>
+              <h3 id="css-color-format">Формат цветов</h3>
               <ul>
-                <li>Перед открывающейся фигурной скобкой <strong>должен</strong> быть пробел. После скобки запись идёт с&nbsp;новой строки.</li>
-                <li>Свойства <strong>должны</strong> стоять на отдельных строках.</li>
-                <li>Свойства внутри блока <strong>должны</strong> иметь один внутренний отступ.</li>
-                <li>После двоеточия <strong>должен</strong> быть пробел. Перед двоеточием пробел не&nbsp;нужен.</li>
-                <li>В конце объявления <strong>должна</strong> быть точка с запятой.</li>
-                <li>Закрывающая скобка <strong>должна</strong> быть на новой строке и без отступа.</li>
-                <li>Между блоками правил <strong>должна</strong> быть одна пустая строка.</li>
+                <li>Цвета <strong>должны</strong> записываться строчными в 6-значном формате HEX.</li>
+                <li>Цвета <strong>могут</strong> записываться функциями <code>rgba</code> или <code>hsla</code>, если нужна прозрачность.</li>
               </ul>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
                 <pre><code class="language-css">/* Правильно */
 .block {
-  margin-bottom: 0;
-  margin-top: 0;
-  font-size: 14px;
-  line-height: 20;
-  color: #ff0000;
-}
-
-.element {
-  background-color: #000000;
+  background-color: #ff0000;
+  border-left-color: #00ff00;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 /* Неправильно */
-.block{margin-bottom: 0;
-    margin-top: 0;
-  font-size: 14px;line-height: 20;
-  color :red}
-.element {
-  background-color: #000000;
+.block {
+  background-color: #F00;
+  border-left-color: rgb(0, 255, 0);
+  color: black;
 }
 </code></pre>
               </figure>
@@ -750,6 +824,28 @@ ul >li {}
 
           <article class="chapter-part">
             <div class="chapter-part-col">
+              <h3 id="css-quotes">Кавычки</h3>
+              <p>Во&nbsp;всех случаях в&nbsp;стилях используются двойные кавычки. В&nbsp;необязательных случаях кавычки не&nbsp;опускаются.</p>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-css">/* Правильно */
+.field[type="text"] {
+  background-color: url("images/cat.jpg");
+}
+
+/* Неправильно */
+.field[type=text] {
+  background-color: url(images/cat.jpg);
+}
+
+</code></pre>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
               <h3 id="css-leading-zero">Ведущий ноль</h3>
               <p>Начальный ноль для значений не&nbsp;сокращается.</p>
             </div>
@@ -765,28 +861,6 @@ ul >li {}
 .block {
   opacity: .5;
   background-color: rgba(0, 0, 0, .5);
-}
-
-</code></pre>
-              </figure>
-            </div>
-          </article>
-
-          <article class="chapter-part">
-            <div class="chapter-part-col">
-              <h3 id="css-quotes">Кавычки</h3>
-              <p>Во&nbsp;всех случаях в&nbsp;стилях используются двойные кавычки. В&nbsp;необязательных случаях кавычки не&nbsp;опускаются.</p>
-            </div>
-            <div class="chapter-part-col gray-bgcolor">
-              <figure>
-                <pre><code class="language-css">/* Правильно */
-.field[type="text"] {
-  background-color: url("images/cat.jpg");
-}
-
-/* Неправильно */
-.field[type=text] {
-  background-color: url(images/cat.jpg);
 }
 
 </code></pre>
@@ -845,117 +919,82 @@ ul >li {}
 
           <article class="chapter-part">
             <div class="chapter-part-col">
-              <h3 id="css-order">Порядок свойств</h3>
-              <p>
-                Объявления логически связанных свойств группируются в&nbsp;следующем порядке:
-              </p>
-              <ol>
-                <li>Позиционирование</li>
-                <li>Блочная модель</li>
-                <li>Типографика</li>
-                <li>Оформление</li>
-                <li>Анимация</li>
-                <li>Разное</li>
-              </ol>
-              <p>
-                Позиционирование следует первым потому, что оно влияет на&nbsp;положение блоков в&nbsp;потоке документа. Блочная модель идёт следующей, так как она определяет размеры и&nbsp;расположение блоков.
-              </p>
-              <p>
-                Все остальные объявления, которые изменяют вид внутренних частей блоков и&nbsp;не&nbsp;оказывают влияния на&nbsp;другие блоки, идут в&nbsp;последнюю очередь.
-              </p>
-              <p>
-                Сгруппированные объявления в&nbsp;правиле отделяются друг от&nbsp;друга пустой строкой.
-              </p>
-              <p>
-                Порядок объявления подробных правил, таких как <code>font-size</code>, <code>font-family</code>, <code>line-height</code>, должен соответствовать порядку в&nbsp;сокращённой версии правила. В&nbsp;случае совместного использования подробных и&nbsp;сокращённых правил, первой должна идти сокращённая версия.
-              </p>
-            </div>
-            <div class="chapter-part-col gray-bgcolor">
-              <figure>
-                <pre><code class="language-css">.declaration-order {
-  /* Позиционирование */
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 100;
-
-  /* Блочная модель */
-  display: block;
-  float: right;
-  width: 100px;
-  height: 100px;
-  margin: 10px;
-  padding: 10px;
-
-  /* Типографика */
-  font: normal 13px/1.5 "Arial", sans-serif;
-  font-style: normal;
-  font-size: 13px;
-  line-height: 1.5;
-  font-family: "Arial", sans-serif;
-  text-align: center;
-  color: #333333;
-
-  /* Оформление */
-  background-color: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  border-radius: 3px;
-  opacity: 1;
-
-  /* Анимация */
-  transition: color 1s;
-
-  /* Разное */
-  will-change: auto;
-}</code></pre>
-              </figure>
-            </div>
-          </article>
-
-          <article class="chapter-part">
-            <div class="chapter-part-col">
-              <h3 id="css-class-names">Имена классов</h3>
+              <h3 id="css-repeated-properties">Повторяющиеся свойства</h3>
               <ul>
-                <li>Имена классов пишутся строчными буквами.</li>
-                <li>Имена классов должны быть такими, чтобы по&nbsp;ним можно было быстро понять какому элементу страницы задан класс: избегайте сокращений, но&nbsp;не&nbsp;делайте их&nbsp;слишком длинными (более трёх слов).</li>
-                <li>Для написания классов используются английские слова и&nbsp;термины. Транслитом названия классов и&nbsp;атрибутов не&nbsp;пишутся.</li>
+                <li>Свойства <strong>не должны</strong> повторяться в рамках одной декларации.</li>
+                <li>Свойство <strong>может</strong> повторяться, если раньше описан сброс или общий случай.</li>
               </ul>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
                 <pre><code class="language-css">/* Правильно */
-.alert-danger { … }
-.tweet .user-picture { … }
-.button { … }
-.layout-center { … }
+.block {
+  margin: 0;
+  margin-left: 20px;
+  border: 10px solid #000000;
+  border-bottom-color: #ff0000;
+}
 
 /* Неправильно */
-.testElement { … }
-.t { … }
-.big_red_button { … }
-.knopka { … }</code></pre>
+.block {
+  margin-left: 10px;
+  border-left: 10px solid #000000;
+  margin-left: 20px;
+  border-left: 10px solid #ff0000;
+}
+</code></pre>
               </figure>
             </div>
           </article>
 
           <article class="chapter-part">
             <div class="chapter-part-col">
-              <h3 id="css-import">Правило <code>@import</code></h3>
-              <p>
-                Правило <code>@import</code> работает медленнее, чем тег <code>&lt;link&gt;</code>. В&nbsp;стилях <code>@import</code> не&nbsp;должен использоваться.
-              </p>
+              <h3 id="css-fractions">Дробные значения</h3>
+              <p>В дробных значениях <strong>не должно</strong> быть больше двух знаков после точки.</p>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
-&lt;link rel="stylesheet" href="module.css"&gt;
+                <pre><code class="language-css">/* Правильно */
+.block {
+  width: 2.33%;
+}
 
-&lt;!-- Неправильно --&gt;
-&lt;style&gt;
-  @import url("module.css");
-&lt;/style&gt;</code></pre>
+/* Неправильно */
+.block {
+  width: 2.33333%;
+}
+</code></pre>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
+              <h3 id="css-important"><code>!important</code></h3>
+              <ul>
+                <li>Ключевое слово <code>!important</code> <strong>не должно</strong> использоваться для борьбы со специфичностью.</li>
+                <li>Универсальные классы-хелперы <strong>могут</strong> использовать <code>!important</code>.</li>
+              </ul>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-css">/* Правильно */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+/* Неправильно */
+.element {
+  font-size: 17px !important;
+}
+</code></pre>
               </figure>
             </div>
           </article>
@@ -1048,116 +1087,6 @@ body {
 
           <article class="chapter-part">
             <div class="chapter-part-col">
-              <h3 id="css-important"><code>!important</code></h3>
-              <ul>
-                <li>Ключевое слово <code>!important</code> <strong>не должно</strong> использоваться для борьбы со специфичностью.</li>
-                <li>Универсальные классы-хелперы <strong>могут</strong> использовать <code>!important</code>.</li>
-              </ul>
-            </div>
-            <div class="chapter-part-col gray-bgcolor">
-              <figure>
-                <pre><code class="language-css">/* Правильно */
-.visually-hidden {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  margin: -1px !important;
-  border: 0 !important;
-  padding: 0 !important;
-  clip: rect(0 0 0 0) !important;
-  overflow: hidden !important;
-}
-
-/* Неправильно */
-.element {
-  font-size: 17px !important;
-}
-</code></pre>
-              </figure>
-            </div>
-          </article>
-
-          <article class="chapter-part">
-            <div class="chapter-part-col">
-              <h3 id="css-repeated-properties">Повторяющиеся свойства</h3>
-              <ul>
-                <li>Свойства <strong>не должны</strong> повторяться в рамках одной декларации.</li>
-                <li>Свойство <strong>может</strong> повторяться, если раньше описан сброс или общий случай.</li>
-              </ul>
-            </div>
-            <div class="chapter-part-col gray-bgcolor">
-              <figure>
-                <pre><code class="language-css">/* Правильно */
-.block {
-  margin: 0;
-  margin-left: 20px;
-  border: 10px solid #000000;
-  border-bottom-color: #ff0000;
-}
-
-/* Неправильно */
-.block {
-  margin-left: 10px;
-  border-left: 10px solid #000000;
-  margin-left: 20px;
-  border-left: 10px solid #ff0000;
-}
-</code></pre>
-              </figure>
-            </div>
-          </article>
-
-          <article class="chapter-part">
-            <div class="chapter-part-col">
-              <h3 id="css-color-format">Формат цветов</h3>
-              <ul>
-                <li>Цвета <strong>должны</strong> записываться строчными в 6-значном формате HEX.</li>
-                <li>Цвета <strong>могут</strong> записываться функциями <code>rgba</code> или <code>hsla</code>, если нужна прозрачность.</li>
-              </ul>
-            </div>
-            <div class="chapter-part-col gray-bgcolor">
-              <figure>
-                <pre><code class="language-css">/* Правильно */
-.block {
-  background-color: #ff0000;
-  border-left-color: #00ff00;
-  color: rgba(0, 0, 0, 0.5);
-}
-
-/* Неправильно */
-.block {
-  background-color: #F00;
-  border-left-color: rgb(0, 255, 0);
-  color: black;
-}
-</code></pre>
-              </figure>
-            </div>
-          </article>
-
-          <article class="chapter-part">
-            <div class="chapter-part-col">
-              <h3 id="css-fractions">Дробные значения</h3>
-              <p>В дробных значениях <strong>не должно</strong> быть больше двух знаков после точки.</p>
-            </div>
-            <div class="chapter-part-col gray-bgcolor">
-              <figure>
-                <pre><code class="language-css">/* Правильно */
-.block {
-  width: 2.33%;
-}
-
-/* Неправильно */
-.block {
-  width: 2.33333%;
-}
-</code></pre>
-              </figure>
-            </div>
-          </article>
-
-          <article class="chapter-part">
-            <div class="chapter-part-col">
               <h3 id="css-visually-hidden">Доступное скрытие</h3>
               <p>
                 Для того, чтобы контент был скрыт от глаз, но доступен для скринридеров и поисковиков его нужно скрывать используя утилитарный класс <code>visually-hidden</code>.
@@ -1191,6 +1120,77 @@ h1 {
 
 .title {
   display: none;
+}</code></pre>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
+              <h3 id="css-order">Порядок свойств</h3>
+              <p>
+                Объявления логически связанных свойств группируются в&nbsp;следующем порядке:
+              </p>
+              <ol>
+                <li>Позиционирование</li>
+                <li>Блочная модель</li>
+                <li>Типографика</li>
+                <li>Оформление</li>
+                <li>Анимация</li>
+                <li>Разное</li>
+              </ol>
+              <p>
+                Позиционирование следует первым потому, что оно влияет на&nbsp;положение блоков в&nbsp;потоке документа. Блочная модель идёт следующей, так как она определяет размеры и&nbsp;расположение блоков.
+              </p>
+              <p>
+                Все остальные объявления, которые изменяют вид внутренних частей блоков и&nbsp;не&nbsp;оказывают влияния на&nbsp;другие блоки, идут в&nbsp;последнюю очередь.
+              </p>
+              <p>
+                Сгруппированные объявления в&nbsp;правиле отделяются друг от&nbsp;друга пустой строкой.
+              </p>
+              <p>
+                Порядок объявления подробных правил, таких как <code>font-size</code>, <code>font-family</code>, <code>line-height</code>, должен соответствовать порядку в&nbsp;сокращённой версии правила. В&nbsp;случае совместного использования подробных и&nbsp;сокращённых правил, первой должна идти сокращённая версия.
+              </p>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-css">.declaration-order {
+  /* Позиционирование */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+
+  /* Блочная модель */
+  display: block;
+  float: right;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  padding: 10px;
+
+  /* Типографика */
+  font: normal 13px/1.5 "Arial", sans-serif;
+  font-style: normal;
+  font-size: 13px;
+  line-height: 1.5;
+  font-family: "Arial", sans-serif;
+  text-align: center;
+  color: #333333;
+
+  /* Оформление */
+  background-color: #f5f5f5;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  opacity: 1;
+
+  /* Анимация */
+  transition: color 1s;
+
+  /* Разное */
+  will-change: auto;
 }</code></pre>
               </figure>
             </div>
