@@ -60,18 +60,11 @@
             <li><a href="#html-tags-formatting">Форматирование тегов</a></li>
             <li><a href="#html-basic-parts">Базовые части разметки</a></li>
             <li><a href="#html-form-method">Атрибут method в форме</a></li>
-
-
             <li><a href="#html-validator">Валидность</a></li>
-            <li><a href="#html-doctype">HTML-доктайп</a></li>
-            <li><a href="#html-encoding">Кодировка символов</a></li>
             <li><a href="#html-style-includes">Подключение стилей</a></li>
             <li><a href="#html-js-includes">Подключение скриптов</a></li>
-            <li><a href="#html-attribute-order">Порядок атрибутов</a></li>
-            <li><a href="#html-boolean">Логические атрибуты</a></li>
             <li><a href="#html-form-labels">Подписи полей ввода</a></li>
             <li><a href="#html-img-sizes">Размеры картинок</a></li>
-            <li><a href="#html-language">Атрибут языка</a></li>
           </ul>
         </div>
 
@@ -295,8 +288,8 @@ project/
 
           <article class="chapter-part">
             <div class="chapter-part-col">
-              <h3 id="html-single-attr-no-value">Одиночные атрибуты</h3>
-              <p>Одиночные атрибуты <strong>должны</strong> быть записаны без значения.</p>
+              <h3 id="html-single-attr-no-value">Логические атрибуты</h3>
+              <p>Логические атрибуты <strong>должны</strong> быть записаны без значения и&nbsp;в&nbsp;единообразной последовательности во&nbsp;всём документе.</p>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
@@ -349,7 +342,7 @@ project/
           <article class="chapter-part">
             <div class="chapter-part-col">
               <h3 id="html-attr-single-quotes">Кавычки в значениях атрибутов</h3>
-              <p>Вложенные кавычки в значениях <strong>должны</strong> быть одиночными.</p>
+              <p>Вложенные кавычки в значениях <strong>должны</strong> быть одинарными.</p>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
@@ -452,7 +445,7 @@ project/
                 <li>Корневой элемент <code>&lt;html&gt;</code> с языком документа <code>lang</code></li>
                 <li>Метаинформация <code>&lt;head&gt;</code></li>
                 <li>Заголовок документа <code>&lt;title&gt;</code></li>
-                <li>Кодировка документа <code>&lt;meta charset="utf-8"&gt;</code></li>
+                <li>Кодировка документа <code>&lt;meta charset="utf-8"&gt;</code>. Кодировка символов на&nbsp;странице всегда должна быть явно указана, чтобы обеспечить корректное отображение текста. Кодировка <code>utf-8</code> предпочтительна.</li>
                 <li>Тело документа <code>&lt;body&gt;</code></li>
               </ul>
             </div>
@@ -504,41 +497,6 @@ project/
               <p>
                 Документ должен проходить проверку на&nbsp;валидность. Для проверки используется <a href="http://validator.w3.org/nu/" target="_blank">современный валидатор</a>.
               </p>
-            </div>
-          </article>
-
-          <article class="chapter-part">
-            <div class="chapter-part-col">
-              <h3 id="html-doctype">HTML-доктайп</h3>
-              <p>
-                В&nbsp;начале страницы обязательно должен быть указан актуальный <code>doctype</code>, чтобы браузер отображал её&nbsp;в&nbsp;режиме соответствия стандартам. Это гарантирует, что страница будет выглядеть единообразно во&nbsp;всех современных браузерах.
-              </p>
-            </div>
-            <div class="chapter-part-col gray-bgcolor">
-              <figure>
-                <pre><code class="language-markup">&lt;!DOCTYPE html&gt;
-&lt;html lang="ru"&gt;
-  &lt;head&gt;…&lt;/head&gt;
-  &lt;body&gt;…&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-              </figure>
-            </div>
-          </article>
-
-          <article class="chapter-part">
-            <div class="chapter-part-col">
-              <h3 id="html-encoding">Кодировка символов</h3>
-              <p>
-                Кодировка символов на&nbsp;странице всегда должна быть явно указана, чтобы обеспечить корректное отображение текста. Кодировка <code>utf-8</code> предпочтительна.
-              </p>
-            </div>
-            <div class="chapter-part-col gray-bgcolor">
-              <figure>
-                <pre><code class="language-markup">&lt;head&gt;
-  &lt;meta charset="utf-8"&gt;
-  &lt;title&gt;Заголовок страницы&lt;/title&gt;
-&lt;/head&gt;</code></pre>
-              </figure>
             </div>
           </article>
 
@@ -608,48 +566,6 @@ project/
 
           <article class="chapter-part">
             <div class="chapter-part-col">
-              <h3 id="html-attribute-order">Порядок атрибутов</h3>
-              <p>
-                Атрибут класса у&nbsp;HTML-элементов пишется первым. Единообразное написание помогает легче считывать код и&nbsp;быстрее разбираться в&nbsp;назначении блоков по&nbsp;их&nbsp;классам.
-              </p>
-              <p>
-                Остальные атрибуты могут быть расставлены в&nbsp;любом порядке, но&nbsp;тоже единообразно для одинаковых элементов.
-              </p>
-            </div>
-            <div class="chapter-part-col gray-bgcolor">
-              <figure>
-                <pre><code class="language-markup">&lt;a class="element element-big" id="element" href="/" data-name="element"&gt;Ссылка&lt;/a&gt;
-
-&lt;input class="form-control" type="text" name="test"&gt;
-
-&lt;img class="pets-picture" src="cats.jpg" alt="Изображение котиков"&gt;</code></pre>
-              </figure>
-            </div>
-          </article>
-
-          <article class="chapter-part">
-            <div class="chapter-part-col">
-              <h3 id="html-boolean">Логические атрибуты</h3>
-              <p>
-                Для логических атрибутов (например, <code>checked</code>, <code>disabled</code>, <code>required</code>) значение не&nbsp;указывается, а&nbsp;сами атрибуты указываются последними и&nbsp;в&nbsp;единообразной последовательности во&nbsp;всём документе.
-              </p>
-            </div>
-            <div class="chapter-part-col gray-bgcolor">
-              <figure>
-                <pre><code class="language-markup">&lt;!-- checked="checked" необязательно --&gt;
-&lt;input type="checkbox" required checked&gt;
-
-&lt;input type="text" disabled&gt;
-
-&lt;select&gt;
-  &lt;option value="1" selected>1&lt;/option&gt;
-&lt;/select&gt;</code></pre>
-            </figure>
-            </div>
-          </article>
-
-          <article class="chapter-part">
-            <div class="chapter-part-col">
               <h3 id="html-form-labels">Подписи полей ввода</h3>
               <p>
                 Для улучшения взаимодействия пользователя с&nbsp;элементами форм, при нажатии на&nbsp;подпись поля, оно должно активироваться. Для этого элемент формы связывается с&nbsp;его описанием с&nbsp;помощью идентификатора и&nbsp;атрибута <code>for</code> тега <code>&lt;label&gt;</code>.
@@ -674,9 +590,9 @@ project/
 
           <article class="chapter-part">
             <div class="chapter-part-col">
-              <h3 id="html-img-sizes">Размеры картинок</h3>
+              <h3 id="html-img-sizes">Размеры замещаемых элементов</h3>
               <p>
-                Изображениям <code>&lt;img&gt;</code> должны быть явно заданы с&nbsp;помощью атрибута размеры в&nbsp;пикселях. В&nbsp;случае пикселей размерность не&nbsp;нужна.
+                У изображений, видео и <code>iframe</code> должны быть указаны размеры.
               </p>
               <p>
                 По&nbsp;возможности изображениям указываются действительные размеры, так как это улучшает производительность отрисовки страницы: браузер не&nbsp;будет перерисовывать страницу в&nbsp;процессе загрузки и&nbsp;отображения изображения.
@@ -684,38 +600,16 @@ project/
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-markup">&lt;!-- Хорошо: размеры картинке заданы --&gt;
-&lt;div class="logo-area"&gt;
-  &lt;img src="logo.png" alt="" width="300" height="150"&gt;
-&lt;/div&gt;
+                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+&lt;img src="logo.png" alt="" width="300" height="150"&gt;
+&lt;video src="source/video.mp4" width="400" height="400"&gt;&lt;/video&gt;
+&lt;iframe src="https://maps.google.com" width="400" height="400"&gt;&lt;/iframe&gt;
 
-&lt;!-- Плохо: размеры картинке заданы в px --&gt;
-&lt;div class="logo-area"&gt;
-  &lt;img src="logo.png" alt="" width="300px" height="150px"&gt;
-&lt;/div&gt;
-
-&lt;!-- Плохо: размеры картинке не заданы --&gt;
-&lt;div class="logo-area"&gt;
-  &lt;img src="logo.png" alt=""&gt;
-&lt;/div&gt;</code></pre>
-              </figure>
-            </div>
-          </article>
-
-          <article class="chapter-part">
-            <div class="chapter-part-col">
-              <h3 id="html-language">Атрибут языка</h3>
-              <p>
-                Для элемента <code>&lt;html&gt;</code> в&nbsp;атрибуте <code>lang</code> должен указываться соответствующий язык документа. Это помогает инструментам синтеза речи определить, какое использовать произношение или системам перевода, какие использовать языковые правила.
-              </p>
-            </div>
-            <div class="chapter-part-col gray-bgcolor">
-              <figure>
-                <pre><code class="language-markup">&lt;!DOCTYPE html&gt;
-&lt;html lang="ru"&gt;
-  &lt;head&gt;…&lt;/head&gt;
-  &lt;body&gt;…&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+&lt;!-- Неправильно --&gt;
+&lt;img src="logo.png" alt=""&gt;
+&lt;video src="source/video.mp4" width="400" height="400"&gt;&lt;/video&gt;
+&lt;iframe src="https://maps.google.com" width="400" height="400"&gt;&lt;/iframe&gt;
+</code></pre>
               </figure>
             </div>
           </article>
