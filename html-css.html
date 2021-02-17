@@ -47,6 +47,8 @@
         <div class="sidebar-col">
           <a href="#html">HTML</a>
           <ul class="sidebar-menu">
+            <li><a href="#html-basic-parts">Базовые части разметки</a></li>
+            <li><a href="#html-tags-formatting">Форматирование тегов</a></li>
             <li><a href="#html-syntax-tag">Регистр тегов и атрибутов</a></li>
             <li><a href="#html-closed-tag">Двойные теги</a></li>
             <li><a href="#html-single-tag">Одиночные теги</a></li>
@@ -56,15 +58,13 @@
             <li><a href="#html-attr-double-quotes">Кавычки в атрибутах</a></li>
             <li><a href="#html-attr-single-quotes">Кавычки в значениях атрибутов</a></li>
             <li><a href="#html-attr-no-units">Единицы измерения в атрибутах</a></li>
+            <li><a href="#html-img-sizes">Размеры замещаемых элементов</a></li>
             <li><a href="#html-class-name">Разделители в имени класса</a></li>
-            <li><a href="#html-tags-formatting">Форматирование тегов</a></li>
-            <li><a href="#html-basic-parts">Базовые части разметки</a></li>
             <li><a href="#html-form-method">Атрибут method в форме</a></li>
-            <li><a href="#html-validator">Валидность</a></li>
+            <li><a href="#html-form-labels">Подписи полей ввода</a></li>
             <li><a href="#html-style-includes">Подключение стилей</a></li>
             <li><a href="#html-js-includes">Подключение скриптов</a></li>
-            <li><a href="#html-form-labels">Подписи полей ввода</a></li>
-            <li><a href="#html-img-sizes">Размеры картинок</a></li>
+            <li><a href="#html-validator">Валидность</a></li>
           </ul>
         </div>
 
@@ -177,6 +177,80 @@ project/
 
         <section class="chapter">
           <h2 id="html">HTML</h2>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
+              <h3 id="html-basic-parts">Базовые части разметки</h3>
+              <ul>
+                <li>Современный тип документа <code>&lt;!DOCTYPE html&gt;</code></li>
+                <li>Корневой элемент <code>&lt;html&gt;</code> с языком документа <code>lang</code></li>
+                <li>Метаинформация <code>&lt;head&gt;</code></li>
+                <li>Заголовок документа <code>&lt;title&gt;</code></li>
+                <li>Кодировка документа <code>&lt;meta charset="utf-8"&gt;</code>. Кодировка символов на&nbsp;странице всегда должна быть явно указана, чтобы обеспечить корректное отображение текста. Кодировка <code>utf-8</code> предпочтительна.</li>
+                <li>Тело документа <code>&lt;body&gt;</code></li>
+              </ul>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;Заголовок&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;Страница&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;!-- Неправильно --&gt;
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;
+&lt;html&gt;
+  &lt;title&gt;Заголовок&lt;/title&gt;
+  Страница
+&lt;/html&gt;
+</code></pre>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
+              <h3 id="html-tags-formatting">Форматирование тегов</h3>
+              <ul>
+                <li>Вложенность тегов <strong>должна</strong> обозначаться переносами и отступами.</li>
+                <li>Каждый новый вложенный тег <strong>должен</strong> переноситься на отдельную строку с отступом.</li>
+                <li>Текст внутри тегов <strong>должен</strong> оставаться на одной строке с тегами.</li>
+              </ul>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+&lt;div class="menu"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;a href=""&gt;Первый&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=""&gt;Второй&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=""&gt;Третий&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;!-- Неправильно --&gt;
+&lt;div class="menu"&gt;&lt;ul&gt;
+  &lt;li&gt;&lt;a href=""&gt;Первый&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=""&gt;
+    Второй
+  &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=""&gt;Третий&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;
+                </code></pre>
+              </figure>
+            </div>
+          </article>
 
           <article class="chapter-part">
             <div class="chapter-part-col">
@@ -379,6 +453,32 @@ project/
 
           <article class="chapter-part">
             <div class="chapter-part-col">
+              <h3 id="html-img-sizes">Размеры замещаемых элементов</h3>
+              <p>
+                У изображений, видео и <code>iframe</code> должны быть указаны размеры.
+              </p>
+              <p>
+                По&nbsp;возможности изображениям указываются действительные размеры, так как это улучшает производительность отрисовки страницы: браузер не&nbsp;будет перерисовывать страницу в&nbsp;процессе загрузки и&nbsp;отображения изображения.
+              </p>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+&lt;img src="logo.png" alt="" width="300" height="150"&gt;
+&lt;video src="source/video.mp4" width="400" height="400"&gt;&lt;/video&gt;
+&lt;iframe src="https://maps.google.com" width="400" height="400"&gt;&lt;/iframe&gt;
+
+&lt;!-- Неправильно --&gt;
+&lt;img src="logo.png" alt=""&gt;
+&lt;video src="source/video.mp4" width="400" height="400"&gt;&lt;/video&gt;
+&lt;iframe src="https://maps.google.com" width="400" height="400"&gt;&lt;/iframe&gt;
+</code></pre>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
               <h3 id="html-class-name">Разделители в имени класса</h3>
               <p>Разделителями в имени класса <strong>должны</strong> быть только дефисы <code>-</code> и подчёркивания <code>_</code>. В коде необходимо придерживаться одного стиля.</p>
             </div>
@@ -394,80 +494,6 @@ project/
 &lt;input class="formInput formInputField" type="text"&gt;
 &lt;input class="form-input form_input_field" type="text"&gt;
                 </code></pre>
-              </figure>
-            </div>
-          </article>
-
-          <article class="chapter-part">
-            <div class="chapter-part-col">
-              <h3 id="html-tags-formatting">Форматирование тегов</h3>
-              <ul>
-                <li>Вложенность тегов <strong>должна</strong> обозначаться переносами и отступами.</li>
-                <li>Каждый новый вложенный тег <strong>должен</strong> переноситься на отдельную строку с отступом.</li>
-                <li>Текст внутри тегов <strong>должен</strong> оставаться на одной строке с тегами.</li>
-              </ul>
-            </div>
-            <div class="chapter-part-col gray-bgcolor">
-              <figure>
-                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
-&lt;div class="menu"&gt;
-  &lt;ul&gt;
-    &lt;li&gt;
-      &lt;a href=""&gt;Первый&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;a href=""&gt;Второй&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;a href=""&gt;Третий&lt;/a&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;
-
-&lt;!-- Неправильно --&gt;
-&lt;div class="menu"&gt;&lt;ul&gt;
-  &lt;li&gt;&lt;a href=""&gt;Первый&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=""&gt;
-    Второй
-  &lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=""&gt;Третий&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/div&gt;
-                </code></pre>
-              </figure>
-            </div>
-          </article>
-
-          <article class="chapter-part">
-            <div class="chapter-part-col">
-              <h3 id="html-basic-parts">Базовые части разметки</h3>
-              <ul>
-                <li>Современный тип документа <code>&lt;!DOCTYPE html&gt;</code></li>
-                <li>Корневой элемент <code>&lt;html&gt;</code> с языком документа <code>lang</code></li>
-                <li>Метаинформация <code>&lt;head&gt;</code></li>
-                <li>Заголовок документа <code>&lt;title&gt;</code></li>
-                <li>Кодировка документа <code>&lt;meta charset="utf-8"&gt;</code>. Кодировка символов на&nbsp;странице всегда должна быть явно указана, чтобы обеспечить корректное отображение текста. Кодировка <code>utf-8</code> предпочтительна.</li>
-                <li>Тело документа <code>&lt;body&gt;</code></li>
-              </ul>
-            </div>
-            <div class="chapter-part-col gray-bgcolor">
-              <figure>
-                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html lang="ru"&gt;
-  &lt;head&gt;
-    &lt;meta charset="utf-8"&gt;
-    &lt;title&gt;Заголовок&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;Страница&lt;/body&gt;
-&lt;/html&gt;
-
-&lt;!-- Неправильно --&gt;
-&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;
-&lt;html&gt;
-  &lt;title&gt;Заголовок&lt;/title&gt;
-  Страница
-&lt;/html&gt;
-</code></pre>
               </figure>
             </div>
           </article>
@@ -493,10 +519,25 @@ project/
 
           <article class="chapter-part">
             <div class="chapter-part-col">
-              <h3 id="html-validator">Валидность</h3>
+              <h3 id="html-form-labels">Подписи полей ввода</h3>
               <p>
-                Документ должен проходить проверку на&nbsp;валидность. Для проверки используется <a href="http://validator.w3.org/nu/" target="_blank">современный валидатор</a>.
+                Для улучшения взаимодействия пользователя с&nbsp;элементами форм, при нажатии на&nbsp;подпись поля, оно должно активироваться. Для этого элемент формы связывается с&nbsp;его описанием с&nbsp;помощью идентификатора и&nbsp;атрибута <code>for</code> тега <code>&lt;label&gt;</code>.
               </p>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+&lt;input type="radio" id="choose"&gt;
+&lt;label for="choose"&gt;Радио кнопка&lt;/label&gt;
+
+&lt;!-- Правильно --&gt;
+&lt;label&gt;
+  &lt;input type="radio"&gt; Радио кнопка
+&lt;/label&gt;
+
+&lt;!-- Неправильно --&gt;
+&lt;input type="radio" id="choose"&gt; Радио кнопка</code></pre>
+              </figure>
             </div>
           </article>
 
@@ -566,51 +607,10 @@ project/
 
           <article class="chapter-part">
             <div class="chapter-part-col">
-              <h3 id="html-form-labels">Подписи полей ввода</h3>
+              <h3 id="html-validator">Валидность</h3>
               <p>
-                Для улучшения взаимодействия пользователя с&nbsp;элементами форм, при нажатии на&nbsp;подпись поля, оно должно активироваться. Для этого элемент формы связывается с&nbsp;его описанием с&nbsp;помощью идентификатора и&nbsp;атрибута <code>for</code> тега <code>&lt;label&gt;</code>.
+                Документ должен проходить проверку на&nbsp;валидность. Для проверки используется <a href="http://validator.w3.org/nu/" target="_blank">современный валидатор</a>.
               </p>
-            </div>
-            <div class="chapter-part-col gray-bgcolor">
-              <figure>
-                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
-&lt;input type="radio" id="choose"&gt;
-&lt;label for="choose"&gt;Радио кнопка&lt;/label&gt;
-
-&lt;!-- Правильно --&gt;
-&lt;label&gt;
-  &lt;input type="radio"&gt; Радио кнопка
-&lt;/label&gt;
-
-&lt;!-- Неправильно --&gt;
-&lt;input type="radio" id="choose"&gt; Радио кнопка</code></pre>
-              </figure>
-            </div>
-          </article>
-
-          <article class="chapter-part">
-            <div class="chapter-part-col">
-              <h3 id="html-img-sizes">Размеры замещаемых элементов</h3>
-              <p>
-                У изображений, видео и <code>iframe</code> должны быть указаны размеры.
-              </p>
-              <p>
-                По&nbsp;возможности изображениям указываются действительные размеры, так как это улучшает производительность отрисовки страницы: браузер не&nbsp;будет перерисовывать страницу в&nbsp;процессе загрузки и&nbsp;отображения изображения.
-              </p>
-            </div>
-            <div class="chapter-part-col gray-bgcolor">
-              <figure>
-                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
-&lt;img src="logo.png" alt="" width="300" height="150"&gt;
-&lt;video src="source/video.mp4" width="400" height="400"&gt;&lt;/video&gt;
-&lt;iframe src="https://maps.google.com" width="400" height="400"&gt;&lt;/iframe&gt;
-
-&lt;!-- Неправильно --&gt;
-&lt;img src="logo.png" alt=""&gt;
-&lt;video src="source/video.mp4" width="400" height="400"&gt;&lt;/video&gt;
-&lt;iframe src="https://maps.google.com" width="400" height="400"&gt;&lt;/iframe&gt;
-</code></pre>
-              </figure>
             </div>
           </article>
         </section>
