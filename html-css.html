@@ -174,7 +174,22 @@ project/
           <article class="chapter-part">
             <div class="chapter-part-col">
               <h3 id="formatting">Форматирование кода</h3>
-              <p>Код проекта соответствует параметрам <a href="https://github.com/htmlacademy/codeguide/blob/master/.editorconfig">EditorConfig</a>, описанным в файле <code>.editorconfig</code> проекта.</p>
+              <p>Код проекта соответствует параметрам <a href="https://github.com/htmlacademy/codeguide/blob/master/.editorconfig">EditorConfig</a>:</p>
+              <pre><code>root = true
+
+[*]
+charset = utf-8
+indent_style = space
+indent_size = 2
+end_of_line = lf
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.{go,py,rb,php}]
+indent_size = 4
+
+[*.md]
+trim_trailing_whitespace = false</code></pre>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
