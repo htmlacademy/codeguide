@@ -61,11 +61,11 @@
             <li><a href="#html-attr-no-space">Форматирование атрибутов</a></li>
             <li><a href="#html-attr-double-quotes">Кавычки в атрибутах</a></li>
             <li><a href="#html-attr-single-quotes">Кавычки в значениях атрибутов</a></li>
-            <li><a href="#html-attr-no-units">Единицы измерения в атрибутах</a></li>
+            <!-- <li><a href="#html-attr-no-units">Единицы измерения в атрибутах</a></li> -->
             <li><a href="#html-img-sizes">Размеры замещаемых элементов</a></li>
             <li><a href="#html-class-name">Разделители в имени класса</a></li>
             <li><a href="#html-form-method">Атрибут method в форме</a></li>
-            <li><a href="#html-form-labels">Подписи полей ввода</a></li>
+            <!-- <li><a href="#html-form-labels">Подписи полей ввода</a></li> -->
             <li><a href="#html-style-includes">Подключение стилей</a></li>
             <li><a href="#html-js-includes">Подключение скриптов</a></li>
             <li><a href="#html-validator">Валидность</a></li>
@@ -90,8 +90,8 @@
             <li><a href="#css-repeated-properties">Повторяющиеся свойства</a></li>
             <li><a href="#css-fractions">Дробные значения</a></li>
             <li><a href="#css-important">!important</a></li>
-            <li><a href="#css-fonts-add">Подключение шрифтов</a></li>
-            <li><a href="#css-font-variant">Варианты шрифта</a></li>
+            <!-- <li><a href="#css-fonts-add">Подключение шрифтов</a></li> -->
+            <!-- <li><a href="#css-font-variant">Варианты шрифта</a></li> -->
             <li><a href="#css-visually-hidden">Доступное скрытие</a></li>
             <li><a href="#css-order">Порядок свойств</a></li>
           </ul>
@@ -110,6 +110,7 @@
                 <li>Для HTML используйте <a href="https://github.com/htmlacademy/htmlhint-config-htmlacademy">HTMLHint</a>.</li>
                 <li>Для стилей <a href="https://github.com/htmlacademy/stylelint-config-htmlacademy">Stylelint</a>.</li>
               </ul>
+              <p>По ссылкам находятся конфигурации Академии для этих инструментов. Конфигурации частично покрывают то, что описано в этом стиле кода, и в них нет ничего, что не описано ниже.</p>
             </div>
           </article>
         </section>
@@ -121,13 +122,13 @@
             <div class="chapter-part-col">
               <h3 id="grouping">Группировка файлов</h3>
               <ul>
-                <li>Файлы схожих типов <strong>должны</strong> быть сгруппированы в папки: картинки, стили, скрипты, шрифты.</li>
-                <li>Если внутри папок файлов становится много или выделяются подгруппы, <strong>можно</strong> добавить вложенные папки.</li>
+                <li>Файлы схожих типов группируются в папки: картинки, стили, скрипты, шрифты.</li>
+                <li>Если внутри папок файлов становится много или выделяются подгруппы, можно добавить вложенные папки.</li>
                </ul>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+                <pre><code class="language-markup">&lt;!-- Хорошо --&gt;
 project/
   pictures/
     catalog/
@@ -152,7 +153,7 @@ project/
   catalog.html
   index.html
 
-&lt;!-- Неправильно --&gt;
+&lt;!-- Плохо --&gt;
 project/
   assets/
     logo.svg
@@ -173,17 +174,32 @@ project/
           <article class="chapter-part">
             <div class="chapter-part-col">
               <h3 id="formatting">Форматирование кода</h3>
-              <p>Код проекта <strong>должен</strong> соответствовать параметрам <a href="https://github.com/htmlacademy/codeguide/blob/master/.editorconfig">EditorConfig</a>, описанным в файле <code>.editorconfig</code> проекта.</p>
+              <p>Код проекта соответствует параметрам <a href="https://github.com/htmlacademy/codeguide/blob/master/.editorconfig">EditorConfig</a>:</p>
+              <pre><code>root = true
+
+[*]
+charset = utf-8
+indent_style = space
+indent_size = 2
+end_of_line = lf
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.{go,py,rb,php}]
+indent_size = 4
+
+[*.md]
+trim_trailing_whitespace = false</code></pre>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-markup">&lt;!-- Правильно--&gt;
+                <pre><code class="language-markup">&lt;!-- Хорошо--&gt;
 &lt;ul&gt;
 ∙∙&lt;li&gt;Пункт&lt;/li&gt;
 ∙∙&lt;li&gt;Пункт&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;!-- Неправильно--&gt;
+&lt;!-- Плохо--&gt;
 &lt;ul&gt;
 → &lt;li&gt;Пункт&lt;/li&gt;
 ∙∙∙∙&lt;li&gt;Пункт&lt;/li&gt;∙∙∙∙∙∙∙
@@ -205,13 +221,13 @@ project/
                 <li>Корневой элемент <code>&lt;html&gt;</code> с языком документа <code>lang</code></li>
                 <li>Метаинформация <code>&lt;head&gt;</code></li>
                 <li>Заголовок документа <code>&lt;title&gt;</code></li>
-                <li>Кодировка документа <code>&lt;meta charset="utf-8"&gt;</code>. Кодировка символов на&nbsp;странице всегда должна быть явно указана, чтобы обеспечить корректное отображение текста. Кодировка <code>utf-8</code> предпочтительна.</li>
+                <li>Кодировка документа <code>&lt;meta charset="utf-8"&gt;</code>. Кодировка символов на странице явно указана, чтобы обеспечить корректное отображение текста. Кодировка <code>utf-8</code> предпочтительна.</li>
                 <li>Тело документа <code>&lt;body&gt;</code></li>
               </ul>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+                <pre><code class="language-markup">&lt;!-- Хорошо --&gt;
 &lt;!DOCTYPE html&gt;
 &lt;html lang="ru"&gt;
   &lt;head&gt;
@@ -221,7 +237,7 @@ project/
   &lt;body&gt;Страница&lt;/body&gt;
 &lt;/html&gt;
 
-&lt;!-- Неправильно --&gt;
+&lt;!-- Плохо --&gt;
 &lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;
 &lt;html&gt;
   &lt;title&gt;Заголовок&lt;/title&gt;
@@ -236,14 +252,14 @@ project/
             <div class="chapter-part-col">
               <h3 id="html-tags-formatting">Форматирование тегов</h3>
               <ul>
-                <li>Вложенность тегов <strong>должна</strong> обозначаться переносами и отступами.</li>
-                <li>Каждый новый вложенный тег <strong>должен</strong> переноситься на отдельную строку с отступом.</li>
-                <li>Текст внутри тегов <strong>должен</strong> оставаться на одной строке с тегами.</li>
+                <li>Вложенность тегов обозначается переносами и отступами.</li>
+                <li>Каждый новый вложенный тег переносится на отдельную строку с отступом, кроме текстовых элементов.</li>
+                <li>Текст внутри тегов остаётся на одной строке с тегами.</li>
               </ul>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+                <pre><code class="language-markup">&lt;!-- Хорошо --&gt;
 &lt;div class="menu"&gt;
   &lt;ul&gt;
     &lt;li&gt;
@@ -258,7 +274,7 @@ project/
   &lt;/ul&gt;
 &lt;/div&gt;
 
-&lt;!-- Неправильно --&gt;
+&lt;!-- Плохо --&gt;
 &lt;div class="menu"&gt;&lt;ul&gt;
   &lt;li&gt;&lt;a href=""&gt;Первый&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=""&gt;
@@ -274,12 +290,12 @@ project/
           <article class="chapter-part">
             <div class="chapter-part-col">
               <h3 id="html-syntax-tag">Регистр тегов и атрибутов</h3>
-              <p>Имена тегов, атрибуты и их значения <strong>должны</strong> быть записаны строчными.</p>
+              <p>Имена тегов, атрибуты и их значения записаны строчными.</p>
               <p>Исключение: атрибуты для SVG-элементов, например: <code>viewBox</code>, <code>preserveAspectRatio</code> и другие.</p>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+                <pre><code class="language-markup">&lt;!-- Хорошо --&gt;
 &lt;ul&gt;
   &lt;li&gt;Первый&lt;/li&gt;
   &lt;li&gt;Второй&lt;/li&gt;
@@ -292,7 +308,7 @@ project/
   &lt;path d="M125,5.15c.89-3,0-5.15-4.23-5.15h-14a6,6,0,0,0-6.09Z"/&gt;
 &lt;/svg&gt;
 
-&lt;!-- Неправильно --&gt;
+&lt;!-- Плохо --&gt;
 &lt;UL&gt;
   &lt;LI&gt;Первый
   &lt;LI&gt;Второй
@@ -308,18 +324,18 @@ project/
           <article class="chapter-part">
             <div class="chapter-part-col">
               <h3 id="html-closed-tag">Двойные теги</h3>
-              <p>Двойные теги <strong>должны</strong> иметь открывающий и закрывающий теги.</p>
+              <p>Двойные теги имеют открывающий и закрывающий теги.</p>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+                <pre><code class="language-markup">&lt;!-- Хорошо --&gt;
 &lt;ul&gt;
   &lt;li&gt;Первый&lt;/li&gt;
   &lt;li&gt;Второй&lt;/li&gt;
   &lt;li&gt;Третий&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;!-- Неправильно --&gt;
+&lt;!-- Плохо --&gt;
 &lt;ul&gt;
   &lt;li&gt;Первый
   &lt;li&gt;Второй
@@ -333,16 +349,16 @@ project/
           <article class="chapter-part">
             <div class="chapter-part-col">
               <h3 id="html-single-tag">Одиночные теги</h3>
-              <p>Одиночные теги <strong>не должны</strong> иметь закрывающий тег или слэш.</p>
+              <p>Одиночные теги не имеют закрывающий тег или слэш.</p>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+                <pre><code class="language-markup">&lt;!-- Хорошо --&gt;
 &lt;img src="images/picture.png" width="400" height="400" alt="Кот смотрит на солнышко."&gt;
 
 &lt;input type="text" name="name"&gt;
 
-&lt;!-- Неправильно --&gt;
+&lt;!-- Плохо --&gt;
 &lt;img src="images/picture.png" width="400" height="400" alt="Кот смотрит на солнышко." /&gt;
 
 &lt;input type="text"&gt;&lt;/input&gt;
@@ -355,20 +371,20 @@ project/
             <div class="chapter-part-col">
               <h3 id="html-attr-order">Порядок атрибутов</h3>
               <ul>
-                <li>Атрибуты <strong>должны</strong> идти в одном порядке, чтобы упростить их чтение.</li>
-                <li>Атрибут <code>class</code> <strong>должен</strong> идти сразу после имени тега.</li>
+                <li>Атрибуты идут в одном порядке, чтобы упростить их чтение.</li>
+                <li>Атрибут <code>class</code> идёт сразу после имени тега.</li>
               </ul>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+                <pre><code class="language-markup">&lt;!-- Хорошо --&gt;
 &lt;label class="field-group-label" for="appointment-phone"&gt;
 &lt;input class="field-group-input field" type="text" id="appointment-phone" placeholder="+7 000-00-00"&gt;
 
 &lt;label class="field-group-label" for="appointment-date"&gt;
 &lt;input class="field-group-input field" type="text" id="appointment-date" placeholder="01.01.2020"&gt;
 
-&lt;!-- Неправильно --&gt;
+&lt;!-- Плохо --&gt;
 &lt;label for="appointment-phone" class="field-group-label"&gt;
 &lt;input class="field-group-input field" type="text" placeholder="+7 000-00-00" id="appointment-phone" &gt;
 
@@ -382,14 +398,14 @@ project/
           <article class="chapter-part">
             <div class="chapter-part-col">
               <h3 id="html-single-attr-no-value">Логические атрибуты</h3>
-              <p>Логические атрибуты <strong>должны</strong> быть записаны без значения и&nbsp;в&nbsp;единообразной последовательности во&nbsp;всём документе.</p>
+              <p>Логические атрибуты записаны без значения и в единообразной последовательности во всём документе.</p>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+                <pre><code class="language-markup">&lt;!-- Хорошо --&gt;
 &lt;input type="text" disabled required&gt;
 
-&lt;!-- Неправильно --&gt;
+&lt;!-- Плохо --&gt;
 &lt;input type="text" disabled="disabled" required="required"&gt;
                 </code></pre>
               </figure>
@@ -399,14 +415,14 @@ project/
           <article class="chapter-part">
             <div class="chapter-part-col">
               <h3 id="html-attr-no-space">Форматирование атрибутов</h3>
-              <p>В записи атрибутов <strong>не должно</strong> быть пробелов вокруг знака «равно» <code>=</code></p>
+              <p>В записи атрибутов нет пробелов вокруг знака «равно» <code>=</code>.</p>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+                <pre><code class="language-markup">&lt;!-- Хорошо --&gt;
 &lt;input class="field-group-input field" type="text" id="appointment-date" placeholder="01.01.2020"&gt;
 
-&lt;!-- Неправильно --&gt;
+&lt;!-- Плохо --&gt;
 &lt;input class = "field-group-input field" type = "text" id = "appointment-date" placeholder = "01.01.2020"&gt;
                 </code></pre>
               </figure>
@@ -416,14 +432,14 @@ project/
           <article class="chapter-part">
             <div class="chapter-part-col">
               <h3 id="html-attr-double-quotes">Кавычки в атрибутах</h3>
-              <p>Значения атрибутов <strong>должны</strong> быть в двойных кавычках.</p>
+              <p>Значения атрибутов записаны в двойных кавычках.</p>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+                <pre><code class="language-markup">&lt;!-- Хорошо --&gt;
 &lt;input class="field-group-input field" type="text" id="appointment-date" placeholder="01.01.2020"&gt;
 
-&lt;!-- Неправильно --&gt;
+&lt;!-- Плохо --&gt;
 &lt;input class='field-group-input field' type='text' id='appointment-date' placeholder='01.01.2020'&gt;
 
 &lt;input class=field-group-input type=text id=appointment-date placeholder=01.01.2020&gt;
@@ -435,16 +451,16 @@ project/
           <article class="chapter-part">
             <div class="chapter-part-col">
               <h3 id="html-attr-single-quotes">Кавычки в значениях атрибутов</h3>
-              <p>Вложенные кавычки в значениях <strong>должны</strong> быть одинарными.</p>
+              <p>Вложенные кавычки в значениях являются одинарными.</p>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+                <pre><code class="language-markup">&lt;!-- Хорошо --&gt;
 &lt;button class="button" type="button" onclick="show('menu')"&gt;
   Меню
 &lt;/button&gt;
 
-&lt;!-- Неправильно --&gt;
+&lt;!-- Плохо --&gt;
 &lt;button class="button" type="button" onclick="show("menu")"&gt;
   Меню
 &lt;/button&gt;
@@ -453,41 +469,41 @@ project/
             </div>
           </article>
 
-          <article class="chapter-part">
+          <!-- <article class="chapter-part">
             <div class="chapter-part-col">
               <h3 id="html-attr-no-units">Единицы измерения в атрибутах</h3>
-              <p>В атрибутах <strong>не должно</strong> быть единиц измерения.</p>
+              <p>В атрибутах нет единиц измерения.</p>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+                <pre><code class="language-markup">&lt;!-- Хорошо --&gt;
 &lt;img src="images/picture.png" width="400" height="400" alt="Кот смотрит на солнышко."&gt;
 
-&lt;!-- Неправильно --&gt;
+&lt;!-- Плохо --&gt;
 &lt;img src="images/picture.png" width="400px" height="400px" alt="Кот смотрит на солнышко."&gt;
                 </code></pre>
               </figure>
             </div>
-          </article>
+          </article> -->
 
           <article class="chapter-part">
             <div class="chapter-part-col">
               <h3 id="html-img-sizes">Размеры замещаемых элементов</h3>
               <p>
-                У изображений, видео и <code>iframe</code> должны быть указаны размеры.
+                У изображений, видео и <code>iframe</code> указаны размеры.
               </p>
               <p>
-                По&nbsp;возможности изображениям указываются действительные размеры, так как это улучшает производительность отрисовки страницы: браузер не&nbsp;будет перерисовывать страницу в&nbsp;процессе загрузки и&nbsp;отображения изображения.
+                По возможности изображениям указываются действительные размеры, так как это улучшает производительность отрисовки страницы: браузер не будет перерисовывать страницу в процессе загрузки и отображения изображения.
               </p>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+                <pre><code class="language-markup">&lt;!-- Хорошо --&gt;
 &lt;img src="logo.png" alt="" width="300" height="150"&gt;
 &lt;video src="source/video.mp4" width="400" height="400"&gt;&lt;/video&gt;
 &lt;iframe src="https://maps.google.com" width="400" height="400"&gt;&lt;/iframe&gt;
 
-&lt;!-- Неправильно --&gt;
+&lt;!-- Плохо --&gt;
 &lt;img src="logo.png" alt=""&gt;
 &lt;video src="source/video.mp4" width="400" height="400"&gt;&lt;/video&gt;
 &lt;iframe src="https://maps.google.com" width="400" height="400"&gt;&lt;/iframe&gt;
@@ -499,17 +515,17 @@ project/
           <article class="chapter-part">
             <div class="chapter-part-col">
               <h3 id="html-class-name">Разделители в имени класса</h3>
-              <p>Разделителями в имени класса <strong>должны</strong> быть только дефисы <code>-</code> и подчёркивания <code>_</code>. В коде необходимо придерживаться одного стиля.</p>
+              <p>Разделителями в имени класса являются только дефисы <code>-</code> и подчёркивания <code>_</code>. В коде необходимо придерживаться одного стиля.</p>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+                <pre><code class="language-markup">&lt;!-- Хорошо --&gt;
 &lt;input class="form-input form-input-field" type="text"&gt;
 &lt;input class="form_input form_input_field" type="text"&gt;
 &lt;input class="form__input form-input__field" type="text"&gt;
 &lt;input class="form--input form-input--field" type="text"&gt;
 
-&lt;!-- Неправильно --&gt;
+&lt;!-- Плохо --&gt;
 &lt;input class="formInput formInputField" type="text"&gt;
 &lt;input class="form-input form_input_field" type="text"&gt;
                 </code></pre>
@@ -520,15 +536,15 @@ project/
           <article class="chapter-part">
             <div class="chapter-part-col">
               <h3 id="html-form-method">Атрибут <code>method</code> в форме</h3>
-              <p>В атрибуте <code>method</code> <strong>должен</strong> быть указан тип отправки данных.</p>
+              <p>В атрибуте <code>method</code> указан тип отправки данных.</p>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+                <pre><code class="language-markup">&lt;!-- Хорошо --&gt;
 &lt;form method="post"&gt;&lt;/form&gt;
 &lt;form method="get"&gt;&lt;/form&gt;
 
-&lt;!-- Неправильно --&gt;
+&lt;!-- Плохо --&gt;
 &lt;form method=""&gt;&lt;/form&gt;
 &lt;form&gt;&lt;/form&gt;
                 </code></pre>
@@ -536,40 +552,40 @@ project/
             </div>
           </article>
 
-          <article class="chapter-part">
+          <!-- <article class="chapter-part">
             <div class="chapter-part-col">
               <h3 id="html-form-labels">Подписи полей ввода</h3>
               <p>
-                Для улучшения взаимодействия пользователя с&nbsp;элементами форм, при нажатии на&nbsp;подпись поля, оно должно активироваться. Для этого элемент формы связывается с&nbsp;его описанием с&nbsp;помощью идентификатора и&nbsp;атрибута <code>for</code> тега <code>&lt;label&gt;</code>.
+                Для улучшения взаимодействия пользователя с элементами форм, при нажатии на подпись поля, оно активируется. Для этого элемент формы связывается с его описанием с помощью идентификатора и атрибута <code>for</code> тега <code>&lt;label&gt;</code>.
               </p>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+                <pre><code class="language-markup">&lt;!-- Хорошо --&gt;
 &lt;input type="radio" id="choose"&gt;
 &lt;label for="choose"&gt;Радио кнопка&lt;/label&gt;
 
-&lt;!-- Правильно --&gt;
+&lt;!-- Хорошо --&gt;
 &lt;label&gt;
   &lt;input type="radio"&gt; Радио кнопка
 &lt;/label&gt;
 
-&lt;!-- Неправильно --&gt;
+&lt;!-- Плохо --&gt;
 &lt;input type="radio" id="choose"&gt; Радио кнопка</code></pre>
               </figure>
             </div>
-          </article>
+          </article> -->
 
           <article class="chapter-part">
             <div class="chapter-part-col">
               <h3 id="html-style-includes">Подключение стилей</h3>
               <p>
-                Стилевые файлы с&nbsp;помощью <code>&lt;link&gt;</code> подключаются внутри <code>&lt;head&gt;</code>. При этом атрибут <code>type</code> для тега <code>&lt;link&gt;</code> не&nbsp;указывается, так как его значение <code>text/css</code> устанавливается по&nbsp;умолчанию.
+                Стилевые файлы с помощью <code>&lt;link&gt;</code> подключены внутри <code>&lt;head&gt;</code>. При этом атрибут <code>type</code> для тега <code>&lt;link&gt;</code> не указан, так как его значение <code>text/css</code> устанавливается по умолчанию.
               </p>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+                <pre><code class="language-markup">&lt;!-- Хорошо --&gt;
 &lt;!DOCTYPE html&gt;
 &lt;html lang="ru"&gt;
   &lt;head&gt;
@@ -578,7 +594,7 @@ project/
   &lt;body&gt;…&lt;/body&gt;
 &lt;/html&gt;
 
-&lt;!-- Неправильно --&gt;
+&lt;!-- Плохо --&gt;
 &lt;!DOCTYPE html&gt;
 &lt;html lang="ru"&gt;
   &lt;head&gt;…&lt;/head&gt;
@@ -594,15 +610,15 @@ project/
             <div class="chapter-part-col">
               <h3 id="html-js-includes">Подключение скриптов</h3>
               <p>
-                Скрипты должны подключаться в&nbsp;самом низу страницы, чтобы при её&nbsp;загрузке не&nbsp;блокировать отображение содержимого.
+                Скрипты подключены в самом низу страницы, чтобы при её загрузке не блокировать отображение содержимого.
               </p>
               <p>
-                При подключении скриптов в&nbsp;теге <code>&lt;script&gt;</code> атрибут <code>type</code> не&nbsp;указывается, так как его значение <code>text/javascript</code> устанавливается по&nbsp;умолчанию.
+                При подключении скриптов в теге <code>&lt;script&gt;</code> атрибут <code>type</code> не указан, так как его значение <code>text/javascript</code> устанавливается по умолчанию.
               </p>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+                <pre><code class="language-markup">&lt;!-- Хорошо --&gt;
 &lt;!DOCTYPE html&gt;
 &lt;html lang="ru"&gt;
   &lt;head&gt;…&lt;/head&gt;
@@ -612,7 +628,7 @@ project/
   &lt;/body&gt;
 &lt;/html&gt;
 
-&lt;!-- Неправильно --&gt;
+&lt;!-- Плохо --&gt;
 &lt;!DOCTYPE html&gt;
 &lt;html lang="ru"&gt;
   &lt;head&gt;
@@ -628,7 +644,7 @@ project/
             <div class="chapter-part-col">
               <h3 id="html-validator">Валидность</h3>
               <p>
-                Документ должен проходить проверку на&nbsp;валидность. Для проверки используется <a href="http://validator.w3.org/nu/" target="_blank">современный валидатор</a>.
+                Документ проходит проверку на валидность. Для проверки используется <a href="http://validator.w3.org/nu/" target="_blank">современный валидатор</a>.
               </p>
             </div>
           </article>
@@ -641,15 +657,15 @@ project/
             <div class="chapter-part-col">
               <h3 id="css-import">Правило <code>@import</code></h3>
               <p>
-                Правило <code>@import</code> работает медленнее, чем тег <code>&lt;link&gt;</code>. В&nbsp;стилях <code>@import</code> не&nbsp;должен использоваться.
+                Правило <code>@import</code> работает медленнее, чем тег <code>&lt;link&gt;</code>. В стилях <code>@import</code> не  использован.
               </p>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-markup">&lt;!-- Правильно --&gt;
+                <pre><code class="language-markup">&lt;!-- Хорошо --&gt;
 &lt;link rel="stylesheet" href="module.css"&gt;
 
-&lt;!-- Неправильно --&gt;
+&lt;!-- Плохо --&gt;
 &lt;style&gt;
   @import url("module.css");
 &lt;/style&gt;</code></pre>
@@ -661,18 +677,18 @@ project/
             <div class="chapter-part-col">
               <h3 id="css-structure">Структура объявления</h3>
               <ul>
-                <li>Перед открывающейся фигурной скобкой <strong>должен</strong> быть пробел. После скобки запись идёт с&nbsp;новой строки.</li>
-                <li>Свойства <strong>должны</strong> стоять на отдельных строках.</li>
-                <li>Свойства внутри блока <strong>должны</strong> иметь один внутренний отступ.</li>
-                <li>После двоеточия <strong>должен</strong> быть пробел. Перед двоеточием пробел не&nbsp;нужен.</li>
-                <li>В конце объявления <strong>должна</strong> быть точка с запятой.</li>
-                <li>Закрывающая скобка <strong>должна</strong> быть на новой строке и без отступа.</li>
-                <li>Между блоками правил <strong>должна</strong> быть одна пустая строка.</li>
+                <li>Перед открывающейся фигурной скобкой стоит пробел. После скобки запись идёт с новой строки.</li>
+                <li>Свойства стоят на отдельных строках.</li>
+                <li>Свойства внутри блока имеют один внутренний отступ.</li>
+                <li>После двоеточия стоит пробел. Перед двоеточием пробел не нужен.</li>
+                <li>В конце объявления стоит точка с запятой.</li>
+                <li>Закрывающая скобка стоит на новой строке и без отступа.</li>
+                <li>Между блоками правил есть одна пустая строка.</li>
               </ul>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-css">/* Правильно */
+                <pre><code class="language-css">/* Хорошо */
 .block {
   margin-bottom: 0;
   margin-top: 0;
@@ -685,7 +701,7 @@ project/
   background-color: #000000;
 }
 
-/* Неправильно */
+/* Плохо */
 .block{margin-bottom: 0;
     margin-top: 0;
   font-size: 14px;line-height: 20;
@@ -702,20 +718,20 @@ project/
             <div class="chapter-part-col">
               <h3 id="css-class-names">Имена классов</h3>
               <ul>
-                <li>Имена классов пишутся строчными буквами.</li>
-                <li>Имена классов должны быть такими, чтобы по&nbsp;ним можно было быстро понять, какому элементу страницы задан класс. Избегайте сокращений, но&nbsp;не&nbsp;делайте их&nbsp;слишком длинными (более трёх слов).</li>
-                <li>Для написания классов используются английские слова и&nbsp;термины. Транслитом названия классов и&nbsp;атрибутов не&nbsp;пишутся.</li>
+                <li>Имена классов записаны строчными буквами.</li>
+                <li>Имена классов такие, что по ним можно быстро понять, какому элементу страницы задан класс. Избегайте сокращений, но не делайте их слишком длинными (более трёх слов).</li>
+                <li>Для написания классов использованы английские слова и термины. В названиях классов и атрибутов нет транслита.</li>
               </ul>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-css">/* Правильно */
+                <pre><code class="language-css">/* Хорошо */
 .alert-danger { … }
 .tweet .user-picture { … }
 .button { … }
 .layout-center { … }
 
-/* Неправильно */
+/* Плохо */
 .testElement { … }
 .t { … }
 .big_red_button { … }
@@ -727,16 +743,16 @@ project/
           <article class="chapter-part">
             <div class="chapter-part-col">
               <h3 id="css-case-sensitivity">Регистр селекторов и свойств</h3>
-              <p>Селекторы и свойства <strong>должны</strong> записываться строчными буквами.</p>
+              <p>Селекторы и свойства записаны строчными буквами.</p>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-css">/* Правильно */
+                <pre><code class="language-css">/* Хорошо */
 .element {
   color: red;
 }
 
-/* Неправильно */
+/* Плохо */
 .Element {
   Color: red;
 }
@@ -753,18 +769,18 @@ project/
           <article class="chapter-part">
             <div class="chapter-part-col">
               <h3 id="css-multiselectors">Перенос селекторов</h3>
-              <p>Селекторы, разделённые запятой, <strong>должны</strong> записываться на новых строках.</p>
+              <p>Селекторы, разделённые запятой, записаны на новых строках.</p>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-css">/* Правильно */
+                <pre><code class="language-css">/* Хорошо */
 h1,
 h2,
 h3 {
   margin-top: 0;
 }
 
-/* Неправильно */
+/* Плохо */
 h1, h2, h3 {
   margin-top: 0;
 }
@@ -776,15 +792,15 @@ h1, h2, h3 {
           <article class="chapter-part">
             <div class="chapter-part-col">
               <h3 id="css-combnators">Пробелы между комбинаторами</h3>
-              <p>До&nbsp;и&nbsp;после комбинатора между селекторами ставится один пробел.</p>
+              <p>До и после комбинатора между селекторами стоит один пробел.</p>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-css">/* Правильно */
+                <pre><code class="language-css">/* Хорошо */
 h2 + h3 {}
 ul > li {}
 
-/* Неправильно */
+/* Плохо */
 h2+h2 p{}
 ul >li {}
 </code></pre>
@@ -796,20 +812,20 @@ ul >li {}
             <div class="chapter-part-col">
               <h3 id="css-color-format">Формат цветов</h3>
               <ul>
-                <li>Цвета <strong>должны</strong> записываться строчными в 6-значном формате HEX.</li>
-                <li>Цвета <strong>могут</strong> записываться функциями <code>rgba</code> или <code>hsla</code>, если нужна прозрачность.</li>
+                <li>Цвета записаны строчными в 6-значном формате HEX.</li>
+                <li>Цвета могут быть записаны функциями <code>rgba</code> или <code>hsla</code>, если нужна прозрачность.</li>
               </ul>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-css">/* Правильно */
+                <pre><code class="language-css">/* Хорошо */
 .block {
   background-color: #ff0000;
   border-left-color: #00ff00;
   color: rgba(0, 0, 0, 0.5);
 }
 
-/* Неправильно */
+/* Плохо */
 .block {
   background-color: #F00;
   border-left-color: rgb(0, 255, 0);
@@ -823,15 +839,15 @@ ul >li {}
           <article class="chapter-part">
             <div class="chapter-part-col">
               <h3 id="css-color">Цвета</h3>
-              <p>Шестнадцатеричное значение цвета не&nbsp;сокращается, а&nbsp;пишется полностью из&nbsp;всех шести символов. Для записи используются строчные буквы.</p>
+              <p>Шестнадцатеричное значение цвета не сокращено, а записано полностью из всех шести символов. Для записи использованы строчные буквы.</p>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-css">/* Правильно */
+                <pre><code class="language-css">/* Хорошо */
 .block {
   color: #ff0000;
 }
-/* Неправильно */
+/* Плохо */
 .block {
   color: red;
   background-color: #ff0;
@@ -844,16 +860,16 @@ ul >li {}
           <article class="chapter-part">
             <div class="chapter-part-col">
               <h3 id="css-quotes">Кавычки</h3>
-              <p>Во&nbsp;всех случаях в&nbsp;стилях используются двойные кавычки. В&nbsp;необязательных случаях кавычки не&nbsp;опускаются.</p>
+              <p>Во всех случаях в стилях использованы двойные кавычки. В необязательных случаях кавычки не опущены.</p>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-css">/* Правильно */
+                <pre><code class="language-css">/* Хорошо */
 .field[type="text"] {
   background-color: url("images/cat.jpg");
 }
 
-/* Неправильно */
+/* Плохо */
 .field[type=text] {
   background-color: url(images/cat.jpg);
 }
@@ -866,17 +882,17 @@ ul >li {}
           <article class="chapter-part">
             <div class="chapter-part-col">
               <h3 id="css-leading-zero">Ведущий ноль</h3>
-              <p>Начальный ноль для значений не&nbsp;сокращается.</p>
+              <p>Начальный ноль для значений не сокращён.</p>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-css">/* Правильно */
+                <pre><code class="language-css">/* Хорошо */
 .block {
   opacity: 0.5;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* Неправильно */
+/* Плохо */
 .block {
   opacity: .5;
   background-color: rgba(0, 0, 0, .5);
@@ -890,17 +906,17 @@ ul >li {}
           <article class="chapter-part">
             <div class="chapter-part-col">
               <h3 id="css-comma">Пробелы после запятых</h3>
-              <p>После запятых в перечислениях <strong>должен</strong> быть пробел.</p>
+              <p>После запятых в перечислениях стоит пробел.</p>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-css">/* Правильно */
+                <pre><code class="language-css">/* Хорошо */
 .element {
   background-color: rgb(0, 0, 0);
   color: rgba(0, 0, 0, 0.5);
 }
 
-/* Неправильно */
+/* Плохо */
 .element {
   background-color: rgb(0,0,0);
   color: rgba(0 ,0 ,0 ,0.5);
@@ -913,18 +929,18 @@ ul >li {}
           <article class="chapter-part">
             <div class="chapter-part-col">
               <h3 id="css-units">Единицы измерения</h3>
-              <p>Единицы измерения не&nbsp;пишутся там, где в&nbsp;них нет необходимости.</p>
+              <p>Единицы измерения не указаны там, где в них нет необходимости.</p>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-css">/* Правильно */
+                <pre><code class="language-css">/* Хорошо */
 .element {
   border: 0;
   box-shadow: 0 1px 2px #cccccc, inset 0 1px 0 #ffffff;
   margin-top: 0;
 }
 
-/* Неправильно */
+/* Плохо */
 .element {
   border: 0px;
   box-shadow: 0px 1px 2px #cccccc, inset 0px 1px 0 #ffffff;
@@ -940,13 +956,13 @@ ul >li {}
             <div class="chapter-part-col">
               <h3 id="css-repeated-properties">Повторяющиеся свойства</h3>
               <ul>
-                <li>Свойства <strong>не должны</strong> повторяться в рамках одной декларации.</li>
-                <li>Свойство <strong>может</strong> повторяться, если раньше описан сброс или общий случай.</li>
+                <li>Свойства не повторяются в рамках одной декларации.</li>
+                <li>Свойство может повторяться, если раньше описан сброс или общий случай.</li>
               </ul>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-css">/* Правильно */
+                <pre><code class="language-css">/* Хорошо */
 .block {
   margin: 0;
   margin-left: 20px;
@@ -954,7 +970,7 @@ ul >li {}
   border-bottom-color: #ff0000;
 }
 
-/* Неправильно */
+/* Плохо */
 .block {
   margin-left: 10px;
   border-left: 10px solid #000000;
@@ -969,16 +985,16 @@ ul >li {}
           <article class="chapter-part">
             <div class="chapter-part-col">
               <h3 id="css-fractions">Дробные значения</h3>
-              <p>В дробных значениях <strong>не должно</strong> быть больше двух знаков после точки.</p>
+              <p>В дробных значениях нет больше двух знаков после точки.</p>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-css">/* Правильно */
+                <pre><code class="language-css">/* Хорошо */
 .block {
   width: 2.33%;
 }
 
-/* Неправильно */
+/* Плохо */
 .block {
   width: 2.33333%;
 }
@@ -991,13 +1007,13 @@ ul >li {}
             <div class="chapter-part-col">
               <h3 id="css-important"><code>!important</code></h3>
               <ul>
-                <li>Ключевое слово <code>!important</code> <strong>не должно</strong> использоваться для борьбы со специфичностью.</li>
-                <li>Универсальные классы-хелперы <strong>могут</strong> использовать <code>!important</code>.</li>
+                <li>Ключевое слово <code>!important</code> не использовано для борьбы со специфичностью.</li>
+                <li>Универсальные классы-хелперы могут использовать <code>!important</code>.</li>
               </ul>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-css">/* Правильно */
+                <pre><code class="language-css">/* Хорошо */
 .visually-hidden {
   position: absolute !important;
   width: 1px !important;
@@ -1009,7 +1025,7 @@ ul >li {}
   overflow: hidden !important;
 }
 
-/* Неправильно */
+/* Плохо */
 .element {
   font-size: 17px !important;
 }
@@ -1018,18 +1034,18 @@ ul >li {}
             </div>
           </article>
 
-          <article class="chapter-part">
+          <!-- <article class="chapter-part">
             <div class="chapter-part-col">
               <h3 id="css-fonts-add">Подключение шрифтов</h3>
               <ul>
-                <li>Базовые начертания семейства <strong>должны</strong> иметь общее название <code>font-family</code>.</li>
-                <li>Для каждого начертания <strong>должны</strong> быть указаны <code>font-weight</code> и <code>font-style</code>.</li>
-                <li>В описании шрифта <strong>должен</strong> быть указан режим отрисовки <code>font-display</code>.</li>
+                <li>Базовые начертания семейства имеют общее название <code>font-family</code>.</li>
+                <li>Для каждого начертания указаны <code>font-weight</code> и <code>font-style</code>.</li>
+                <li>В описании шрифта указан режим отрисовки <code>font-display</code>.</li>
               </ul>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-css">/* Правильно */
+                <pre><code class="language-css">/* Хорошо */
 @font-face {
   font-family: "PT Sans";
   font-weight: normal;
@@ -1046,7 +1062,7 @@ ul >li {}
   src: url("../fonts/pt-sans-bold.woff2") format("woff2");
 }
 
-/* Неправильно */
+/* Плохо */
 @font-face {
   font-family: "PT Sans Regular";
 }
@@ -1056,16 +1072,16 @@ ul >li {}
 }</code></pre>
               </figure>
             </div>
-          </article>
+          </article> -->
 
-          <article class="chapter-part">
+          <!-- <article class="chapter-part">
             <div class="chapter-part-col">
               <h3 id="css-font-variant">Варианты шрифта</h3>
               <p>
-                Альтернативные варианты шрифта и&nbsp;тип семейства указываются в&nbsp;конце перечисления <code>font-family</code>.
+                Альтернативные варианты шрифта и тип семейства указаны в конце перечисления <code>font-family</code>.
               </p>
               <p>
-                В&nbsp;случае использования нестандартных шрифтов альтернативный веб-безопасный шрифт и&nbsp;тип семейства указываются, чтобы в&nbsp;случае отсутствия нестандартного шрифта в&nbsp;системе, изменения внешнего вида страницы были минимальны. Альтернативный шрифт должен быть такого&nbsp;же типа, что и&nbsp;нестандартный.
+                В случае использования нестандартных шрифтов альтернативный веб-безопасный шрифт и тип семейства указаны, чтобы в случае отсутствия нестандартного шрифта в системе, изменения внешнего вида страницы были минимальны. Альтернативный шрифт указан такого же типа, что и нестандартный.
               </p>
               <p>
                 Порядок шрифтов следующий:
@@ -1076,44 +1092,44 @@ ul >li {}
                 <li>тип шрифта.</li>
               </ol>
               <p>
-                Список веб-безопасных шрифтов можно посмотреть здесь&nbsp;&mdash; <a href="http://www.cssfontstack.com" target="_blank">cssfontstack.com</a>.
+                Список веб-безопасных шрифтов можно посмотреть здесь — <a href="http://www.cssfontstack.com" target="_blank">cssfontstack.com</a>.
               </p>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-css">/* Правильно */
+                <pre><code class="language-css">/* Хорошо */
 body {
   font-family: "Helvetica", "Arial", sans-serif;
 }
 
-/* Неправильно: указан только нестандартный шрифт */
+/* Плохо: указан только нестандартный шрифт */
 body {
   font-family: "Helvetica";
 }
 
-/* Неправильно: указан только нестандартный шрифт и тип семейства, альтернативный веб-безопасный шрифт отсутствует */
+/* Плохо: указан только нестандартный шрифт и тип семейства, альтернативный веб-безопасный шрифт отсутствует */
 body {
   font-family: "Helvetica", sans-serif;
 }
 
-/* Неправильно: Georgia — шрифт с засечками, а нестандартный шрифт — без засечек */
+/* Плохо: Georgia — шрифт с засечками, а нестандартный шрифт — без засечек */
 body {
   font-family: "Helvetica", "Georgia", sans-serif;
 }</code></pre>
               </figure>
             </div>
-          </article>
+          </article> -->
 
           <article class="chapter-part">
             <div class="chapter-part-col">
               <h3 id="css-visually-hidden">Доступное скрытие</h3>
               <p>
-                Для того, чтобы контент был скрыт от глаз, но доступен для скринридеров и поисковиков его нужно скрывать используя утилитарный класс <code>visually-hidden</code>.
+                Контент скрыт утилитарным классом <code>visually-hidden</code>, чтобы он был доступен для скринридеров и поисковиков.
               </p>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
-                <pre><code class="language-css">/* Правильно */
+                <pre><code class="language-css">/* Хорошо */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -1132,7 +1148,7 @@ body {
               </figure>
               <br>
               <figure>
-                <pre><code class="language-css">/* Неправильно */
+                <pre><code class="language-css">/* Плохо */
 h1 {
   font-size: 0;
 }
@@ -1148,7 +1164,7 @@ h1 {
             <div class="chapter-part-col">
               <h3 id="css-order">Порядок свойств</h3>
               <p>
-                Объявления логически связанных свойств группируются в&nbsp;следующем порядке:
+                Объявления логически связанных свойств сгруппированы в следующем порядке:
               </p>
               <ol>
                 <li>Позиционирование</li>
@@ -1159,16 +1175,16 @@ h1 {
                 <li>Разное</li>
               </ol>
               <p>
-                Позиционирование следует первым потому, что оно влияет на&nbsp;положение блоков в&nbsp;потоке документа. Блочная модель идёт следующей, так как она определяет размеры и&nbsp;расположение блоков.
+                Позиционирование следует первым, потому что оно влияет на положение блоков в потоке документа. Блочная модель идёт следующей, так как она определяет размеры и расположение блоков.
               </p>
               <p>
-                Все остальные объявления, которые изменяют вид внутренних частей блоков и&nbsp;не&nbsp;оказывают влияния на&nbsp;другие блоки, идут в&nbsp;последнюю очередь.
+                Все остальные объявления, которые изменяют вид внутренних частей блоков и не оказывают влияния на другие блоки, идут в последнюю очередь.
               </p>
               <p>
-                Сгруппированные объявления в&nbsp;правиле отделяются друг от&nbsp;друга пустой строкой.
+                Сгруппированные объявления в правиле отделены друг от друга пустой строкой.
               </p>
               <p>
-                Порядок объявления подробных правил, таких как <code>font-size</code>, <code>font-family</code>, <code>line-height</code>, должен соответствовать порядку в&nbsp;сокращённой версии правила. В&nbsp;случае совместного использования подробных и&nbsp;сокращённых правил, первой должна идти сокращённая версия.
+                Порядок объявления подробных правил, таких как <code>font-size</code>, <code>font-family</code>, <code>line-height</code>, соответствует порядку в сокращённой версии правила. В случае совместного использования подробных и сокращённых правил, первой идёт сокращённая версия.
               </p>
             </div>
             <div class="chapter-part-col gray-bgcolor">
