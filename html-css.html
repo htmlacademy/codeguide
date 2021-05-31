@@ -52,15 +52,13 @@
           <a href="#html">HTML</a>
           <ul class="sidebar-menu">
             <li><a href="#html-basic-parts">Базовые части разметки</a></li>
-            <li><a href="#html-tags-formatting">Форматирование тегов</a></li>
             <li><a href="#html-syntax-tag">Регистр тегов и атрибутов</a></li>
-            <li><a href="#html-closed-tag">Двойные теги</a></li>
-            <li><a href="#html-single-tag">Одиночные теги</a></li>
+            <li><a href="#html-tags-formatting">Форматирование тегов</a></li>
+            <li><a href="#html-closed-tag">Двойные и одиночные теги</a></li>
             <li><a href="#html-attr-order">Порядок атрибутов</a></li>
             <li><a href="#html-single-attr-no-value">Одиночные атрибуты</a></li>
             <li><a href="#html-attr-no-space">Форматирование атрибутов</a></li>
-            <li><a href="#html-attr-double-quotes">Кавычки в атрибутах</a></li>
-            <li><a href="#html-attr-single-quotes">Кавычки в значениях атрибутов</a></li>
+            <li><a href="#html-attr-double-quotes">Кавычки в атрибутах и в значениях</a></li>
             <!-- <li><a href="#html-attr-no-units">Единицы измерения в атрибутах</a></li> -->
             <li><a href="#html-img-sizes">Размеры замещаемых элементов</a></li>
             <li><a href="#html-class-name">Разделители в имени класса</a></li>
@@ -250,6 +248,40 @@ trim_trailing_whitespace = false</code></pre>
 
           <article class="chapter-part">
             <div class="chapter-part-col">
+              <h3 id="html-syntax-tag">Регистр тегов и атрибутов</h3>
+              <p>Имена тегов, атрибуты и их значения записаны строчными.</p>
+              <p>Исключение: атрибуты для SVG-элементов, например: <code>viewBox</code>, <code>preserveAspectRatio</code> и другие.</p>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-markup">&lt;!-- Хорошо --&gt;
+&lt;ul&gt;
+  &lt;li&gt;Первый&lt;/li&gt;
+  &lt;li&gt;Второй&lt;/li&gt;
+  &lt;li&gt;Третий&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;img class="image" src="images/picture.png" width="400" height="400" alt="Кот смотрит на солнышко."&gt;
+
+&lt;svg width="27" height="16" viewBox="0 0 128 76"&gt;
+  &lt;path d="M125,5.15c.89-3,0-5.15-4.23-5.15h-14a6,6,0,0,0-6.09Z"/&gt;
+&lt;/svg&gt;
+
+&lt;!-- Плохо --&gt;
+&lt;UL&gt;
+  &lt;LI&gt;Первый&lt;/LI&gt;
+  &lt;LI&gt;Второй&lt;/LI&gt;
+  &lt;LI&gt;Третий&lt;/LI&gt;
+&lt;/UL&gt;
+
+&lt;IMG class="IMAGE" SRC="images/picture.png" WIDTH="400" HEIGHT="400" ALT="Кот смотрит на солнышко."&gt;
+                </code></pre>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
               <h3 id="html-tags-formatting">Форматирование тегов</h3>
               <ul>
                 <li>Вложенность тегов обозначается переносами и отступами.</li>
@@ -289,9 +321,12 @@ trim_trailing_whitespace = false</code></pre>
 
           <article class="chapter-part">
             <div class="chapter-part-col">
-              <h3 id="html-syntax-tag">Регистр тегов и атрибутов</h3>
-              <p>Имена тегов, атрибуты и их значения записаны строчными.</p>
-              <p>Исключение: атрибуты для SVG-элементов, например: <code>viewBox</code>, <code>preserveAspectRatio</code> и другие.</p>
+              <h3 id="html-closed-tag">Двойные и одиночные теги</h3>
+              <ul>
+                <li>Двойные теги имеют открывающий и закрывающий теги.</li>
+                <li>Одиночные теги не имеют закрывающий тег или слэш.</li>
+              </ul>
+              <p></p>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
@@ -302,38 +337,9 @@ trim_trailing_whitespace = false</code></pre>
   &lt;li&gt;Третий&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;img class="image" src="images/picture.png" width="400" height="400" alt="Кот смотрит на солнышко."&gt;
+&lt;img src="images/picture.png" width="400" height="400" alt="Кот смотрит на солнышко."&gt;
 
-&lt;svg width="27" height="16" viewBox="0 0 128 76"&gt;
-  &lt;path d="M125,5.15c.89-3,0-5.15-4.23-5.15h-14a6,6,0,0,0-6.09Z"/&gt;
-&lt;/svg&gt;
-
-&lt;!-- Плохо --&gt;
-&lt;UL&gt;
-  &lt;LI&gt;Первый&lt;/LI&gt;
-  &lt;LI&gt;Второй&lt;/LI&gt;
-  &lt;LI&gt;Третий&lt;/LI&gt;
-&lt;/UL&gt;
-
-&lt;IMG class="IMAGE" SRC="images/picture.png" WIDTH="400" HEIGHT="400" ALT="Кот смотрит на солнышко."&gt;
-                </code></pre>
-              </figure>
-            </div>
-          </article>
-
-          <article class="chapter-part">
-            <div class="chapter-part-col">
-              <h3 id="html-closed-tag">Двойные теги</h3>
-              <p>Двойные теги имеют открывающий и закрывающий теги.</p>
-            </div>
-            <div class="chapter-part-col gray-bgcolor">
-              <figure>
-                <pre><code class="language-markup">&lt;!-- Хорошо --&gt;
-&lt;ul&gt;
-  &lt;li&gt;Первый&lt;/li&gt;
-  &lt;li&gt;Второй&lt;/li&gt;
-  &lt;li&gt;Третий&lt;/li&gt;
-&lt;/ul&gt;
+&lt;input type="text" name="name"&gt;
 
 &lt;!-- Плохо --&gt;
 &lt;ul&gt;
@@ -341,24 +347,7 @@ trim_trailing_whitespace = false</code></pre>
   &lt;li&gt;Второй
   &lt;li&gt;Третий
 &lt;/ul&gt;
-                </code></pre>
-              </figure>
-            </div>
-          </article>
 
-          <article class="chapter-part">
-            <div class="chapter-part-col">
-              <h3 id="html-single-tag">Одиночные теги</h3>
-              <p>Одиночные теги не имеют закрывающий тег или слэш.</p>
-            </div>
-            <div class="chapter-part-col gray-bgcolor">
-              <figure>
-                <pre><code class="language-markup">&lt;!-- Хорошо --&gt;
-&lt;img src="images/picture.png" width="400" height="400" alt="Кот смотрит на солнышко."&gt;
-
-&lt;input type="text" name="name"&gt;
-
-&lt;!-- Плохо --&gt;
 &lt;img src="images/picture.png" width="400" height="400" alt="Кот смотрит на солнышко." /&gt;
 
 &lt;input type="text"&gt;&lt;/input&gt;
@@ -371,8 +360,8 @@ trim_trailing_whitespace = false</code></pre>
             <div class="chapter-part-col">
               <h3 id="html-attr-order">Порядок атрибутов</h3>
               <ul>
-                <li>Атрибуты идут в одном порядке, чтобы упростить их чтение.</li>
                 <li>Атрибут <code>class</code> идёт сразу после имени тега.</li>
+                <li>Атрибуты идут в одном порядке, чтобы упростить их чтение.</li>
               </ul>
             </div>
             <div class="chapter-part-col gray-bgcolor">
@@ -431,36 +420,26 @@ trim_trailing_whitespace = false</code></pre>
 
           <article class="chapter-part">
             <div class="chapter-part-col">
-              <h3 id="html-attr-double-quotes">Кавычки в атрибутах</h3>
-              <p>Значения атрибутов записаны в двойных кавычках.</p>
+              <h3 id="html-attr-double-quotes">Кавычки в атрибутах и в значениях</h3>
+              <ul>
+                <li>Значения атрибутов записаны в двойных кавычках.</li>
+                <li>Вложенные кавычки в значениях являются одинарными.</li>
+              </ul>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
                 <pre><code class="language-markup">&lt;!-- Хорошо --&gt;
 &lt;input class="field-group-input field" type="text" id="appointment-date" placeholder="01.01.2020"&gt;
 
-&lt;!-- Плохо --&gt;
-&lt;input class='field-group-input field' type='text' id='appointment-date' placeholder='01.01.2020'&gt;
-
-&lt;input class=field-group-input type=text id=appointment-date placeholder=01.01.2020&gt;
-                </code></pre>
-              </figure>
-            </div>
-          </article>
-
-          <article class="chapter-part">
-            <div class="chapter-part-col">
-              <h3 id="html-attr-single-quotes">Кавычки в значениях атрибутов</h3>
-              <p>Вложенные кавычки в значениях являются одинарными.</p>
-            </div>
-            <div class="chapter-part-col gray-bgcolor">
-              <figure>
-                <pre><code class="language-markup">&lt;!-- Хорошо --&gt;
 &lt;button class="button" type="button" onclick="show('menu')"&gt;
   Меню
 &lt;/button&gt;
 
 &lt;!-- Плохо --&gt;
+&lt;input class='field-group-input field' type='text' id='appointment-date' placeholder='01.01.2020'&gt;
+
+&lt;input class=field-group-input type=text id=appointment-date placeholder=01.01.2020&gt;
+
 &lt;button class="button" type="button" onclick="show("menu")"&gt;
   Меню
 &lt;/button&gt;
@@ -469,42 +448,28 @@ trim_trailing_whitespace = false</code></pre>
             </div>
           </article>
 
-          <!-- <article class="chapter-part">
-            <div class="chapter-part-col">
-              <h3 id="html-attr-no-units">Единицы измерения в атрибутах</h3>
-              <p>В атрибутах нет единиц измерения.</p>
-            </div>
-            <div class="chapter-part-col gray-bgcolor">
-              <figure>
-                <pre><code class="language-markup">&lt;!-- Хорошо --&gt;
-&lt;img src="images/picture.png" width="400" height="400" alt="Кот смотрит на солнышко."&gt;
-
-&lt;!-- Плохо --&gt;
-&lt;img src="images/picture.png" width="400px" height="400px" alt="Кот смотрит на солнышко."&gt;
-                </code></pre>
-              </figure>
-            </div>
-          </article> -->
-
           <article class="chapter-part">
             <div class="chapter-part-col">
               <h3 id="html-img-sizes">Размеры замещаемых элементов</h3>
-              <p>
-                У изображений, видео и <code>iframe</code> указаны размеры.
-              </p>
-              <p>
-                По возможности изображениям указываются действительные размеры, так как это улучшает производительность отрисовки страницы: браузер не будет перерисовывать страницу в процессе загрузки и отображения изображения.
-              </p>
+
+              <ul>
+                <li>У изображений, видео и <code>iframe</code> указаны размеры.</li>
+                <li>о возможности изображениям указываются действительные размеры, так как это улучшает производительность отрисовки страницы: браузер не будет перерисовывать страницу в процессе загрузки и отображения изображения.</li>
+                <li>В атрибутах нет единиц измерения.</li>
+              </ul>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
                 <pre><code class="language-markup">&lt;!-- Хорошо --&gt;
 &lt;img src="logo.png" alt="" width="300" height="150"&gt;
+&lt;svg width="16" height="16" xmlns="http://www.w3.org/2000/svg"&gt;&lt;/svg&gt;
 &lt;video src="source/video.mp4" width="400" height="400"&gt;&lt;/video&gt;
 &lt;iframe src="https://maps.google.com" width="400" height="400"&gt;&lt;/iframe&gt;
 
 &lt;!-- Плохо --&gt;
 &lt;img src="logo.png" alt=""&gt;
+&lt;img src="logo.png" alt="" width="300px" height="150px"&gt;
+&lt;svg xmlns="http://www.w3.org/2000/svg"&gt;&lt;/svg&gt;
 &lt;video src="source/video.mp4" width="400" height="400"&gt;&lt;/video&gt;
 &lt;iframe src="https://maps.google.com" width="400" height="400"&gt;&lt;/iframe&gt;
 </code></pre>
@@ -580,7 +545,7 @@ trim_trailing_whitespace = false</code></pre>
             <div class="chapter-part-col">
               <h3 id="html-style-includes">Подключение стилей</h3>
               <p>
-                Стилевые файлы с помощью <code>&lt;link&gt;</code> подключены внутри <code>&lt;head&gt;</code>. При этом атрибут <code>type</code> для тега <code>&lt;link&gt;</code> не указан, так как его значение <code>text/css</code> устанавливается по умолчанию.
+                Стилевые файлы подключены с помощью <code>&lt;link&gt;</code> внутри <code>&lt;head&gt;</code>. При этом атрибут <code>type</code> для тега <code>&lt;link&gt;</code> не указан, так как его значение <code>text/css</code> устанавливается по умолчанию.
               </p>
             </div>
             <div class="chapter-part-col gray-bgcolor">
