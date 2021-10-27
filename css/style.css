@@ -136,6 +136,10 @@ header a:visited {
   height: 300px;
 }
 
+.logo-list-js {
+  margin: 11px 23px 0;
+}
+
 @media (min-width: 38em) {
   header {
     padding-bottom: 4rem;
@@ -145,14 +149,13 @@ header a:visited {
 /* Logo list */
 
 .logo-list {
-  max-width: 550px;
   margin: 50px auto;
 }
 
 .logo-list ul {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   margin: 0;
   padding: 0;
   list-style: none;
