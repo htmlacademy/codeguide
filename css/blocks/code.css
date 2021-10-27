@@ -1,0 +1,31 @@
+code,
+pre {
+  font-family: "Consolas", "Liberation Mono", "Menlo", "Courier", monospace;
+}
+
+code {
+  padding: 2px 4px;
+
+  font-size: 95%;
+  color: #d44950;
+
+  background-color: #f7f7f9;
+  border-radius: 0.2rem;
+}
+
+pre {
+  display: block;
+  margin: 0 0 1rem;
+
+  line-height: 1.4;
+  white-space: pre-wrap;
+}
+
+pre code {
+  padding: 0;
+
+  color: inherit;
+
+  background-color: transparent;
+  border: 0;
+}

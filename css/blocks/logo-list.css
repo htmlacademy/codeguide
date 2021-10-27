@@ -1,0 +1,19 @@
+.logo-list {
+  max-width: 550px;
+  margin: 50px auto;
+}
+
+.logo-list ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.logo-list li {
+  margin-right: 10px;
+  margin-left: 10px;
+}
