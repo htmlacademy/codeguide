@@ -7,15 +7,19 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
   margin: 0;
+  min-height: 100%;
 
   font: 17px/1.6 "Helvetica", "Arial", sans-serif;
   color: #5a5a5a;
 
   background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
 }
 
 a:link,
@@ -248,6 +252,7 @@ header a:visited {
 
 footer {
   padding: 2rem;
+  margin-top: auto;
 
   background-color: #2d2d44;
 }
