@@ -1,5 +1,6 @@
-# Стиль кода Академии HTML
-Стиль кода можно [посмотреть тут](https://codeguide.academy/).
+# Стиль кода .html academy
+
+Это исходники, публичная версия на сайте [codeguide.academy](https://codeguide.academy/).
 
 ## Благодарности
 
@@ -10,12 +11,11 @@
 
 ## Лицензия
 
-Лицензия MIT, смотрите файл `License.md`.
+[MIT](./License.md).
 
-## Конфигурации линтеров
+## Правила линтеров
 
-ESLint — https://github.com/htmlacademy/eslint-config-htmlacademy
-
-Stylelint — https://github.com/htmlacademy/stylelint-config-htmlacademy
-
-linthtml — https://github.com/htmlacademy/linthtml-config-htmlacademy
+* [EditorConfig](.editorconfig)
+* [ESLint](https://github.com/htmlacademy/eslint-config-htmlacademy)
+* [Stylelint](https://github.com/htmlacademy/stylelint-config-htmlacademy)
+* [HTMLHint](https://github.com/htmlacademy/htmlhint-config-htmlacademy)
