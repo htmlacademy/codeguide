@@ -1,6 +1,5 @@
 footer {
   padding: 2rem;
-
   background-color: #2d2d44;
 }
 
@@ -31,7 +30,6 @@ footer {
 .icon {
   min-width: 2rem;
   min-height: 2rem;
-
   background-repeat: no-repeat;
   background-position: center;
   background-size: calc(100% - 5px);
@@ -62,6 +60,5 @@ footer {
   display: inline-block;
   width: 91px;
   height: 16px;
-
   background-image: url("../../img/github.svg");
 }
