@@ -10,10 +10,10 @@ html {
 
 body {
   margin: 0;
-
-  font: 17px/1.6 "Helvetica", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  font-family: "Helvetica", "Arial", sans-serif;
   color: #5a5a5a;
-
   background-color: #ffffff;
 }
 
