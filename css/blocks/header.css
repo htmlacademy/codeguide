@@ -1,0 +1,44 @@
+header {
+  padding: 1rem 1rem 6rem;
+
+  text-align: center;
+
+  background-color: #312785;
+  background-image: repeating-linear-gradient(150deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.06) 1px, transparent 0, transparent 41px), repeating-linear-gradient(-150deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.06) 1px, transparent 0, transparent 41px);
+  background-size: 82px 47px;
+}
+
+header h1 {
+  margin: 0 0 0.25rem;
+
+  color: #ffffff;
+}
+
+header p {
+  margin-top: 0;
+
+  font-size: 1.1rem;
+}
+
+header a:link,
+header a:visited {
+  color: #ffffff;
+}
+
+.logo {
+  width: 300px;
+  height: 300px;
+}
+
+@media (min-width: 38em) {
+  header {
+    padding-bottom: 4rem;
+  }
+}
+
+@media (min-width: 38em) {
+  header {
+    padding-bottom: 4rem;
+  }
+}
+
