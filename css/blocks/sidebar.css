@@ -1,7 +1,6 @@
 .sidebar {
   display: flex;
   flex-direction: column;
-
   width: 100%;
 }
 
@@ -35,7 +34,6 @@
   .sidebar {
     flex-direction: row;
     flex-wrap: wrap;
-
     padding: 2rem 0;
   }
 
@@ -54,15 +52,12 @@
     position: sticky;
     top: 0;
     bottom: 0;
-
     flex-direction: column;
     flex-wrap: nowrap;
     align-self: flex-start;
-
     width: 230px;
     height: 100vh;
     padding: 0 1rem;
-
     overflow-y: auto;
     line-height: 1.25;
     border-right: 1px solid #e5e5e5;
@@ -70,7 +65,6 @@
 
   .sidebar-col {
     flex-shrink: 0;
-
     width: 100%;
     padding: 0;
   }
@@ -97,21 +91,17 @@
   .sidebar-menu {
     padding: 0;
     margin: 0.5em 0 0;
-
     list-style: none;
-
     font-size: 0.7rem;
   }
 
   .sidebar-menu li {
     margin: 0;
-
     line-height: 1.45;
   }
 
   .sidebar-menu a {
     display: block;
-
     padding: 0.25em 0;
   }
 }
