@@ -139,14 +139,13 @@ header a:visited {
 }
 
 .logo-list {
-  max-width: 550px;
   margin: 50px auto;
 }
 
 .logo-list ul {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   margin: 0;
   padding: 0;
 
@@ -156,6 +155,10 @@ header a:visited {
 .logo-list li {
   margin-right: 10px;
   margin-left: 10px;
+}
+
+.logo-list-js {
+  margin: 11px 23px 0;
 }
 
 .logo {
