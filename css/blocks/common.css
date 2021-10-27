@@ -33,7 +33,6 @@ h1,
 h2,
 h3 {
   margin: 0;
-
   font-weight: normal;
   color: #424242;
   letter-spacing: -0.025em;
@@ -71,9 +70,7 @@ ul li {
   margin: -1px;
   padding: 0;
   overflow: hidden;
-
   border: 0;
-
   clip: rect(0, 0, 0, 0);
   clip-path: inset(100%);
 }
