@@ -19,7 +19,6 @@
 .chapter-part {
   display: flex;
   flex-direction: column;
-
   border-bottom: 1px solid #e5e5e5;
 }
 
@@ -53,15 +52,6 @@
   }
 }
 
-@media (min-width: 38em) {
-  .chapter h2 {
-    padding: 2rem 2rem 2.5rem;
-  }
-
-  .chapter-part-col {
-    padding: 2rem;
-  }
-}
 
 @media (min-width: 48em) {
   .chapter h2 {
