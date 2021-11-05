@@ -870,12 +870,15 @@ ul >li {}
           <article class="chapter-part">
             <div class="chapter-part-col">
               <h3 id="css-units">Единицы измерения</h3>
-              <p>Единицы измерения не указаны там, где в них нет необходимости.</p>
+              <p>Единицы измерения не указаны там, где в них нет необходимости (за исключением значений кастомных свойств).</p>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
                 <pre><code class="language-css">/* Хорошо */
 .element {
+  --x: 0%;
+  --y: 0px;
+
   border: 0;
   box-shadow: 0 1px 2px #cccccc, inset 0 1px 0 #ffffff;
   margin-top: 0;
