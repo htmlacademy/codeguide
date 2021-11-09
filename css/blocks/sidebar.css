@@ -1,0 +1,109 @@
+/* Sidebar */
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.sidebar a {
+  display: block;
+  color: #5a5a5a;
+}
+
+.sidebar a:hover {
+  color: #3f3ccb;
+}
+
+.sidebar-col {
+  padding: 2rem 1rem;
+}
+
+.sidebar-col + .sidebar-col {
+  border-top: 1px solid #e5e5e5;
+}
+
+.sidebar-col > a {
+  font-size: 1.75rem;
+  line-height: 1.25;
+}
+
+.sidebar-menu {
+  padding-left: 1rem;
+}
+
+@media (min-width: 48em) {
+  .sidebar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+  }
+
+  .sidebar-col {
+    width: 50%;
+    padding: 1rem 3rem;
+  }
+
+  .sidebar-col + .sidebar-col {
+    border-top: 0;
+  }
+}
+
+@media (min-width: 75em) {
+  .sidebar {
+    position: sticky;
+    top: 0;
+    bottom: 0;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-self: flex-start;
+    width: 230px;
+    height: 100vh;
+    padding: 0 1rem;
+    overflow-y: auto;
+    line-height: 1.25;
+    border-right: 1px solid #e5e5e5;
+  }
+
+  .sidebar-col {
+    flex-shrink: 0;
+    width: 100%;
+    padding: 0;
+  }
+
+  .sidebar-col-first {
+    padding-top: 1.75rem;
+  }
+
+  .sidebar-col-last {
+    padding-bottom: 1.75rem;
+  }
+
+  .sidebar-col + .sidebar-col {
+    margin-top: 1.75em;
+  }
+
+  .sidebar-col > a {
+    display: block;
+
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+
+  .sidebar-menu {
+    padding: 0;
+    margin: 0.5em 0 0;
+    list-style: none;
+    font-size: 0.7rem;
+  }
+
+  .sidebar-menu li {
+    margin: 0;
+    line-height: 1.45;
+  }
+
+  .sidebar-menu a {
+    display: block;
+    padding: 0.25em 0;
+  }
+}

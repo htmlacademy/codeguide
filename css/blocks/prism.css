@@ -1,0 +1,51 @@
+/* Prism */
+
+/* override default prism theme */
+code[class*="language-"],
+pre[class*="language-"] {
+  white-space: pre-wrap;
+}
+
+pre[class*="language-"] {
+  margin: 0;
+  padding: 0;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: initial;
+}
+
+/* override default prism theme */
+code[class*="language-"],
+pre[class*="language-"] {
+  white-space: pre-wrap;
+}
+
+pre[class*="language-"] {
+  margin: 0;
+  padding: 0;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: initial;
+}
+
+pre.language-correct,
+pre.language-incorrect {
+  padding: 5px 10px;
+}
+
+pre.language-correct {
+  background: #deeede;
+}
+
+pre.language-incorrect {
+  background: #f4d3d3;
+}
+
+pre.language-correct .token.operator,
+pre.language-incorrect .token.operator {
+  background: none;
+}
