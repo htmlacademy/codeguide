@@ -668,7 +668,7 @@ trim_trailing_whitespace = false</code></pre>
 .block{margin-bottom: 0;
     margin-top: 0;
   font-size: 14px;line-height: 20;
-  color :red}
+  color :#ff0000}
 .element {
   background-color: #000000;
 }
@@ -786,12 +786,12 @@ ul >li {}
               <figure>
                 <pre><code class="language-css">/* Хорошо */
 .field[type="text"] {
-  background-color: url("images/cat.jpg");
+  background-image: url("images/cat.jpg");
 }
 
 /* Плохо */
 .field[type=text] {
-  background-color: url(images/cat.jpg);
+  background-image: url(images/cat.jpg);
 }
 
 </code></pre>
@@ -815,11 +815,6 @@ ul >li {}
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.element {
-  background-color: rgb(0, 0, 0);
-  color: rgba(0, 0, 0, 0.5);
-}
-
 /* Плохо */
 .block {
   opacity: .5;
@@ -827,7 +822,6 @@ ul >li {}
 }
 
 .element {
-  background-color: rgb(0,0,0);
   color: rgba(0 ,0 ,0 ,0.5);
 }
 
