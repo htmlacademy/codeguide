@@ -212,7 +212,7 @@ trim_trailing_whitespace = false</code></pre>
                 <li>Корневой элемент <code>&lt;html&gt;</code> с языком документа <code>lang</code></li>
                 <li>Метаинформация <code>&lt;head&gt;</code></li>
                 <li>Заголовок документа <code>&lt;title&gt;</code></li>
-                <li>Кодировка документа <code>&lt;meta charset="utf-8"&gt;</code>. Кодировка символов на странице явно указана, чтобы обеспечить корректное отображение текста. Кодировка <code>utf-8</code> предпочтительна.</li>
+                <li>Кодировка документа <code>&lt;meta charset="utf-8"&gt;</code>. Кодировка символов на странице явно указана, чтобы обеспечить корректное отображение текста.</li>
                 <li>Тело документа <code>&lt;body&gt;</code></li>
               </ul>
             </div>
@@ -233,6 +233,14 @@ trim_trailing_whitespace = false</code></pre>
 &lt;html&gt;
   &lt;title&gt;Заголовок&lt;/title&gt;
   Страница
+&lt;/html&gt;
+
+&lt;!-- Плохо --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+  &lt;head&gt;
+    &lt;meta charset="windows-1251"&gt;
+  &lt;/head&gt;
 &lt;/html&gt;
 </code></pre>
               </figure>
