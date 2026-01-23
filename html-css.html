@@ -74,7 +74,6 @@
           <a href="#css">CSS</a>
           <ul class="sidebar-menu">
             <li><a href="#css-import">Правило @import</a></li>
-            <li><a href="#css-container">Контейнерные запросы</a></li>
             <li><a href="#css-case-sensitivity">Регистр селекторов и свойств</a></li>
             <li><a href="#css-structure">Структура объявления</a></li>
             <li><a href="#css-class-names">Имена классов</a></li>
@@ -724,33 +723,6 @@ trim_trailing_whitespace = false</code></pre>
 &lt;style&gt;
   @import url("module.css");
 &lt;/style&gt;</code></pre>
-              </figure>
-            </div>
-          </article>
-
-          <article class="chapter-part">
-            <div class="chapter-part-col">
-              <h3 id="css-container">Контейнерные запросы</h3>
-              <p>Контейнерные запросы позволяют компонентам адаптироваться к размеру родителя, а не <code>viewport</code>. Объявите контейнер через <code>container</code> и задайте стили в <code>@container</code>.</p>
-            </div>
-            <div class="chapter-part-col gray-bgcolor">
-              <figure>
-                <pre><code class="language-css">/* Хорошо */
-.card-wrapper {
-  container: card / inline-size;
-}
-
-@container card (min-width: 400px) {
-  .card {
-    display: flex;
-    gap: 16px;
-  }
-}
-
-/* Единицы контейнера */
-.card-title {
-  font-size: clamp(16px, 5cqi, 24px);
-}</code></pre>
               </figure>
             </div>
           </article>
