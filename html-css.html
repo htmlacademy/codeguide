@@ -78,6 +78,7 @@
             <li><a href="#css-case-sensitivity">Регистр селекторов и свойств</a></li>
             <li><a href="#css-structure">Структура объявления</a></li>
             <li><a href="#css-class-names">Имена классов</a></li>
+            <li><a href="#css-id-selectors">ID-селекторы</a></li>
             <li><a href="#css-multiselectors">Перенос селекторов</a></li>
             <li><a href="#css-combnators">Пробелы между комбинаторами</a></li>
             <li><a href="#css-color-format">Формат цветов</a></li>
@@ -92,6 +93,7 @@
             <li><a href="#css-custom-properties">Кастомные свойства</a></li>
             <li><a href="#css-keyframes">Правило @keyframes</a></li>
             <li><a href="#css-font-face">Правило @font-face</a></li>
+            <li><a href="#css-font-weight">Свойство font-weight</a></li>
             <li><a href="#css-order">Порядок свойств</a></li>
           </ul>
         </div>
@@ -795,7 +797,7 @@ trim_trailing_whitespace = false</code></pre>
               <ul>
                 <li>Увеличивайте отступ на 2 пробела для каждого уровня.</li>
                 <li>Отделяйте вложенные блоки пустой строкой от свойств родителя.</li>
-                <li>Ограничивайте глубину до 2–3 уровней — глубже читать сложно.</li>
+                <li>Ограничивайте глубину до 2 уровней — глубже читать сложно.</li>
               </ul>
             </div>
             <div class="chapter-part-col gray-bgcolor">
@@ -879,6 +881,35 @@ trim_trailing_whitespace = false</code></pre>
 .t { … }
 .big_red_button { … }
 .knopka { … }</code></pre>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
+              <h3 id="css-id-selectors">ID-селекторы</h3>
+              <p>Не используйте ID-селекторы для стилизации — их специфичность слишком высока, что затрудняет переопределение стилей. Используйте классы.</p>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-css">/* Хорошо */
+.header {
+  background-color: #333333;
+}
+
+.navigation {
+  display: flex;
+}
+
+/* Плохо */
+#header {
+  background-color: #333333;
+}
+
+#navigation {
+  display: flex;
+}
+</code></pre>
               </figure>
             </div>
           </article>
@@ -1293,6 +1324,39 @@ h1 {
   font-family: "Roboto";
   src: url("fonts/roboto.ttf");
 }</code></pre>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
+              <h3 id="css-font-weight">Свойство <code>font-weight</code></h3>
+              <p>Используйте числовые значения (<code>400</code>, <code>700</code>) вместо ключевых слов <code>normal</code> и <code>bold</code> — они точнее и понятнее. Относительные значения <code>bolder</code> и <code>lighter</code> допустимы.</p>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-css">/* Хорошо */
+.text {
+  font-weight: 400;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+.text-relative {
+  font-weight: bolder;
+}
+
+/* Плохо */
+.text {
+  font-weight: normal;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+</code></pre>
               </figure>
             </div>
           </article>
