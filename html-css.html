@@ -75,7 +75,8 @@
           <ul class="sidebar-menu">
             <li><a href="#css-import">Правило @import</a></li>
             <li><a href="#css-case-sensitivity">Регистр селекторов и свойств</a></li>
-            <li><a href="#css-structure">Структура объявления</a></li>
+            <li><a href="#css-formatting">Форматирование правил</a></li>
+            <li><a href="#css-nesting">Вложенность</a></li>
             <li><a href="#css-class-names">Имена классов</a></li>
             <li><a href="#css-id-selectors">ID-селекторы</a></li>
             <li><a href="#css-multiselectors">Перенос селекторов</a></li>
@@ -755,8 +756,7 @@ trim_trailing_whitespace = false</code></pre>
 
           <article class="chapter-part">
             <div class="chapter-part-col">
-              <h3 id="css-structure">Структура объявления</h3>
-              <p>Форматирование правил:</p>
+              <h3 id="css-formatting">Форматирование правил</h3>
               <ul>
                 <li>Перед <code>{</code> ставьте пробел, после — новая строка.</li>
                 <li>Каждое свойство — на отдельной строке с отступом в 2 пробела.</li>
@@ -764,12 +764,6 @@ trim_trailing_whitespace = false</code></pre>
                 <li>Завершайте каждое объявление <code>;</code> — так проще добавлять новые свойства.</li>
                 <li><code>}</code> — на новой строке без отступа.</li>
                 <li>Между блоками — одна пустая строка.</li>
-              </ul>
-              <p>Вложенность (<code>@media</code>, <code>@container</code>, CSS nesting):</p>
-              <ul>
-                <li>Увеличивайте отступ на 2 пробела для каждого уровня.</li>
-                <li>Отделяйте вложенные блоки пустой строкой от свойств родителя.</li>
-                <li>Ограничивайте глубину до 2 уровней — глубже читать сложно.</li>
               </ul>
             </div>
             <div class="chapter-part-col gray-bgcolor">
@@ -795,8 +789,24 @@ trim_trailing_whitespace = false</code></pre>
 .element {
   background-color: #000000;
 }
+</code></pre>
+              </figure>
+            </div>
+          </article>
 
-/* Хорошо: @media */
+          <article class="chapter-part">
+            <div class="chapter-part-col">
+              <h3 id="css-nesting">Вложенность</h3>
+              <p>Правила для <code>@media</code>, <code>@container</code> и CSS nesting:</p>
+              <ul>
+                <li>Увеличивайте отступ на 2 пробела для каждого уровня.</li>
+                <li>Отделяйте вложенные блоки пустой строкой от свойств родителя.</li>
+                <li>Ограничивайте глубину до 2 уровней — глубже читать сложно.</li>
+              </ul>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-css">/* Хорошо: @media */
 .block {
   padding: 10px;
 }
