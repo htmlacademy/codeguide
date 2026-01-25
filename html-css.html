@@ -62,7 +62,8 @@
             <li><a href="#html-img-sizes">Размеры замещаемых элементов</a></li>
             <li><a href="#html-loading">Ленивая загрузка</a></li>
             <li><a href="#html-class-name">Разделители в имени класса</a></li>
-            <li><a href="#html-form-method">Атрибут method в форме</a></li>
+            <li><a href="#html-form-attrs">Атрибуты action и method</a></li>
+            <li><a href="#html-external-links">Безопасность внешних ссылок</a></li>
             <li><a href="#html-style-includes">Подключение стилей</a></li>
             <li><a href="#html-js-includes">Подключение скриптов</a></li>
             <li><a href="#html-validator">Валидность</a></li>
@@ -564,18 +565,48 @@ trim_trailing_whitespace = false</code></pre>
 
           <article class="chapter-part">
             <div class="chapter-part-col">
-              <h3 id="html-form-method">Атрибут <code>method</code> в форме</h3>
-              <p>Всегда указывайте атрибут <code>method</code> — он определяет, как браузер отправит данные формы.</p>
+              <h3 id="html-form-attrs">Атрибуты <code>action</code> и <code>method</code></h3>
+              <p>Указывайте оба атрибута явно:</p>
+              <ul>
+                <li><code>action</code> — куда отправляются данные. Без него форма отправится на текущий URL.</li>
+                <li><code>method</code> — как отправляются данные. Без него браузер использует GET, и данные попадут в URL.</li>
+              </ul>
             </div>
             <div class="chapter-part-col gray-bgcolor">
               <figure>
                 <pre><code class="language-markup">&lt;!-- Хорошо --&gt;
+&lt;form action="/submit" method="post"&gt;&lt;/form&gt;
+&lt;form action="/search" method="get"&gt;&lt;/form&gt;
+
+&lt;!-- Плохо: нет action --&gt;
 &lt;form method="post"&gt;&lt;/form&gt;
-&lt;form method="get"&gt;&lt;/form&gt;
+
+&lt;!-- Плохо: нет method --&gt;
+&lt;form action="/submit"&gt;&lt;/form&gt;
+
+&lt;!-- Плохо: нет ни action, ни method --&gt;
+&lt;form&gt;&lt;/form&gt;
+                </code></pre>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
+              <h3 id="html-external-links">Безопасность внешних ссылок</h3>
+              <p>Для ссылок с <code>target="_blank"</code> добавляйте <code>rel="noopener"</code> — это защита от атаки через <code>window.opener</code>, когда внешняя страница может получить доступ к вашей.</p>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-markup">&lt;!-- Хорошо --&gt;
+&lt;a href="https://example.com" target="_blank" rel="noopener"&gt;
+  Внешняя ссылка
+&lt;/a&gt;
 
 &lt;!-- Плохо --&gt;
-&lt;form method=""&gt;&lt;/form&gt;
-&lt;form&gt;&lt;/form&gt;
+&lt;a href="https://example.com" target="_blank"&gt;
+  Внешняя ссылка
+&lt;/a&gt;
                 </code></pre>
               </figure>
             </div>
