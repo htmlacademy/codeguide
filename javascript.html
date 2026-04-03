@@ -15,14 +15,6 @@
     <link rel="stylesheet" href="css/prism.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <style type="text/css">
-      blockquote {
-        background: #eeb;
-        margin-left: -10px;
-        padding: 10px 10px;
-      }
-    </style>
-
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MN2NPQ9');</script>
     <!-- End Google Tag Manager -->
@@ -270,7 +262,7 @@ const bar = [
 
               <p>В коде нет пустых блоков кода</p>
 
-              <p>Код работает в строгом режиме: в начале всех файлов явно прописана директива <code>"use strict"</code> или используются модули ECMAScript, которые по умолчанию работают в строгом режиме</p>
+              <p>Код работает в строгом режиме. Модули ECMAScript (<code>type="module"</code>) работают в строгом режиме автоматически. В обычных скриптах в начале файла явно прописывается директива <code>"use strict"</code></p>
             </div>
           </article>
 
@@ -347,7 +339,7 @@ const bar = [
           <article class="chapter-part">
             <div class="chapter-part-col chapter-part-col--full-width">
               <h3 id="declaring-variables-and-functions">Объявление переменных и функций</h3>
-              <p>При объявлении переменных предпочтение отдается ключевым словам <code>let</code> и <code>const</code>. Переменные объявляются через <code>var</code> только при наличии проблем с поддержкой ECMAScript 2015</p>
+              <p>Переменные объявляются через <code>const</code> или <code>let</code>. Ключевое слово <code>var</code> не используется</p>
 
               <p>Запрещено переопределять с помощью ключевого слова ранее созданные переменные</p>
 
@@ -494,7 +486,7 @@ myFunc = 2;</code></pre>
 
           <article class="chapter-part">
             <div class="chapter-part-col chapter-part-col--full-width">
-              <p>При итерировании по объектам через <code>for..in</code> при работе со свойствами используется конструкция <code>hasOwnProperty</code></p>
+              <p>При итерировании по объектам через <code>for..in</code> при работе со свойствами используется <code>Object.hasOwn()</code></p>
 
               <p>В объектах напрямую не переопределяется свойство <code>__iterator__</code></p>
 
@@ -503,9 +495,11 @@ myFunc = 2;</code></pre>
   __proto__: Parent
 };</code></pre>
 
-              <pre class="language-js language-correct"><code>const Obj = function() {};
-Obj.prototype = new Parent();
-const obj = new obj;
+              <pre class="language-js language-correct"><code>class Obj extends Parent {
+  constructor() {
+    super();
+  }
+}
 
 const obj = Object.create(Parent.prototype);</code></pre>
 
@@ -554,20 +548,6 @@ for (let i = 0, l = 100; i < l; i++);</code></pre>
         <a class="logo-full" href="https://htmlacademy.ru">
           <img src="img/logo-html-academy.svg" width="161" height="47" alt="HTML Academy" title="HTML Academy">
         </a>
-        <div class="social-icons">
-          <a class="icon icon-vk" href="https://vk.com/htmlacademy" target="_blank" rel="noopener">
-            Вконтакте
-          </a>
-          <a class="icon icon-fb" href="https://www.facebook.com/htmlacademy" target="_blank" rel="noopener">
-            Facebook
-          </a>
-          <a class="icon icon-tw" href="https://twitter.com/htmlacademy_ru" target="_blank" rel="noopener">
-            Twitter
-          </a>
-          <a class="icon icon-ig" href="https://instagram.com/htmlacademy" target="_blank" rel="noopener">
-            Instagram
-          </a>
-        </div>
         <div class="github">
           <a class="github-link" href="https://github.com/htmlacademy" target="_blank" rel="noopener">
             GitHub
