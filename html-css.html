@@ -82,6 +82,7 @@
             <li><a href="#css-id-selectors">ID-селекторы</a></li>
             <li><a href="#css-multiselectors">Перенос селекторов</a></li>
             <li><a href="#css-combnators">Пробелы между комбинаторами</a></li>
+            <li><a href="#css-modern-selectors">Современные селекторы</a></li>
             <li><a href="#css-color-format">Формат цветов</a></li>
             <li><a href="#css-quotes">Кавычки</a></li>
             <li><a href="#css-leading-zero">Ведущий ноль и пробелы после запятых</a></li>
@@ -108,7 +109,7 @@
             <div class="chapter-part-col">
               <p>Запоминать все правила необязательно — за этим следят линтеры.</p>
               <ul>
-                <li>Для поддержания единообразия в коде используйте <a href="https://github.com/htmlacademy/codeguide/blob/master/.editorconfig">EditorConfig</a>.</li>
+                <li>Для поддержания единообразия в коде используйте <a href="https://github.com/htmlacademy/codeguide/blob/main/.editorconfig">EditorConfig</a>.</li>
                 <li>Для HTML используйте <a href="https://github.com/htmlacademy/linthtml-config-htmlacademy">linthtml</a>.</li>
                 <li>Для стилей используйте <a href="https://github.com/htmlacademy/stylelint-config-htmlacademy">Stylelint</a>.</li>
               </ul>
@@ -173,7 +174,7 @@ project/
           <article class="chapter-part">
             <div class="chapter-part-col">
               <h3 id="formatting">Форматирование кода</h3>
-              <p>Настройте <a href="https://github.com/htmlacademy/codeguide/blob/master/.editorconfig">EditorConfig</a>, чтобы редактор автоматически форматировал код:</p>
+              <p>Настройте <a href="https://github.com/htmlacademy/codeguide/blob/main/.editorconfig">EditorConfig</a>, чтобы редактор автоматически форматировал код:</p>
               <pre><code>root = true
 
 [*]
@@ -971,6 +972,60 @@ ul >li {}
 
           <article class="chapter-part">
             <div class="chapter-part-col">
+              <h3 id="css-modern-selectors">Современные селекторы</h3>
+              <p>Используйте современные псевдоклассы для упрощения селекторов:</p>
+              <ul>
+                <li><code>:is()</code> — группирует селекторы. Специфичность равна самому специфичному аргументу.</li>
+                <li><code>:where()</code> — то же, что <code>:is()</code>, но с нулевой специфичностью. Подходит для базовых стилей и сбросов.</li>
+                <li><code>:has()</code> — стилизует элемент по наличию определённого потомка или соседа.</li>
+              </ul>
+            </div>
+            <div class="chapter-part-col gray-bgcolor">
+              <figure>
+                <pre><code class="language-css">/* Хорошо: :is() вместо длинного перечисления */
+:is(h1, h2, h3) {
+  margin-top: 0;
+}
+
+:is(.card, .banner) :is(h2, h3) {
+  color: var(--color-primary);
+}
+
+/* Хорошо: :where() для базовых стилей */
+:where(ul, ol) {
+  padding-left: 0;
+  list-style: none;
+}
+
+/* Хорошо: :has() для стилизации родителя */
+.form-field:has(:invalid) {
+  border-color: var(--color-error);
+}
+
+.card:has(img) {
+  padding-top: 0;
+}
+
+/* Плохо: дублирование вместо :is() */
+h1,
+h2,
+h3 {
+  margin-top: 0;
+}
+
+.card h2,
+.card h3,
+.banner h2,
+.banner h3 {
+  color: var(--color-primary);
+}
+</code></pre>
+              </figure>
+            </div>
+          </article>
+
+          <article class="chapter-part">
+            <div class="chapter-part-col">
               <h3 id="css-color-format">Формат цветов</h3>
               <p>Записывайте цвета строчными в шестизначном HEX-формате (<code>#ff0000</code>, а не <code>#f00</code>) — так легче искать и заменять цвета в коде. Для прозрачности добавляйте альфа-канал в <code>rgb()</code> через слэш: <code>rgb(0 0 0 / 0.5)</code>.</p>
               <p>Для дизайн-систем подойдёт <code>oklch()</code> — в нём легко создавать оттенки одного цвета, меняя только яркость.</p>
@@ -1454,20 +1509,6 @@ h1 {
         <a class="logo-full" href="https://htmlacademy.ru">
           <img src="img/logo-html-academy.svg" width="161" height="47" alt="HTML Academy" title="HTML Academy">
         </a>
-        <div class="social-icons">
-          <a class="icon icon-vk" href="https://vk.com/htmlacademy" target="_blank" rel="noopener">
-            Вконтакте
-          </a>
-          <a class="icon icon-fb" href="https://www.facebook.com/htmlacademy" target="_blank" rel="noopener">
-            Facebook
-          </a>
-          <a class="icon icon-tw" href="https://twitter.com/htmlacademy_ru" target="_blank" rel="noopener">
-            Twitter
-          </a>
-          <a class="icon icon-ig" href="https://instagram.com/htmlacademy" target="_blank" rel="noopener">
-            Instagram
-          </a>
-        </div>
         <div class="github">
           <a class="github-link" href="https://github.com/htmlacademy" target="_blank" rel="noopener">
             GitHub
