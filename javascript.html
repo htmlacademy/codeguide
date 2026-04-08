@@ -88,7 +88,7 @@
             <div class="chapter-part-col chapter-part-col--full-width">
               <h3 id="indents-spaces-and-hyphens">Отступы, пробелы и переносы</h3>
 
-              <blockquote>Для правильного форматирования используйте файл <a href="https://github.com/htmlacademy/codeguide/blob/master/.editorconfig" target="_blank" rel="noopener">.editorconfig</a> в&nbsp;вашем редакторе.</blockquote>
+              <blockquote>Для правильного форматирования используйте файл <a href="https://github.com/htmlacademy/codeguide/blob/master/.editorconfig" target="_blank">.editorconfig</a> в&nbsp;вашем редакторе.</blockquote>
 
               <p>Для отступов используются два пробела. Знак табуляции не используется</p>
 
@@ -239,7 +239,7 @@ const bar = [
 
               <p>Запрещено использовать имена переменных, которые используются во внешних областях видимости</p>
 
-              <p>Запрещено называть переменные и свойства <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords" target="_blank" rel="noopener">ключевыми словами JS</a></p>
+              <p>Запрещено называть переменные и свойства <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords" target="_blank">ключевыми словами JS</a></p>
 
               <p>Запрещено использовать переменные, не объявленные ранее. При использовании переменной, объявленной в другом модуле в глобальной области видимости, нужно обращаться к ней как к свойству объекта <code>window</code></p>
 
@@ -262,7 +262,7 @@ const bar = [
 
               <p>В коде нет пустых блоков кода</p>
 
-              <p>Код работает в строгом режиме. Модули ECMAScript (<code>type="module"</code>) работают в строгом режиме автоматически. В обычных скриптах в начале файла явно прописывается директива <code>"use strict"</code></p>
+              <p>Код работает в строгом режиме. Модули ECMAScript (<code>type="module"</code>) работают в строгом режиме автоматически. В скриптах без <code>type="module"</code> в начале файла явно прописывается директива <code>"use strict"</code></p>
             </div>
           </article>
 
@@ -279,7 +279,7 @@ const bar = [
 
               <p>В условиях не используется небезопасное отрицание, например использование <code>!</code> в <code>in</code> или <code>instanceof</code> без скобок</p>
 
-              <p>Запрещено сравнение с <code>NaN</code>. Для проверки, является ли результат операции числовым, нужно использовать <code><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN" target="_blank" rel="noopener">Number.isNaN</a></code></p>
+              <p>Запрещено сравнение с <code>NaN</code>. Для проверки, является ли результат операции числовым, нужно использовать <code><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN" target="_blank">Number.isNaN</a></code></p>
 
               <p>Запрещено использовать <code>case</code> без <code>break</code> или <code>return</code> в блоках <code>switch</code></p>
 
@@ -339,11 +339,11 @@ const bar = [
           <article class="chapter-part">
             <div class="chapter-part-col chapter-part-col--full-width">
               <h3 id="declaring-variables-and-functions">Объявление переменных и функций</h3>
-              <p>Переменные объявляются через <code>const</code> или <code>let</code>. Ключевое слово <code>var</code> не используется</p>
+              <p>Переменные объявляются через <code>const</code>. Если переменной нужно переприсвоение, используется <code>let</code>. Ключевое слово <code>var</code> не используется</p>
 
               <p>Запрещено переопределять с помощью ключевого слова ранее созданные переменные</p>
 
-              <p>Запрещено использовать множественное объявление через одно ключевое слово. Для каждой переменной используется отдельный <code>var</code>, <code>let</code> или <code>const</code>.</p>
+              <p>Запрещено использовать множественное объявление через одно ключевое слово. Для каждой переменной используется отдельный <code>let</code> или <code>const</code>.</p>
               <pre class="language-js language-incorrect"><code>const a = 1, b = 2;</code></pre>
 
               <pre class="language-js language-correct"><code>const a = 1;
@@ -404,7 +404,7 @@ myFunc = 2;</code></pre>
               <p>В функциях, которые не являются методами никакого объекта или класса, не используется <code>this</code></p>
 
               <h4>Переменные</h4>
-              <p>Переменные, объявленные через <code>var</code> не удаляются оператором <code>delete</code></p>
+              <p>Переменные не удаляются оператором <code>delete</code></p>
             </div>
           </article>
 
@@ -495,19 +495,17 @@ myFunc = 2;</code></pre>
   __proto__: Parent
 };</code></pre>
 
-              <pre class="language-js language-correct"><code>class Obj extends Parent {
+              <pre class="language-js language-correct"><code>class Child extends Parent {
   constructor() {
     super();
   }
-}
-
-const obj = Object.create(Parent.prototype);</code></pre>
+}</code></pre>
 
               <p>В коде не используются лейблы. Лейблы используются с конструкциями <code>break</code> и <code>continue</code> для направленного выхода из цикла и могут привести к слишком сложному для понимания коду</p>
 
               <p>Блоки, использующиеся в коде, должны описывать тело функции, условия, оператора <code>switch</code> и прочие конструкции, относящиеся к группировке множественных операций. Блоки не должны использоваться сами по себе, любой блок должен быть частью другого выражения</p>
 
-              <p>В коде не используется оператор «запятая» для описания последовательностей действий. Для создания переменных используются отдельные ключевые слова <code>let</code>, <code>const</code>, <code>var</code>, операторы группировки, условные операторы и прочие конструкции. Исключение составляет начальное условие оператора <code>for</code></p>
+              <p>В коде не используется оператор «запятая» для описания последовательностей действий. Для создания переменных используются отдельные ключевые слова <code>let</code>, <code>const</code>, операторы группировки, условные операторы и прочие конструкции. Исключение составляет начальное условие оператора <code>for</code></p>
               <pre class="language-js language-incorrect"><code>const result = (1, 2); // 2</code></pre>
 
               <pre class="language-js language-correct"><code>const result = 2;</code></pre>
@@ -549,7 +547,7 @@ for (let i = 0, l = 100; i < l; i++);</code></pre>
           <img src="img/logo-html-academy.svg" width="161" height="47" alt="HTML Academy" title="HTML Academy">
         </a>
         <div class="github">
-          <a class="github-link" href="https://github.com/htmlacademy" target="_blank" rel="noopener">
+          <a class="github-link" href="https://github.com/htmlacademy" target="_blank">
             GitHub
           </a>
         </div>

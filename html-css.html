@@ -63,7 +63,6 @@
             <li><a href="#html-loading">Ленивая загрузка</a></li>
             <li><a href="#html-class-name">Разделители в имени класса</a></li>
             <li><a href="#html-form-attrs">Атрибуты action и method</a></li>
-            <li><a href="#html-external-links">Безопасность внешних ссылок</a></li>
             <li><a href="#html-style-includes">Подключение стилей</a></li>
             <li><a href="#html-js-includes">Подключение скриптов</a></li>
             <li><a href="#html-validator">Валидность</a></li>
@@ -109,7 +108,7 @@
             <div class="chapter-part-col">
               <p>Запоминать все правила необязательно — за этим следят линтеры.</p>
               <ul>
-                <li>Для поддержания единообразия в коде используйте <a href="https://github.com/htmlacademy/codeguide/blob/main/.editorconfig">EditorConfig</a>.</li>
+                <li>Для поддержания единообразия в коде используйте <a href="https://github.com/htmlacademy/codeguide/blob/master/.editorconfig">EditorConfig</a>.</li>
                 <li>Для HTML используйте <a href="https://github.com/htmlacademy/linthtml-config-htmlacademy">linthtml</a>.</li>
                 <li>Для стилей используйте <a href="https://github.com/htmlacademy/stylelint-config-htmlacademy">Stylelint</a>.</li>
               </ul>
@@ -174,7 +173,7 @@ project/
           <article class="chapter-part">
             <div class="chapter-part-col">
               <h3 id="formatting">Форматирование кода</h3>
-              <p>Настройте <a href="https://github.com/htmlacademy/codeguide/blob/main/.editorconfig">EditorConfig</a>, чтобы редактор автоматически форматировал код:</p>
+              <p>Настройте <a href="https://github.com/htmlacademy/codeguide/blob/master/.editorconfig">EditorConfig</a>, чтобы редактор автоматически форматировал код:</p>
               <pre><code>root = true
 
 [*]
@@ -592,26 +591,6 @@ trim_trailing_whitespace = false</code></pre>
             </div>
           </article>
 
-          <article class="chapter-part">
-            <div class="chapter-part-col">
-              <h3 id="html-external-links">Безопасность внешних ссылок</h3>
-              <p>Для ссылок с <code>target="_blank"</code> добавляйте <code>rel="noopener"</code> — это защита от атаки через <code>window.opener</code>, когда внешняя страница может получить доступ к вашей.</p>
-            </div>
-            <div class="chapter-part-col gray-bgcolor">
-              <figure>
-                <pre><code class="language-markup">&lt;!-- Хорошо --&gt;
-&lt;a href="https://example.com" target="_blank" rel="noopener"&gt;
-  Внешняя ссылка
-&lt;/a&gt;
-
-&lt;!-- Плохо --&gt;
-&lt;a href="https://example.com" target="_blank"&gt;
-  Внешняя ссылка
-&lt;/a&gt;
-                </code></pre>
-              </figure>
-            </div>
-          </article>
 
           <article class="chapter-part">
             <div class="chapter-part-col">
@@ -691,7 +670,7 @@ trim_trailing_whitespace = false</code></pre>
           <article class="chapter-part">
             <div class="chapter-part-col">
               <h3 id="html-validator">Валидность</h3>
-              <p>Проверяйте HTML через <a href="http://validator.w3.org/nu/" target="_blank" rel="noopener">валидатор</a> — он найдёт ошибки, которые легко пропустить.</p>
+              <p>Проверяйте HTML через <a href="http://validator.w3.org/nu/" target="_blank">валидатор</a> — он найдёт ошибки, которые легко пропустить.</p>
             </div>
           </article>
 
@@ -829,11 +808,12 @@ trim_trailing_whitespace = false</code></pre>
           <article class="chapter-part">
             <div class="chapter-part-col">
               <h3 id="css-nesting">Вложенность</h3>
-              <p>Правила для <code>@media</code>, <code>@container</code> и CSS nesting:</p>
+              <p>Нативная вложенность CSS работает во всех современных браузерах. Правила для <code>@media</code>, <code>@container</code> и вложенных селекторов:</p>
               <ul>
                 <li>Увеличивайте отступ на 2 пробела для каждого уровня.</li>
                 <li>Отделяйте вложенные блоки пустой строкой от свойств родителя.</li>
                 <li>Ограничивайте глубину до 2 уровней — глубже читать сложно.</li>
+                <li>Используйте <code>&</code> для псевдоклассов, псевдоэлементов и составных селекторов. Для вложенных потомков <code>&</code> необязателен.</li>
               </ul>
             </div>
             <div class="chapter-part-col gray-bgcolor">
@@ -853,12 +833,16 @@ trim_trailing_whitespace = false</code></pre>
 .card {
   padding: 16px;
 
-  & .title {
+  .title {
     font-size: 24px;
   }
 
   &:hover {
     background: #f0f0f0;
+  }
+
+  &.card--active {
+    border-color: blue;
   }
 }
 
@@ -1006,13 +990,7 @@ ul >li {}
   padding-top: 0;
 }
 
-/* Плохо: дублирование вместо :is() */
-h1,
-h2,
-h3 {
-  margin-top: 0;
-}
-
+/* Плохо: дублирование вложенных селекторов */
 .card h2,
 .card h3,
 .banner h2,
@@ -1510,7 +1488,7 @@ h1 {
           <img src="img/logo-html-academy.svg" width="161" height="47" alt="HTML Academy" title="HTML Academy">
         </a>
         <div class="github">
-          <a class="github-link" href="https://github.com/htmlacademy" target="_blank" rel="noopener">
+          <a class="github-link" href="https://github.com/htmlacademy" target="_blank">
             GitHub
           </a>
         </div>
