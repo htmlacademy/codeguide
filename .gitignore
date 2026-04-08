@@ -1,5 +1,8 @@
-build/
 node_modules/
+build/
 *.log
 .DS_Store
-.vscode
+Thumbs.db
+.idea/
+*.sublime*
+.vscode/

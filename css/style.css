@@ -492,3 +492,9 @@ pre.language-correct .token.operator,
 pre.language-incorrect .token.operator {
   background: none;
 }
+
+blockquote {
+  background: #eeb;
+  margin-left: -10px;
+  padding: 10px 10px;
+}
